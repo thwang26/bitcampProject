@@ -3,11 +3,14 @@ package com.menu.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.menu.bean.MenuDTO;
 import com.menu.service.MenuService;
+import com.order.bean.OrderDTO;
 
 @Controller
 public class MenuController {
@@ -21,7 +24,18 @@ public class MenuController {
 	
 	@GetMapping(value="/menuDetails")
 	@ResponseBody
-	public MenuDTO menuDetails(@RequestParam int seq) {
-		return menuService.getMenu(seq);
+	public MenuDTO menuDetails(@RequestParam int seqMenu) {
+		return menuService.getMenu(seqMenu);
+	}
+	
+	@PostMapping(value="/orderMenu")
+	@ResponseBody
+	public void orderMenu(@ModelAttribute OrderDTO orderDTO) {
+		menuService.orderMenu(orderDTO);
+	}
+	
+	@GetMapping(value="/orderMenuForm")
+	public String orderMenuForm() {
+		return "orderMenuForm";
 	}
 }

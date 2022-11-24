@@ -5,5 +5,6 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="com.menu.bean.MenuDTO" alias="menu"/>
+		<typeAlias type="com.order.bean.OrderDTO" alias="order"/>
 	</typeAliases>
 </configuration>

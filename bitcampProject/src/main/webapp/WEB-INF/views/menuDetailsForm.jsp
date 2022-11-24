@@ -14,8 +14,8 @@
 <body>
 <div class="container" ><!-- container start -->
 	<form id="menuDetailsForm">
-	<input type="hidden" id="seq" name="seq" value="1"> <!-- 메뉴시퀀스 -->
-	<input type="hidden" id="id" name="id" value="hong"> <!-- member id -->
+	<input type="hidden" id="seqMenu" name="seqMenu" value="1"> <!-- 메뉴시퀀스 -->
+	<input type="hidden" id="id" name="id" value="hong"> <!-- member id 세션 -->
 	<input type="hidden" id="storeNum" name="storeNum" value="1">
 	
 	<div class="card" style="width: 90%;">

@@ -35,32 +35,43 @@ img, fieldset {
 /* 매장리스트부분 */ 
 
 #store_List{
-	width: 500px;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	width: 100%;
+	margin: auto;
 }
 #store_thumb{
-	width: 120px;
-	height: 120px;	
+	width: 100px;
+	height: 100px;	
 }
 
 #store_info{
+	padding-top: 12px;
+	width: 350px;
 	text-align: left;
 }
 
 #store_name{
+	width: auto;
 	font-weight: bold;
-	font-size: 30px;
+	font-size: 22px;
 }
 #store_addr{
-	font-size: 22px;
+	width: auto;
+	font-size: 17px;
 	color: grey;
 }
 #store_tel{
-	font-size: 20px;
+	width: auto;
+	font-size: 18px;
 		
 }
 #phone_img{
-	margin-top: 3px;
+	margin-top: 6px;
 	margin-right: 5px;
+	margin-left: 3px;
 }
 #store_img_each{
 	display: flex;
@@ -74,9 +85,22 @@ img, fieldset {
 	background-position: left;
 }
 
-
-
-
+#scroll_list{
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	width: 100%;
+	margin: auto;
+	
+}
+#box_wrap{
+	width: auto;
+	height: auto;
+}
+#categoryStart{
+	width: 600px;
+}
 
 
 
@@ -101,6 +125,7 @@ img {
 /* container(640px)을 제외한 좌우 흰 여백 */
 body {
 	overflow-y: scroll;
+	overflow-x: hidden;
 	background: white;
 }
 /* 전체화면(container), 하단 탭(menu) 크기 및 옵션 */

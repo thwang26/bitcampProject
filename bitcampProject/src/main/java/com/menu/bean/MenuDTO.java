@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class MenuDTO {
-	private int seq;
+	private int seqMenu;
 	private String menuName;
 	private String menuContent;
 	private String menuPrice;

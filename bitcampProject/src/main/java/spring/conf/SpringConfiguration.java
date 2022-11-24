@@ -36,9 +36,10 @@ public class SpringConfiguration {
 	@Bean
 	public SqlSessionFactory sqlSessionFactory() throws Exception {
 		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
-		sqlSessionFactoryBean.setDataSource(dataSource()); //basicDataSource return해준다.
 		sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("spring/mybatis-config.xml")); //Resource타입을 원하기 때문. classPath를 알려준다.
-		sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("com/menu/dao/menuMapper.xml"));
+		sqlSessionFactoryBean.setDataSource(this.dataSource()); //basicDataSource return해준다.
+		sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("com/menu/dao/menuMapper.xml"),
+																		new ClassPathResource("com/store/dao/StoreMapper.xml"));
 		
 		return sqlSessionFactoryBean.getObject(); //SqlSessionFactory로 return하기 위해서 
 	}

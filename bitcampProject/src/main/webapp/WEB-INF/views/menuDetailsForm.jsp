@@ -16,6 +16,9 @@
 	<form id="menuDetailsForm">
 	<input type="hidden" id="seqMenu" name="seqMenu" value="1"> <!-- 메뉴시퀀스 -->
 	<input type="hidden" id="id" name="id" value="hong"> <!-- member id 세션 -->
+	<form id="menuDetailsForm" method="post">
+	<input type="hidden" id="seqMenu" name="seqMenu" value="1"> <!-- 메뉴시퀀스 -->
+	<input type="hidden" id="id" name="id" value="hong"> <!-- member id -->
 	<input type="hidden" id="storeNum" name="storeNum" value="1">
 	
 	<div class="card" style="width: 90%;">
@@ -25,48 +28,50 @@
 	    		<input type="text" name="menuName" id="menuName" />
 	    	</h3>
 	    	<p class="card-text" style="font-size:14pt;" align="left">
-	    		<input type="text" name="menuContent" id="menuContent" />
+	    		<input type="text" id="menuContent" />
 	    	</p>
 		</div>
 		<ul class="list-group list-group-flush">
 			<li class="list-group-item">사이즈
 				<div class="btn-group" role="group" aria-label="size group">
-					<input type="radio" class="btn-check" name="sizeOpt" id="sizeOpt1" autocomplete="off" checked>
+					<input type="radio" class="btn-check" name="sizeOpt" id="sizeOpt1" value="0" autocomplete="off" checked>
 					<label class="btn btn-outline-primary" for="sizeOpt1">Small</label>
 				
-					<input type="radio" class="btn-check" name="sizeOpt" id="sizeOpt2" autocomplete="off">
+					<input type="radio" class="btn-check" name="sizeOpt" id="sizeOpt2" value="1" autocomplete="off">
 					<label class="btn btn-outline-primary" for="sizeOpt2">Regular</label>
 				
-					<input type="radio" class="btn-check" name="sizeOpt" id="sizeOpt3" autocomplete="off">
+					<input type="radio" class="btn-check" name="sizeOpt" id="sizeOpt3" value="2" autocomplete="off">
 					<label class="btn btn-outline-primary" for="sizeOpt3">Large</label>
 				</div>
 			</li>
 			<li class="list-group-item">컵선택
 				<div class="btn-group" role="group" aria-label="takeout group">
-					<input type="radio" class="btn-check" name="takeoutOpt" id="takeoutOpt1" autocomplete="off" checked>
+					<input type="radio" class="btn-check" name="takeoutOpt" id="takeoutOpt1" value="0" autocomplete="off" checked>
 					<label class="btn btn-outline-primary" for="takeoutOpt1">매장컵</label>
 				
-					<input type="radio" class="btn-check" name="takeoutOpt" id="takeoutOpt2" autocomplete="off">
+					<input type="radio" class="btn-check" name="takeoutOpt" id="takeoutOpt2" value="1" autocomplete="off">
 					<label class="btn btn-outline-primary" for="takeoutOpt2">개인컵</label>
 				
-					<input type="radio" class="btn-check" name="takeoutOpt" id="takeoutOpt3" autocomplete="off">
+					<input type="radio" class="btn-check" name="takeoutOpt" id="takeoutOpt3" value="2" autocomplete="off">
 					<label class="btn btn-outline-primary" for="takeoutOpt3">일회용컵</label>
 				</div>
 			</li>
 			<li class="list-group-item">에스프레소 샷
-				<button type="button" class="btn btn-outline-primary">-</button>
+				<button type="button" class="btn btn-outline-primary" id="minusShotBtn">-</button>
 				<input type="text" name="shotOpt" id="shotOpt" value="0" size=1 />
-				<button type="button" class="btn btn-outline-primary">+</button>
+				<button type="button" class="btn btn-outline-primary" id="plusShotBtn">+</button>
 			</li>
 		</ul>
 		<div class="card-body">
-			<button type="button" class="btn btn-outline-primary">-</button>
-			<input type="text" name="qty" id="qty" value="1" size=1 />
-			<button type="button" class="btn btn-outline-primary">+</button>
-			<input type="text" name="menuPrice" id="menuPrice">
-			<input type="hidden" name="orderPrice" id="orderPrice"> <br>
-			<button type="button" class="btn btn-secondary btn-lg">담기</button>
-			<button type="button" class="btn btn-secondary btn-lg">주문하기</button>
+			<div>
+				<button type="button" class="btn btn-outline-primary" id="minusQtyBtn">-</button>
+				<input type="text" name="qty" id="qty" value="1" size=1 />
+				<button type="button" class="btn btn-outline-primary" id="plusQtyBtn">+</button>
+				<input type="text" name="menuPrice" id="menuPrice">
+				<input type="hidden" name="orderPrice" id="orderPrice">
+			</div>
+			<button type="button" id="cartBtn" class="btn btn-secondary btn-lg">담기</button>
+			<button type="button" id="orderBtn" class="btn btn-secondary btn-lg">주문하기</button>
 		</div>
 	</div>
 	</form>

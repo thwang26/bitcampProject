@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.menu.bean.CategoryDTO;
 import com.menu.bean.MenuDTO;
 import com.menu.dao.MenuDAO;
+import com.order.bean.OrderDTO;
 
 @Service
 public class MenuServiceImpl implements MenuService {
@@ -22,6 +23,10 @@ public class MenuServiceImpl implements MenuService {
 	@Override
 	public List<CategoryDTO> getCategoryList() {
 		return menuDAO.getCategory();
+	}
+
+	public void orderMenu(OrderDTO orderDTO) {
+		menuDAO.orderMenu(orderDTO);
 	}
 
 }

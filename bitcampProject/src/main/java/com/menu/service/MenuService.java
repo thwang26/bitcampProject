@@ -4,11 +4,14 @@ import java.util.List;
 
 import com.menu.bean.CategoryDTO;
 import com.menu.bean.MenuDTO;
+import com.order.bean.OrderDTO;
 
 public interface MenuService {
 
-	MenuDTO getMenu(int seqMenu);
+	public MenuDTO getMenu(int seqMenu);
 
-	List<CategoryDTO> getCategoryList();
+	public List<CategoryDTO> getCategoryList();
+	
+	public void orderMenu(OrderDTO orderDTO);
 
 }

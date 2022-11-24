@@ -1,8 +1,11 @@
 package com.menu.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.menu.bean.CategoryDTO;
 import com.menu.bean.MenuDTO;
 import com.menu.dao.MenuDAO;
 import com.order.bean.OrderDTO;
@@ -18,8 +21,12 @@ public class MenuServiceImpl implements MenuService {
 	}
 
 	@Override
+	public List<CategoryDTO> getCategoryList() {
+		return menuDAO.getCategory();
+	}
+
 	public void orderMenu(OrderDTO orderDTO) {
-		menuDAO.orderMenu(orderDTO);	
+		menuDAO.orderMenu(orderDTO);
 	}
 
 }

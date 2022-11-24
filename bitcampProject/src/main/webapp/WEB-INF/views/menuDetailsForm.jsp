@@ -13,6 +13,9 @@
 </head>
 <body>
 <div class="container" ><!-- container start -->
+	<form id="menuDetailsForm">
+	<input type="hidden" id="seqMenu" name="seqMenu" value="1"> <!-- 메뉴시퀀스 -->
+	<input type="hidden" id="id" name="id" value="hong"> <!-- member id 세션 -->
 	<form id="menuDetailsForm" method="post">
 	<input type="hidden" id="seqMenu" name="seqMenu" value="1"> <!-- 메뉴시퀀스 -->
 	<input type="hidden" id="id" name="id" value="hong"> <!-- member id -->

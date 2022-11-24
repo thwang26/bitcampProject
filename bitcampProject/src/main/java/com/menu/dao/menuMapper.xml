@@ -7,6 +7,17 @@
 		select * from menu where seqMenu=#{seqMenu}
 	</select>
 	
+	<!-- 카테고리 리스트 받기 -->	
+	<resultMap type="com.menu.bean.CategoryDTO" id="categoryResult">
+		<result property="categoryName" column="CATEGORYNAME" />
+		<result property="categoryNum" column="CATEGORYNUM" />
+		<result property="categoryImagePath" column="CATEGORYIMAGEPATH" />
+	</resultMap>
+
+	<select id="getCategoryList" resultMap="categoryResult">
+		select * from category
+	</select>
+
 	<insert id="orderMenu" parameterType="order">
 		insert into orderinform values(seq_order.NEXTVAL
 									 , #{id}

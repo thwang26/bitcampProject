@@ -4,6 +4,20 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="menuSQL">
 	<select id="getMenu" parameterType="Integer" resultType="menu">
-		select * from menu where seq=#{seq}
+		select * from menu where seqMenu=#{seqMenu}
 	</select>
+	
+	<insert id="orderMenu" parameterType="order">
+		insert into orderinform values(seq_order.NEXTVAL
+									 , #{id}
+									 , #{orderPrice}
+									 , #{qty}
+									 , sysdate
+									 , #{menuName}
+									 , 1
+									 , #{storeNum}
+									 , #{takeoutOpt}
+									 , #{shotOpt}
+									 , #{sizeOpt})
+	</insert>
 </mapper>

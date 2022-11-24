@@ -34,11 +34,6 @@ a {
    color: #fff;
    text-decoration: none;
 }
-a:hover, a:focus {
-   color: #fff;
-   text-decoration: none;
-   background-color: #0866c6;
-}
 table {
    border-collapse: collapse;
 }

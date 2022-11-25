@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
     	
-<<<<<<< HEAD
     <wb-module deploy-name="bitcampProject">
-=======
-<<<<<<< HEAD
-    <wb-module deploy-name="bitcampProject">
-=======
-    <wb-module deploy-name="maincontroller-1.0.0-BUILD-SNAPSHOT">
->>>>>>> main
->>>>>>> main
                 
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         		

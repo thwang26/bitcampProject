@@ -30,4 +30,19 @@ public class AdminServiceImpl implements AdminService {
 	public List<MenuDTO> menuLoad(String categoryNum) {
 		return adminDAO.menuLoad(categoryNum);
 	}
+
+	@Override
+	public void menuErase(int seqMenu) {
+		adminDAO.menuErase(seqMenu);
+	}
+
+	@Override
+	public MenuDTO menuUpdateForm(int seqMenu) {
+		return adminDAO.menuUpdateForm(seqMenu);
+	}
+
+	@Override
+	public String orderAlert() {
+		return adminDAO.orderAlert();
+	}
 }

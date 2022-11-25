@@ -64,5 +64,6 @@ div#menuNameDiv, div#menuContentDiv, div#menuPriceDiv {
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="/bitcafe/resources/js/admin.js"></script>
 <script type="text/javascript" src="/bitcafe/resources/js/menuInsert.js"></script>
+<script type="text/javascript" src="/bitcafe/resources/js/orderAlert.js"></script>
 </body>
 </html>

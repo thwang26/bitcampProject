@@ -12,4 +12,11 @@ public interface AdminDAO {
 	public void menuWrite(MenuDTO menuDTO);
 
 	public List<MenuDTO> menuLoad(String categoryNum);
+
+	public void menuErase(int seqMenu);
+
+	public MenuDTO menuUpdateForm(int seqMenu);
+
+	public String orderAlert();
+
 }

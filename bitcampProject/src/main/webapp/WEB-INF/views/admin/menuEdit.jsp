@@ -34,5 +34,6 @@ div#menulist{
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="/bitcafe/resources/js/admin.js"></script>
 <script type="text/javascript" src="/bitcafe/resources/js/menuLoad.js"></script>
+<script type="text/javascript" src="/bitcafe/resources/js/orderAlert.js"></script>
 </body>
 </html>

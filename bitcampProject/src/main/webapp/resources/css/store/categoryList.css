@@ -6,17 +6,22 @@ body, div, dl,dt,dd,ul,ol,li, h1,h2,h3,h4,h5,h6, form, fieldset, p, button {
 }
 
 
-
-
-
-
 /* 매장선택 헤드  */
-
-#storeList_head{
-	background-color: #fcf5ef;
+#categoryHead {
+	width: 100%;
+	margin: auto;
+	
+	align-items: stretch;
+	display: flex;
+	flex-wrap: wrap;
 	z-index: 1000;
 	position: fixed;
 	top: 0;
+	flex: 0 0 auto;
+}
+#storeList_head{
+	background: #fcf5ef;
+	margin: auto;
 	width: 640px;
 }
 
@@ -77,6 +82,12 @@ img, fieldset {
 #storeList_all{
 	width: 600px;
 }
+
+#box_wrap{
+	width: auto;
+	height: auto;
+}
+
 
 
 

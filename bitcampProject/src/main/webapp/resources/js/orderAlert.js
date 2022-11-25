@@ -1,3 +1,4 @@
+/*
 $(function() {
 	setInterval( function () {
 	    $.ajax ({
@@ -14,3 +15,4 @@ $(function() {
 	    });
 	    }, 5000);
 });
+*/

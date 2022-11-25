@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="adminSQL"><!-- 다른 mapper.xml파일에서 중복된 id를 구별하기위해 넣는 구분자-->
+	
+	
+	<insert id="menuWrite" parameterType="menu">
+		insert into menu (seq, menuName, menuContent, menuPrice, categoryNum) values (seq_menu.NEXTVAL, #{menuName}, #{menuContent}, #{menuPrice}, #{categoryNum})
+	</insert>
+	
+	<select id="menuLoad" parameterType="String" resultType="menu">
+		select * from menu where categoryNum=#{categoryNum}
+	</select>
+</mapper>

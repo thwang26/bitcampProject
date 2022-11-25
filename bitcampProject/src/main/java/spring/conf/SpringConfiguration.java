@@ -41,7 +41,8 @@ public class SpringConfiguration {
 		sqlSessionFactoryBean.setDataSource(this.dataSource()); //basicDataSource return해준다.
 		sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("com/menu/dao/menuMapper.xml"),
 												 new ClassPathResource("com/store/dao/StoreMapper.xml"),
-												 new ClassPathResource("com/admin/dao/AdminMapper.xml"));
+												 new ClassPathResource("com/admin/dao/AdminMapper.xml"),
+												 new ClassPathResource("com/order/dao/orderMapper.xml"));
 		
 		return sqlSessionFactoryBean.getObject(); //SqlSessionFactory로 return하기 위해서 
 	}

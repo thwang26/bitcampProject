@@ -5,7 +5,15 @@ body, div, dl,dt,dd,ul,ol,li, h1,h2,h3,h4,h5,h6, form, fieldset, p, button {
 	padding: 0;
 }
 
+
 /* 매장선택 헤드  */
+header{
+	background-color: #fcf5ef;
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	
+}
 
 #storeList_head{
 	width: 640px;
@@ -34,6 +42,10 @@ img, fieldset {
 
 /* 매장리스트부분 */ 
 
+#storeList_all{
+	width: 500px;
+}
+
 #store_List{
 	position: relative;
 	display: flex;
@@ -49,7 +61,7 @@ img, fieldset {
 
 #store_info{
 	padding-top: 12px;
-	width: 350px;
+	width: 350;
 	text-align: left;
 }
 
@@ -84,16 +96,36 @@ img, fieldset {
 	background-position: 20px 20px;
 	background-position: left;
 }
-
+/* 
 #scroll_list{
 	position: relative;
-	display: flex;
 	flex-wrap: wrap;
 	align-items: stretch;
 	width: 100%;
 	margin: auto;
+	display: flex;
 	
+}  */
+
+
+#scroll_list {
+	position: relative;
+	flex-wrap: wrap;
+	align-items: stretch;
+	width: 80%;
+	margin: auto;
+	margin-top: 110px;
+	margin-bottom: 60px;
+	display: flex;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
+#scroll_list::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+
+
+
 #box_wrap{
 	width: auto;
 	height: auto;
@@ -101,6 +133,7 @@ img, fieldset {
 #categoryStart{
 	width: 600px;
 }
+
 
 
 

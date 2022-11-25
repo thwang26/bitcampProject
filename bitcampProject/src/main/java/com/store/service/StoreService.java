@@ -6,6 +6,6 @@ import com.store.bean.StoreDTO;
 
 public interface StoreService {
 
-	public List<StoreDTO> getStoreList();
+	public List<StoreDTO> getStoreList(String keyword);
 
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="eventSQL">
+  
+<resultMap type="com.event.EventDTO" id="eventResult">
+<result property="seq" column="SEQ" />
+<result property="subject" column="SUBJECT" />
+<result property="content" column="CONTENT" />
+<result property="logtime" column="LOGTIME" />
+<result property="eventimagepath" column="EVENTIMAGEPATH" />
+</resultMap>
+<select id="getEventList" resultMap="eventResult">
+  select * from event
+  </select>
+  </mapper>
+  
+  
+ 

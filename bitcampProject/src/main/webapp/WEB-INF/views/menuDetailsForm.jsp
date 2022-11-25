@@ -14,9 +14,9 @@
 <body>
 <div class="container" ><!-- container start -->
 	<form id="menuDetailsForm" method="post">
-	<input type="hidden" id="seqMenu" name="seqMenu" value="1"> <!-- 메뉴시퀀스 -->
+	<input type="hidden" id="seqMenu" name="seqMenu" value="${param.menuSEQ }"> <!-- 메뉴시퀀스 -->
 	<input type="hidden" id="id" name="id" value="hong"> <!-- member id -->
-	<input type="hidden" id="storeNum" name="storeNum" value="1">
+	<input type="hidden" id="storeNum" name="storeNum" value="${param.storeNum }">
 	
 	<div class="card" style="width: 90%;">
 		<img src="" class="card-img-top" alt="커피이미지">

@@ -31,6 +31,24 @@ public class MenuController {
 		return menuService.getMenu(seqMenu);
 	}
 
+	
+	
+	// 카테고리 선택 후 메뉴 선택 페이지
+	@GetMapping("menu")
+	public String menu() {
+		return "menu";
+	}
+	
+	@GetMapping("getMenuList")
+	@ResponseBody
+	public List<MenuDTO> getMenuList(@RequestParam int categoryNum){
+		
+		return menuService.getMenuList(categoryNum);
+	}
+	
+	
+	
+	
 	// 카테고리 리스트
 	@GetMapping("categoryList")
 	public String categoryList() {
@@ -54,4 +72,12 @@ public class MenuController {
 	public String orderMenuForm() {
 		return "orderMenuForm";
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 }

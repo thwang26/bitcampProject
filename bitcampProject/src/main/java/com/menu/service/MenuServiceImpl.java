@@ -29,4 +29,12 @@ public class MenuServiceImpl implements MenuService {
 		menuDAO.orderMenu(orderDTO);
 	}
 
+	@Override
+	public List<MenuDTO> getMenuList(int categoryNum) {
+		
+		//System.out.println(categoryNum);
+		
+		return menuDAO.getMenuList(categoryNum);
+	}
+
 }

@@ -17,6 +17,12 @@
 	<select id="getCategoryList" resultMap="categoryResult">
 		select * from category
 	</select>
+	
+	<!-- 카테고리 선택 후 메뉴리스트(카테고리 번호와 일치하는 메뉴 가져오기) -->
+	<select id="getMenuList" parameterType="Integer" resultType="menu">
+		select * from menu where categoryNum=#{categoryNum}
+	</select>
+	
 
 	<insert id="orderMenu" parameterType="order">
 		insert into orderinform values(seq_order.NEXTVAL

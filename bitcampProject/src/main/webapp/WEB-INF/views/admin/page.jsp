@@ -14,10 +14,10 @@
 <div id="container">
 	<div id="nav">
 		<ul>
-			<li id="orderList"><a href="/bitcafe/orderList">주문내역</a></li>
-			<li><a href="/bitcafe/orderCount">매출확인</a></li>
-			<li><a href="/bitcafe/menuInsert">메뉴추가</a></li>
-			<li><a href="/bitcafe/menuDelete">메뉴삭제</a></li>
+			<li class="menu" id="orderMenuList"><a href="/bitcafe/orderMenuList?num=1">주문내역</a></li>
+			<li class="menu" id="orderCount"><a href="/bitcafe/orderCount?num=2">매출확인</a></li>
+			<li class="menu" id="menuInsert"><a href="/bitcafe/menuInsert?num=3">메뉴추가</a></li>
+			<li class="menu" id="menuDelete"><a href="/bitcafe/menuEdit?num=4">메뉴편집</a></li>
 		</ul>
 	</div><!-- nav -->
 </div><!-- container -->

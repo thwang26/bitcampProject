@@ -3,7 +3,11 @@
 <<<<<<< HEAD
     <wb-module deploy-name="bitcampProject">
 =======
+<<<<<<< HEAD
+    <wb-module deploy-name="bitcampProject">
+=======
     <wb-module deploy-name="maincontroller-1.0.0-BUILD-SNAPSHOT">
+>>>>>>> main
 >>>>>>> main
                 
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>

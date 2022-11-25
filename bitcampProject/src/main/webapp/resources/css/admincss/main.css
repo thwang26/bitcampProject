@@ -20,9 +20,9 @@ body {
 	font-size: 25px;
 	color: #fff;
 	width: 230px;
-    text-align: left;
-    padding: 13px 15px;
-    float: left;
+	text-align: left;
+	padding: 13px 15px;
+	float: left;
 }
 
 #nav{
@@ -38,6 +38,14 @@ body {
 	padding: 16px 12px;
 	display: block;
 }
+.menu:hover, .menu:focus {
+   color: #fff;
+   text-decoration: none;
+   background-color: #0866c6;
+}
+.menu-active{
+	background-color: #0866c6;
+}
 ul {
 	margin: 20px 0;
 	
@@ -50,6 +58,13 @@ ul {
 }
 #content a{
 	color: #000000;
+}
+#menuList{
+	position: relative;
+	top: 60px;
+	right: 100px;
+	width: 500px;
+	float: right;
 }
 input#logout{
 }
@@ -66,4 +81,7 @@ input#logout{
 #income li, #confirm li, #complete li {
 	left: 50px;
 	position: relative;
+}
+#category {
+	position: fixed;
 }

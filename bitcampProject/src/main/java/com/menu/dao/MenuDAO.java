@@ -14,4 +14,6 @@ public interface MenuDAO {
 
 	List<CategoryDTO> getCategory();
 
+	public List<MenuDTO> getMenuList(int categoryNum);
+
 }

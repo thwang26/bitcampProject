@@ -19,7 +19,7 @@ public class MenuDAOImpl implements MenuDAO {
 
 	@Override
 	public MenuDTO getMenu(int seqMenu) {
-		return sqlSession.selectOne("menuSQL.getMenu", seqMenu); //mapper만들고, spring폴더, spring.conf파일 가져와서 완성하기 root-context설정도!
+		return sqlSession.selectOne("menuSQL.getMenu", seqMenu);
 	}
 
 	@Override
@@ -31,6 +31,12 @@ public class MenuDAOImpl implements MenuDAO {
 	@Override
 	public List<CategoryDTO> getCategory() {
 		return sqlSession.selectList("menuSQL.getCategoryList");
+	}
+
+	@Override
+	public List<MenuDTO> getMenuList(int categoryNum) {
+		
+		return sqlSession.selectList("menuSQL.getMenuList", categoryNum);
 	}
 
 }

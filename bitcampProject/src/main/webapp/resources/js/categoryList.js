@@ -9,7 +9,7 @@ $(function () {
            
             $.each(data, function (index, items) {
                 $('<div/>', { class: "row click_category", id: "category_List"})
-                    .append($('<div/>', { class: "col", id: "category_img_each" }).append($('<img/>', {
+                    .append($('<div/>', { class: "col-6", id: "category_img_each" }).append($('<img/>', {
                         src: items.categoryImagePath,
                         alt: "categoryImg",
                         class: "rounded float-start",
@@ -30,22 +30,25 @@ $(function () {
     });
 
 });
+
 $(document).on('click', '.click_category', function(){
 
 	const urlParams = new URL(location.href).searchParams;
 	const storeNum = urlParams.get('storeNum');
 	
-	alert(storeNum);	
+	//alert(storeNum);	
 
 	var categoryNum = $(this).find('input').val();
+	var categoryName = $(this).find('#category_name').text();
 	//alert(storeNum);
-	location.href="/bitcafe/menuDetailsForm/?categoryNum="+categoryNum+"&storeNum="+storeNum;
+	//alert(categoryName);
+	location.href="/bitcafe/menu/?categoryNum="+categoryNum+"&storeNum="+storeNum+"&categoryName="+categoryName;
 	
 
 });
 
 function goback_store_info(){
-	alert("뒤로가기 123123");	
+	//alert("뒤로가기 123123");	
 	location.href="/bitcafe/order?num=2";
 
 };

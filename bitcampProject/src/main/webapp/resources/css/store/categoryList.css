@@ -13,6 +13,10 @@ body, div, dl,dt,dd,ul,ol,li, h1,h2,h3,h4,h5,h6, form, fieldset, p, button {
 /* 매장선택 헤드  */
 
 #storeList_head{
+	background-color: #fcf5ef;
+	z-index: 1000;
+	position: fixed;
+	top: 0;
 	width: 640px;
 }
 
@@ -31,7 +35,13 @@ img, fieldset {
 
 
 
-/* 매장리스트부분 */ 
+/* 카테고리 리스트부분 */ 
+
+#categoryStart{
+	position: relative;
+	margin-top: 100px;
+	margin-bottom: 60px;
+}
 
 #category_List{
 	position: relative;
@@ -47,7 +57,7 @@ img, fieldset {
 }
 
 #category_info{
-	padding-top: 80px;
+	padding-top: 70px;
 	width: 350px;
 	text-align: left;
 }
@@ -55,7 +65,7 @@ img, fieldset {
 #category_name{
 	width: auto;
 	font-weight: bold;
-	font-size: 35px;
+	font-size: 27px;
 }
 
 #category_img_each{

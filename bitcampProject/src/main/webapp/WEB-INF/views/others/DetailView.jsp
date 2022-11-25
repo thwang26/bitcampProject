@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <title>BitCafe</title>
 <link rel="stylesheet" type="text/css" href="/bitcafe/resources/css/bottomTab.css"><!-- reset, bottomTab.css -->
-<link rel="stylesheet" type="text/css" href="/bitcafe/resources/css/listDtail.css"><!-- reset, bottomTab.css -->
+<link rel="stylesheet" type="text/css" href="/bitcafe/resources/css/DetailView.css"><!-- reset, bottomTab.css -->
 <link rel="icon" href="/bitcafe/resources/img/order.png">
 </head>
 <body>

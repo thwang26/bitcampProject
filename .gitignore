@@ -34,7 +34,7 @@ local.properties
 
 # sbteclipse plugin
 .target
-
+target/
 # Tern plugin
 .tern-project
 
@@ -65,3 +65,4 @@ local.properties
 .sts4-cache/
 
 MANIFEST.MF
+/chapter_03/

@@ -25,3 +25,22 @@ $('.order').click(function(){
 		}
 	});
 });
+$(function(){
+	let query = window.location.search;
+	let param = new URLSearchParams(query);
+	let num = param.get('num');
+	
+	if(num == 1){
+		$('#orderMenuList').addClass('menu-active');
+		
+	}else if(num == 2){
+		$('#orderCount').addClass('menu-active');
+	
+	}else if(num == 3){
+		$('#menuInsert').addClass('menu-active');
+	
+	}else if(num == 4){
+		$('#menuDelete').addClass('menu-active');
+	
+	}
+});

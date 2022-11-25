@@ -12,5 +12,5 @@ public class MenuDTO {
 	private String menuImagePath;
 	private int takeoutOpt;
 	private int shotOpt;
-	private int sizeOpt; 
+	private int sizeOpt;
 }

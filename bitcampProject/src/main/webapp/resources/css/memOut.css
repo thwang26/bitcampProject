@@ -1,12 +1,7 @@
 @charset "UTF-8";
-/* css초기화 */
-body, div, dl,dt,dd,ul,ol,li, h1,h2,h3,h4,h5,h6, form, fieldset, p, button {
-	margin: 0;
-	padding: 0;
-}
 h1{
-	text-align: center;
 	color: white;
+	font-size: 35px;
 }
 h2{
 	text-align: center;
@@ -34,13 +29,32 @@ a{
 	text-decoration:none;
 	color: brown;
 }
-* {
-	box-sizing: border-box;
+td{
+	padding:2px;
+	text-align: center;
+	font-size: 75%;
+	border-color:#873c00;
+}
+th{
+	padding:2px;
+	font-size: 75%;
+	border-color:#873c00;
+	text-align:left;
+	padding-left: 4rem;
 }
 /* container(640px)을 제외한 좌우 흰 여백 */
-body {
-	overflow-y: scroll;
-	background: white;
+table{
+	font-size:30px;
+	position: absolute;
+   	top: 20%;
+   	width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-color:#873c00;
+	border-collapse: collapse;
+}
+span{
+	text-align: left;
 }
 /* 전체화면(container), 하단 탭(menu) 크기 및 옵션 */
 .container {
@@ -49,8 +63,7 @@ body {
 	height: 1200px;
 	display: flex;
 	flex-direction: column;
-	/*justify-content: center;*/
-	align-items: center;
+	align-ite : center;
 	background: #fcf5ef;
 	position: relative;
 	margin: 0 auto;
@@ -61,10 +74,70 @@ body {
 	font-size: 2em;
 	color: #360a01;
 }
+#pwd{
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	background-color:rgba(0,0,0,0);
+	color:#873c00;
+	padding: 2px;
+	font-size: 20px;
+	border-color: #873c00;
+}
+#id{
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	background-color:rgba(0,0,0,0);
+	color:#873c00;
+	padding: 2px;
+	font-size: 20px;
+	border-color: #873c00;
+}
+#reset{
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	background-color:rgba(0,0,0,0);
+	color:#873c00;
+	padding: 3px; 
+	font-size: 23px;
+	border-color: #873c00;
+}
+#Btn{
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	background-color:rgba(0,0,0,0);
+	color:#873c00;
+	padding: 3px;
+	font-size: 23px;
+	border-color: #873c00;
+}
+.top-img{
+	background-image: url("/bitcafe/resources/img/maintop.jpg");
+	background-size: cover;
+	width: 100%;
+	height: 240px;
+	background-repeat: no-repeat;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.top-name{
+	font-family: 'Marcellus', sans-serif;
+	padding: 150px 100px;
+	color : white;
+	font-size: 0.7em;
+	text-align: right;
+}
 .title{
 	position: absolute;
-   	top: 5%;
-   	left: 74%;
+   	top: 10%;
+   	left: 65%;
    	transform: translate(-50%, -50%);
 }
 .info {
@@ -94,6 +167,7 @@ body {
 	-webkit-backdrop-filter: blur(20px);
 	backdrop-filter: blur(20px);
 }
+
 a.footer-item {
 	text-decoration: none;
 	font-family: sans-serif;

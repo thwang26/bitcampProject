@@ -16,13 +16,13 @@ $('#category li').click(function () {
                         class: "rounded float-start",
                         id: "menu_thumb"
                     })))
-                    .append($('<input/>', { type: "text" , class: "seqMenu" , value: items.seqMenu}))
+                    .append($('<input/>', { type: "hidden" , class: "seqMenu" , value: items.seqMenu}))
                     .append($('<div/>', { class: "col-6", id: "menuInfo" })
-	                    .append($('<input/>', { type: "button", value: "편집", class: "btn btn-success menuEditBtn", id: "menuEditBtn"}).css('width', '100px'))
-	                    .append($('<input/>', { type: "button", value: "✕", class: "btn btn-danger", id: "menuDeleteBtn"}).css('width', '100px'))
 	                    .append($('<div/>', { id:"menuName"}).text(items.menuName))
 	                    .append($('<div/>', { id: "menuContent" }).text(items.menuContent))
-	                    .append($('<div/>', { id: "menuPrice" }).text(items.menuPrice)))
+	                    .append($('<div/>', { id: "menuPrice" }).text(items.menuPrice))
+	                    .append($('<input/>', { type: "button", value: "편집", class: "btn btn-success menuEditBtn", id: "menuEditBtn"}).css('width', '100px'))
+	                    .append($('<input/>', { type: "button", value: "✕", class: "btn btn-danger", id: "menuDeleteBtn"}).css('width', '100px')))
                     .append($('<hr/>').css('margin-top', '16px'))
                     .appendTo($('#menuList'))
             });
@@ -36,13 +36,15 @@ $('#category li').click(function () {
 });//카테고리별 메뉴
 
 $(document).on('click', '.menuEditBtn', function(){
+	console.log($(this).parent().prev().val());
+	window.scrollTo(0,0);
 	$.ajax({
         type: 'get',
         url: '/bitcafe/menuUpdateForm',
-        data: 'seqMenu=' + $(this).parents().find('.seqMenu').val(),
+        data: 'seqMenu=' + $(this).parent().prev().val(),
         dataType: 'json',
         success: function (data) {
-        	alert(JSON.stringify(data));
+        	//alert(JSON.stringify(data));
         	$('#menuList div').remove();
         	$('<div/>', { class: "row nnn", id: "menuList"})
 	            .append($('<div/>', { class: "col-4", id: "menuImg" })
@@ -52,13 +54,13 @@ $(document).on('click', '.menuEditBtn', function(){
 	                class: "rounded float-start",
 	                id: "menu_thumb"
 	            })))
-	            .append($('<input/>', { type: "text" , class: "seqMenu" , value: data.seqMenu}))
+	            .append($('<input/>', { type: "hidden" , class: "seqMenu" , value: data.seqMenu}))
 	            .append($('<div/>', { class: "col-6", id: "menuInfo" })
-	                .append($('<input/>', { type: "button", value: "수정", class: "btn btn-success", id: "menuUpdateBtn"}).css('width', '100px'))
-	                .append($('<input/>', { type: "button", value: "취소", class: "btn btn-danger", id: "menuBackBtn"}).css('width', '100px'))
 	                .append($('<input/>', { type: "text", id:"menuName", value: data.menuName}))
-	                .append($('<input/>', { type: "text", id: "menuContent", value: data.menuContent }))
-	                .append($('<input/>', { type: "text", id: "menuPrice", value: data.menuPrice })))
+	                .append($('<textarea/>', { id: "menuContent", value: data.menuContent }))
+	                .append($('<input/>', { type: "text", id: "menuPrice", value: data.menuPrice }))
+	                .append($('<input/>', { type: "button", value: "수정", class: "btn btn-success", id: "menuUpdateBtn"}).css('width', '100px'))
+	                .append($('<input/>', { type: "button", value: "취소", class: "btn btn-danger", id: "menuBackBtn"}).css('width', '100px')))
 	            .append($('<hr/>').css('margin-top', '16px'))
 	            .appendTo($('#menuList'))
         },

@@ -85,3 +85,7 @@ input#logout{
 #category {
 	position: fixed;
 }
+#menu_thumb{
+	width: 150px;
+	height: 150px;	
+}

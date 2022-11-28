@@ -9,27 +9,33 @@
 <link rel="stylesheet" type="text/css" href="/bitcafe/resources/css/admincss/main.css">
 <link rel="icon" href="/bitcafe/resources/img/order.png">
 <style type="text/css">
-div#menulist{
-	background-color: black;
-}
 </style>
 </head>
 <body>
 <div id="wrap">
 	<%@ include file="page.jsp" %>
-	<div id="content">
-		<div id="category">
-			<ul>
-				<li class="menu" value="1"><a href="#">에스프레소</a></li>
-				<li class="menu" value="2"><a href="#">디카페인</a></li>
-				<li class="menu" value="3"><a href="#">프라푸치노</a></li>
-				<li class="menu" value="4"><a href="#">아포가토</a></li>
-				<li class="menu" value="5"><a href="#">병음료</a></li>
-			</ul>
-		</div><!-- nav -->
+	<div id="content" class="row">
+		<div class="col-3">
+			<div id="category" class="category">
+				<ul>
+					<li value="1"><a href="#">에스프레소</a></li>
+					<hr style="margin-top: 16px;">
+					<li value="2"><a href="#">디카페인</a></li>
+					<hr style="margin-top: 16px;">
+					<li value="3"><a href="#">프라푸치노</a></li>
+					<hr style="margin-top: 16px;">
+					<li value="4"><a href="#">아포가토</a></li>
+					<hr style="margin-top: 16px;">
+					<li value="5"><a href="#">병음료</a></li>
+					<hr style="margin-top: 16px;">
+				</ul>
+			</div><!-- nav -->
+		</div>
+		<div class="col-8">
+			<div id="menuList"></div>
+		</div>
 	</div><!-- container -->
 	<!-- 메뉴리스트 동적처리 -->
-	<div id="menuList"></div>
 </div>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="/bitcafe/resources/js/admin.js"></script>

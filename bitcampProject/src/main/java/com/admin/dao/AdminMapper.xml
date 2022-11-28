@@ -3,7 +3,6 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="adminSQL"><!-- 다른 mapper.xml파일에서 중복된 id를 구별하기위해 넣는 구분자-->
 	
-	
 	<insert id="menuWrite" parameterType="menu">
 		insert into menu (seqMenu, menuName, menuContent, menuPrice, categoryNum) values (seq_menu.NEXTVAL, #{menuName}, #{menuContent}, #{menuPrice}, #{categoryNum})
 	</insert>
@@ -21,6 +20,31 @@
 	</select>
 	
 	<select id="orderAlert" resultType="order">
-		<![CDATA[select * from orderInform where ordercode = 0 and rownum<=1]]>
+		<![CDATA[select * from orderInform where orderCode = 2 and rownum<=1]]>
 	</select>
+	
+	<update id="menuUpdate" parameterType="menu">
+		update menu set menuName=#{menuName}, menuContent=#{menuContent}, menuPrice=#{menuPrice} where seqMenu=#{seqMenu}
+	</update>
+	
+	<select id="orderLoad" resultType="order">
+		select * from orderInform where orderCode = 2 or orderCode = 3 or orderCode = 5 order by orderCode, seqOrder
+	</select>
+	
+	<update id="orderConfirm" parameterType="Integer">
+		update orderInform set orderCode=3 where seqOrder=#{seqOrder}
+	</update>
+	
+	<update id="orderComplete" parameterType="Integer">
+		update orderInform set orderCode=5 where seqOrder=#{seqOrder}
+	</update>
+	
+	<update id="orderReject" parameterType="Integer">
+		update orderInform set orderCode=4 where seqOrder=#{seqOrder}
+	</update>
+	
+	<select id="orderSales" resultType="order">
+		select * from orderInform
+	</select><!-- 추후에 매장코드 추가 -->
+	
 </mapper>

@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <div id="header">
-	<a href="/bitcafe/admin">
+	<a href="/bitcafe/orderMenuList?num=1">
 		<strong>BitCafe</strong>
 	</a>
 	<div id="admin">

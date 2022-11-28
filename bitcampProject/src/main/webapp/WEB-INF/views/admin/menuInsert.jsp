@@ -18,9 +18,17 @@ div#menuNameDiv, div#menuContentDiv, div#menuPriceDiv {
 <body>
 <div id="wrap">
 	<%@ include file="page.jsp" %>
-	<div id="content">
+	<div id="content" class="row">
+	<div class="col-10">
 	<form name="menuInsertForm" id="menuInsertForm" method="">
-		<table border="1" cellpadding="5" cellspacing="0" class="table table-sm">
+		<table cellpadding="5" cellspacing="0" class="table table-sm" id="menuInsertTable">
+			<tr>
+				<th>메뉴이미지</th>
+				<td>
+					<img id="showImg" width="150" height="150"><br><br>
+					<input type="file" name="img" id="img">
+				</td>
+			</tr>
 			<tr>
 				<th>메뉴이름</th>
 				<td>
@@ -52,18 +60,19 @@ div#menuNameDiv, div#menuContentDiv, div#menuPriceDiv {
 			</tr>
 			<tr>
 				<td colspan="2" align="center">
-					<input type="button" class="menuInsert" value="메뉴추가">
-					<input type="reset" value="다시작성">
+					<input type="button" class="menuInsert btn btn-primary" value="메뉴추가">
+					<input type="reset" value="다시작성" class="btn btn-primary">
 				</td>
 			</tr>
 		</table>
 	</form>
+	</div>
 	</div><!-- content -->
 </div>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="/bitcafe/resources/js/admin.js"></script>
 <script type="text/javascript" src="/bitcafe/resources/js/menuInsert.js"></script>
-<script type="text/javascript" src="/bitcafe/resources/js/orderAlert.js"></script>
+<script type="text/javascript" src="/bitcafe/resources/js/imgUpload.js"></script>
 </body>
 </html>

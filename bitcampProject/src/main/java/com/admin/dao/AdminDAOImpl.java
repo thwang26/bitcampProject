@@ -20,11 +20,6 @@ public class AdminDAOImpl implements AdminDAO {
 	private SqlSession sqlSession;
 
 	@Override
-	public OrderDTO getOrder() {
-		return sqlSession.selectOne("adminSQL.getOrder");
-	}
-
-	@Override
 	public void menuWrite(MenuDTO menuDTO) {
 		sqlSession.insert("adminSQL.menuWrite", menuDTO);
 	}
@@ -47,10 +42,39 @@ public class AdminDAOImpl implements AdminDAO {
 	@Override
 	public String orderAlert() {
 		OrderDTO orderDTO = sqlSession.selectOne("adminSQL.orderAlert");
-		System.out.println(orderDTO);
 		
 		if(orderDTO != null) {
 			return "alert";
 		}else return "null";
+	}
+
+	@Override
+	public void menuUpdate(MenuDTO menuDTO) {
+		sqlSession.update("adminSQL.menuUpdate", menuDTO);
+	}
+
+	@Override
+	public List<OrderDTO> orderLoad() {
+		return sqlSession.selectList("adminSQL.orderLoad");
+	}
+
+	@Override
+	public void orderConfirm(int seqOrder) {
+		sqlSession.update("adminSQL.orderConfirm", seqOrder);
+	}
+
+	@Override
+	public void orderComplete(int seqOrder) {
+		sqlSession.update("adminSQL.orderComplete", seqOrder);
+	}
+
+	@Override
+	public void orderReject(int seqOrder) {
+		sqlSession.update("adminSQL.orderReject", seqOrder);
+	}
+
+	@Override
+	public List<OrderDTO> orderSales() {
+		return sqlSession.selectList("adminSQL.orderSales");
 	}
 }

@@ -8,7 +8,7 @@ import lombok.Data;
 public class OrderDTO {
 	private int seqOrder;
 	private String id;
-	private int orderPrice;
+	private String orderPrice;
 	private int qty;
 	private Date orderDate;
 	private String menuName;

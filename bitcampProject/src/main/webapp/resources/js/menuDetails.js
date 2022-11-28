@@ -8,6 +8,7 @@ $(function(){
 			$('#menuName').val(data.menuName);
 			$('#menuContent').val(data.menuContent);
 			$('#menuPrice').val(data.menuPrice);
+			$('#orderPrice').val(data.menuPrice);
 			$('.card > img').attr("src", data.menuImagePath); 
 		},
 		error: function(err){

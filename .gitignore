@@ -8,6 +8,7 @@ lecture
 pom.properties
 .classpath
 MANIFEST.MF
+db.properties
 
 ### Eclipse ###
 .metadata

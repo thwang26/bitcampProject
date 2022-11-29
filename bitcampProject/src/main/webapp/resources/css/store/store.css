@@ -42,8 +42,9 @@ img, fieldset {
 #search_DIV{
 	width: 80%;
 	margin: auto;
-	margin-top: 20px;
+	padding-top: 20px;
 	margin-bottom: 30px;
+	background: #fcf5ef;
 }
 
 #inputGroup-sizing-default, #button-addon2{

@@ -4,7 +4,7 @@ public class OtherDAOsql implements OtherDAO {
 
 	@Override
 	public void delete(String memberId) throws Exception {
-		sqlsession.delete("memberMapper.delete", memberId);
+		//sqlsession.delete("memberMapper.delete", memberId);
 		
 	}
 

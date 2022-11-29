@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import com.store.service.StoreService;
 
+import user.bean.UserDTO;
+
 @Component
 @Controller
 public class OtherController {

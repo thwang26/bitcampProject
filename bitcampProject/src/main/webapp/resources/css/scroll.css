@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* banner */
+.banner {
+	position: relative;
+	max-width: 640px;
+	min-width: 320px;
+	/* width: 340px; */
+	width: 500px;
+	height: 210px;
+	top: 550px;
+	margin: 0 auto;
+	padding: 0;
+	overflow: hidden;
+}
+
+.banner ul {
+	position: absolute;
+	margin: 0px;
+	padding: 0;
+	list-style: none;
+}
+
+.banner ul li {
+	max-width: 640px;
+	min-width: 320px;
+	float: left;
+	/* width: 340px; */
+	width: 500px; height : 210px;
+	margin: 0;
+	padding: 0;
+	height: 210px;
+}
+
+img {
+	max-width: 640px;
+	min-width: 320px;
+	height: 200px;
+	object-fit: cover;
+}

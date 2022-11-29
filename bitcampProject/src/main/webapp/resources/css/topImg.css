@@ -1,6 +1,10 @@
 @charset "UTF-8";
-/*------------------------------*/
-.top-img {
+
+#carouselExampleIndicators{ /*부트스트랩 하단 조정*/
+top:550px;
+}
+
+.top-img{
 	background-image: url("/bitcafe/resources/img/maintop.jpg");
 	background-size: cover;
 	margin: 0;

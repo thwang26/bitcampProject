@@ -13,8 +13,8 @@
 		<result property="storeNum" column="STORENUM" />
 	</resultMap>
 
-	<select id="getStoreList" resultMap="storeResult">
-		select * from store
+	<select id="getStoreList" parameterType="java.lang.String" resultMap="storeResult">
+		select * from store <if test="keyword != null">where storeName like '%'||#{keyword}||'%'</if>
 	</select>
 
 

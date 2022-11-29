@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.event.bean.EventDTO;
+import com.menu.bean.MenuDTO;
 @Repository
 @Transactional
 public class EventDAOMyBatis implements EventDAO {
@@ -16,11 +17,15 @@ public class EventDAOMyBatis implements EventDAO {
 	private SqlSession sqlSession;
 	
 	@Override
-	public List<EventDTO> getEventList() {
+	public EventDTO getEventList(int seqEvent) {
 		
-		return sqlSession.selectList("eventSQL.getEventList");
+		return sqlSession.selectOne("eventSQL.getEventList",seqEvent);
 	}
 
-	
+	@Override
+	public List<MenuDTO> getBestMenuList() {
+		return sqlSession.selectList("eventSQL.getBestMenuList");
+	}
+
 
 }

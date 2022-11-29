@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.event.bean.EventDTO;
 import com.event.dao.EventDAO;
+import com.menu.bean.MenuDTO;
 
 @Service
 public class EventServiceImpl implements EventService {
@@ -14,9 +15,15 @@ public class EventServiceImpl implements EventService {
 	private EventDAO eventDAO;
 	
 	@Override
-	public List<EventDTO> getEventList() {
-		// TODO Auto-generated method stub
-		return eventDAO.getEventList();
+	public EventDTO getEventList(int seqEvent) {
+	
+		return eventDAO.getEventList(seqEvent);
+	}
+
+	@Override
+	public List<MenuDTO> getBestMenuList() {
+		
+		return eventDAO.getBestMenuList();
 	}
 
 	

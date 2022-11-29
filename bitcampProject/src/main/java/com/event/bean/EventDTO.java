@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 public class EventDTO {
-private int seq;
+private int seqEvent;
 private String subject;
 private String content;
 private Date logtime;

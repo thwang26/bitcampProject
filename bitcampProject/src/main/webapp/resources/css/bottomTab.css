@@ -23,7 +23,6 @@ img {
 body {
 	overflow-y: scroll;
 	background: white;
-	overflow-x: hidden;
 }
 /* 전체화면(container), 하단 탭(menu) 크기 및 옵션 */
 .container {

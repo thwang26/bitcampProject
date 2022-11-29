@@ -16,4 +16,6 @@ public interface MenuService {
 
 	public List<MenuDTO> getMenuList(int categoryNum);
 
+	public void addCart(OrderDTO orderDTO);
+
 }

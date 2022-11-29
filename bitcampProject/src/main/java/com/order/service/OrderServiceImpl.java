@@ -27,6 +27,7 @@ public class OrderServiceImpl implements OrderService {
 	private static final String HOST = "https://kapi.kakao.com";
 	private KakaoPayReadyVO kakaoPayReadyVO;
 	private KakaoPayApprovalVO kakaoPayApprovalVO;
+	private Map<String,Object> map;
 	
 	@Override
 	public Map<String, Object> getOrderMenu(Map<String, Object> map) {
@@ -34,7 +35,7 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
-	public String kakaoPayReady(OrderDTO orderDTO) {
+	public String kakaoPayReady(Map<String,Object> map) {
 		RestTemplate restTemplate = new RestTemplate();
 		 
         // 서버로 요청할 Header
@@ -46,11 +47,11 @@ public class OrderServiceImpl implements OrderService {
         // 서버로 요청할 Body
         MultiValueMap<String, Object> params = new LinkedMultiValueMap<String, Object>();
         params.add("cid", "TC0ONETIME");
-        params.add("partner_order_id", orderDTO.getSeqOrder());
-        params.add("partner_user_id", orderDTO.getId());
-        params.add("item_name", orderDTO.getMenuName());
-        params.add("quantity", orderDTO.getQty());
-        params.add("total_amount", orderDTO.getOrderPrice());
+        params.add("partner_order_id", map.get("seqOrder"));
+        params.add("partner_user_id", map.get("id"));
+        params.add("item_name", map.get("menuName"));
+        params.add("quantity", map.get("qty"));
+        params.add("total_amount", map.get("orderPrice"));
         params.add("tax_free_amount", "0");
         params.add("approval_url", "http://localhost:8080/bitproject/kakaoPaySuccess");
         params.add("cancel_url", "http://localhost:8080/bitproject/kakaoPayCancel");
@@ -84,15 +85,15 @@ public class OrderServiceImpl implements OrderService {
         headers.add("Content-Type", MediaType.APPLICATION_FORM_URLENCODED_VALUE + ";charset=UTF-8");
  
         // 서버로 요청할 Body
-        MultiValueMap<String, String> params = new LinkedMultiValueMap<String, String>();
+        MultiValueMap<String, Object> params = new LinkedMultiValueMap<String, Object>();
         params.add("cid", "TC0ONETIME");
         params.add("tid", kakaoPayReadyVO.getTid());
-        params.add("partner_order_id", "1001"); //여기도 orderDTO.id 로 가지오 와야 하는지???? 
-        params.add("partner_user_id", "gorany");
+        params.add("partner_order_id", map.get("seqOrder")); 
+        params.add("partner_user_id", map.get("id"));
         params.add("pg_token", pg_token);
-        params.add("total_amount", "2100");
+        params.add("total_amount", map.get("orderPrice"));
         
-        HttpEntity<MultiValueMap<String, String>> body = new HttpEntity<MultiValueMap<String, String>>(params, headers);
+        HttpEntity<MultiValueMap<String, Object>> body = new HttpEntity<MultiValueMap<String, Object>>(params, headers);
         
         try {
             kakaoPayApprovalVO = restTemplate.postForObject(new URI(HOST + "/v1/payment/approve"), body, KakaoPayApprovalVO.class);

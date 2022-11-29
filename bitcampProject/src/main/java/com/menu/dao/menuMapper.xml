@@ -23,7 +23,7 @@
 		select * from menu where categoryNum=#{categoryNum}
 	</select>
 	
-
+	<!-- 바로 주문하기 -->
 	<insert id="orderMenu" parameterType="order">
 		insert into orderinform values(seq_order.NEXTVAL
 									 , #{id}
@@ -35,6 +35,23 @@
 									 , #{storeNum}
 									 , #{takeoutOpt}
 									 , #{shotOpt}
-									 , #{sizeOpt})
+									 , #{sizeOpt}
+									 , seq_order.NEXTVAL)
+	</insert>
+	
+	<!-- 장바구니 담기 -->
+	<insert id="addCart" parameterType="order">
+		insert into orderinform values(seq_order.NEXTVAL
+									 , #{id}
+									 , #{orderPrice}
+									 , #{qty}
+									 , sysdate
+									 , #{menuName}
+									 , 0
+									 , #{storeNum}
+									 , #{takeoutOpt}
+									 , #{shotOpt}
+									 , #{sizeOpt}
+									 , seq_order.NEXTVAL)
 	</insert>
 </mapper>

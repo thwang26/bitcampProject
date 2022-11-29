@@ -16,7 +16,7 @@
 	<form id="menuDetailsForm" method="post">
 	<input type="hidden" id="seqMenu" name="seqMenu" value="${param.seqMenu }"> <!-- 메뉴시퀀스 -->
 	<input type="hidden" id="id" name="id" value="hong"> <!-- member id -->
-	<input type="hidden" id="storeNum" name="storeNum" value="${param.storeNum }">
+	<input type="text" id="storeNum" name="storeNum" value="${param.storeNum }">
 	
 	<div class="card" style="width: 90%;">
 		<img src="" class="card-img-top" alt="커피이미지">
@@ -67,11 +67,31 @@
 				<input type="text" name="menuPrice" id="menuPrice">
 				<input type="text" name="orderPrice" id="orderPrice">
 			</div>
-			<button type="button" id="cartBtn" class="btn btn-secondary btn-lg">담기</button>
+			<button type="button" id="cartBtn" class="btn btn-secondary btn-lg" data-bs-toggle="modal" data-bs-target="#cartModal">담기</button>
 			<button type="button" id="orderBtn" class="btn btn-secondary btn-lg">주문하기</button>
 		</div>
 	</div>
 	</form>
+	
+		<!-- Modal -->
+	<div class="modal fade modal-dialog modal-dialog-centered" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h1 class="modal-title fs-5" id="exampleModalLabel">장바구니에 추가되었습니다.</h1>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	      </div>
+	      <!-- <div class="modal-body">
+	        ...
+	      </div> -->
+	      <div class="modal-footer">
+	        <button type="button" id="goToCartBtn" class="btn btn-secondary" data-bs-dismiss="modal" onclick="location.href='/bitcafe/cart'">장바구니 가기</button>
+	        <button type="button" id="goToMenuBtn" class="btn btn-primary" onclick="location.href='/bitcafe/categoryList?storeNum=${param.storeNum }'">다른 메뉴 더보기</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
 </div><!-- container end -->
 	<%@ include file="bottomTab.jsp" %><!-- bottomTab.jsp -->
 <!-- bootstrap -->

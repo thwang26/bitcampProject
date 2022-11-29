@@ -68,7 +68,11 @@ public class MenuController {
 		return "orderMenuForm";
 	}
 	
-	
+	@PostMapping(value="/addCart")
+	@ResponseBody
+	public void addCart(@ModelAttribute OrderDTO orderDTO) {
+		menuService.addCart(orderDTO);
+	}
 	
 	
 	

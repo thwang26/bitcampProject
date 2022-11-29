@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -29,8 +30,10 @@ public class OrderController {
 	}
 	
 	@PostMapping(value="/kakaoPay")
-	public String kakaoPay(@RequestParam OrderDTO orderDTO) {
-		return orderService.kakaoPayReady(orderDTO);
+	@ResponseBody
+	public String kakaoPay(@RequestParam Map<String,Object> map) {
+		System.out.println("map = " + map.get("seqOrder"));
+		return orderService.kakaoPayReady(map);
 	}
 	
 	@GetMapping(value="/kakaoPaySuccess")

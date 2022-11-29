@@ -45,14 +45,14 @@ $(function () {
 $(document).on('click', '.nnn', function(){
 	var storeNum = $(this).find('input').val();
 	//alert(storeNum);
-	location.href="/bitcafe/categoryList/?storeNum="+storeNum;
+	location.href="/bitcafe/categoryList?storeNum="+storeNum;
 	
 
 });
 
 function goback_store_info(){
 	//alert("뒤로가기 123123");	
-	location.href="/bitcafe/?num=1";
+	location.href="/bitcafe?num=1";
 
 };
 

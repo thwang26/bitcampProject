@@ -16,18 +16,21 @@
 	<resources mapping="/resources/**" location="/resources/" />
 
 	<context:component-scan base-package="com.bitcafe.maincontroller" />
-	<context:component-scan base-package="com.member.controller" />
 	<context:component-scan base-package="com.admin.admincontroller"/>
-	<context:component-scan base-package="com.menu.controller"></context:component-scan>
+	<context:component-scan base-package="com.menu.controller" />
 	<context:component-scan base-package="com.bitcafe.othercontroller" />
+<<<<<<< HEAD
+=======
+	<context:component-scan base-package="com.store.controller" />
+	<context:component-scan base-package="com.order.controller" />
+
+>>>>>>> afe542395f9078e8307c2679425936e7c9d839b4
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 		
-	<context:component-scan base-package="com.bitcafe.maincontroller" />
-	<context:component-scan base-package="com.store.controller" />
 	
 	<context:component-scan base-package="com.event.controller" />
 	

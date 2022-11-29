@@ -1,20 +1,18 @@
-$('#logout').click(function(){
+$('#logoutBtn').click(function(){
+	//alert('로그아웃 하시겠습니까?');
 	if(confirm('로그아웃 하시겠습니까?')){
-		location.href='/bitcafe?num=1';
-	}
-});
-
-$('.order').click(function(){
-	$.ajax({
-		url: '/bitcafe/getOrder',
-		dataType: 'json',
+		$.ajax({
+		url: '/bitcafe/adminLogout',
 		success: function(data){
-			alert("확인합니다.");
+			alert("로그아웃 되었습니다.");
+			location.href='/bitcafe?num=1';
 		},
 		error: function(err){
 			console.log(err);
 		}
 	});
+		
+	}
 });
 $(function(){
 	let query = window.location.search;

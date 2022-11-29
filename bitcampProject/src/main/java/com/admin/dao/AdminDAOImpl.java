@@ -74,7 +74,16 @@ public class AdminDAOImpl implements AdminDAO {
 	}
 
 	@Override
-	public List<OrderDTO> orderSales() {
-		return sqlSession.selectList("adminSQL.orderSales");
+	public List<OrderDTO> orderSales(int selectNum) {
+		if(selectNum == 1){
+			System.out.println(selectNum);
+			return sqlSession.selectList("adminSQL.orderSales1", selectNum);
+		}else if(selectNum == 2){
+			System.out.println(selectNum);
+			return sqlSession.selectList("adminSQL.orderSales2", selectNum);
+		}else {
+			System.out.println(selectNum);
+			return sqlSession.selectList("adminSQL.orderSales3", selectNum);
+		}
 	}
 }

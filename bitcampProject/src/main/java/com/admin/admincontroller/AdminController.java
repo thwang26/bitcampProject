@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
@@ -21,34 +23,33 @@ import com.admin.service.AdminService;
 import com.menu.bean.MenuDTO;
 import com.order.bean.OrderDTO;
 
-
 @Component
 @Controller
 public class AdminController {
 	@Autowired
 	private AdminService adminService;
 	
-	@RequestMapping(value="/admin", method=RequestMethod.GET)
+	@RequestMapping(value="/admin")
 	public String index() {
 		return "/admin/admin";
 	}
 	
-	@RequestMapping(value="/orderMenuList", method=RequestMethod.GET)
+	@RequestMapping(value="/orderMenuList")
 	public String orderList() {
 		return "/admin/orderMenuList";
 	}
 	
-	@RequestMapping(value="/orderCount", method=RequestMethod.GET)
+	@RequestMapping(value="/orderCount")
 	public String orderCount() {
 		return "/admin/orderCount";
 	}
 	
-	@RequestMapping(value="/menuInsert", method=RequestMethod.GET)
+	@RequestMapping(value="/menuInsert")
 	public String menuInsert() {
 		return "/admin/menuInsert";
 	}
 	
-	@RequestMapping(value="/menuEdit", method=RequestMethod.GET)
+	@RequestMapping(value="/menuEdit")
 	public String menuEdit() {
 		return "/admin/menuEdit";
 	}
@@ -115,8 +116,15 @@ public class AdminController {
 	
 	@RequestMapping(value="/orderSales", method=RequestMethod.GET)
 	@ResponseBody
-	public List<OrderDTO> orderSales() {
-		return adminService.orderSales();
+	public List<OrderDTO> orderSales(@RequestParam int selectNum) {
+		return adminService.orderSales(selectNum);
+	}
+	
+	@RequestMapping(value="/adminLogout")
+	@ResponseBody
+	public void adminLogout(HttpSession session) {
+		System.out.println("로그아웃");
+		session.invalidate();
 	}
 	
 //	@PostMapping(value="/upload")

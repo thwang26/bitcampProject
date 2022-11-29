@@ -66,7 +66,7 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public List<OrderDTO> orderSales() {
-		return adminDAO.orderSales();
+	public List<OrderDTO> orderSales(int selectNum) {
+		return adminDAO.orderSales(selectNum);
 	}
 }

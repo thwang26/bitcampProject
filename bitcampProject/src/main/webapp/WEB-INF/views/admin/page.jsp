@@ -6,8 +6,8 @@
 		<strong>BitCafe</strong>
 	</a>
 	<div id="admin">
-		<div id="welcome">홍길동님 환영합니다!</div>
-		<input type="button" value="로그아웃" id="logout"/>
+		<div id="welcome">관리자(${name })님 환영합니다!</div>
+		<input type="button" value="로그아웃" id="logoutBtn"/>
 	</div>
 </div><!-- header -->
 

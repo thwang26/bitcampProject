@@ -12,8 +12,11 @@
 <body>
 <div id="wrap">
 	<%@ include file="page.jsp" %>
+	
 	<div id="content">
-		매출확인
+		<select name="orderNum" id="orderNum">
+			<option value="">매출</option>
+		</select>
 	</div><!-- content -->
 </div>
 

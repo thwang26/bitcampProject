@@ -22,13 +22,13 @@ div#menuNameDiv, div#menuContentDiv, div#menuPriceDiv {
 	<div class="col-10">
 	<form name="menuInsertForm" id="menuInsertForm" method="">
 		<table cellpadding="5" cellspacing="0" class="table table-sm" id="menuInsertTable">
-			<tr>
+			<!-- <tr>
 				<th>메뉴이미지</th>
 				<td>
 					<img id="showImg" width="150" height="150"><br><br>
 					<input type="file" name="img" id="img">
 				</td>
-			</tr>
+			</tr> -->
 			<tr>
 				<th>메뉴이름</th>
 				<td>

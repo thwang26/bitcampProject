@@ -43,8 +43,16 @@
 		update orderInform set orderCode=4 where seqOrder=#{seqOrder}
 	</update>
 	
-	<select id="orderSales" resultType="order">
+	<select id="orderSales1" resultType="order">
+		select menuName, orderDate from orderInform
+	</select><!-- 시간대별 -->
+	
+	<select id="orderSales2" resultType="order">
 		select * from orderInform
-	</select><!-- 추후에 매장코드 추가 -->
+	</select><!-- 일별 -->
+	
+	<select id="orderSales3" resultType="order">
+		select seqOrder from orderInform
+	</select><!-- 월별 -->
 	
 </mapper>

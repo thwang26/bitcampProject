@@ -27,6 +27,6 @@ public interface AdminService {
 
 	public void orderReject(int seqOrder);
 
-	public List<OrderDTO> orderSales();
+	public List<OrderDTO> orderSales(int selectNum);
 	
 }

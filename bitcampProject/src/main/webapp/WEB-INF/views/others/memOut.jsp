@@ -30,19 +30,6 @@
 			</th>
 		</tr>
 		<tr>
-			<th colspan="2">아이디</th>
-		</tr>
-		<tr>
-			<td colspan="2">
-			 	<input type="text" name="id" id="id" size="40" >
-			</td>
-		</tr>
-		<tr>
-			<th colspan="2">
-			<br/>
-			</th>
-		</tr>
-		<tr>
 			<th colspan="2">비밀번호</th>
 		</tr>
 		<tr>
@@ -50,11 +37,6 @@
 				<input type="password" name="pwd" size="40" id="pwd" size="40">
 				<div id="pwdDiv"></div>
 			</td>
-		</tr>
-		<tr>
-			<th colspan="2">
-			<br/>
-			</th>
 		</tr>
 		<tr>
 			<th colspan="2">
@@ -76,6 +58,7 @@
 </div><!-- container end -->
 	<%@ include file="../bottomTab.jsp" %><!-- bottomTab.jsp -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="/bitcafe/resources/js/memOut.js"></script>
 <script type="text/javascript" src="/bitcafe/resources/js/bottomTab.js"></script><!-- bottomTab.js -->
 </body>
 </html>

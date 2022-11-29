@@ -15,7 +15,7 @@
 	<!-- container start -->
 	<div class="container" >
 		<header>
-			<div id="head_all">
+			
 				<div class="row" id="storeList_head">
 					<div class="col-2" id="storeList_head_goback" onclick="goback_store_info()"><img alt="goback" src="/bitcafe/resources/img/goback.png" id="goback_icon"></div>
 					<div class="col-8"><div class="storeViewHead">매장 선택</div></div>
@@ -25,7 +25,7 @@
 			  		<input type="text" class="form-control" name="keyword" id="storekeyword" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="검색">
 			  		<button class="btn btn-outline-secondary" type="button" id="button-addon2">Enter</button>
 				</div>
-			</div>
+			
 		</header>	
 		<hr id="store_List_hr1">
 		

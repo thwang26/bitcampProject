@@ -21,7 +21,7 @@ $(function(){
                                 id: "menu_thumb"
                             })))
                             .append($('<div/>', { class: "col", id: "menu_info" })
-                                .append($('<input/>', {type:"hidden", id:"menuSeq"}).val(items.seqMenu))
+                                .append($('<input/>', {type:"hidden", id:"seqMenu"}).val(items.seqMenu))
                                 .append($('<div/>', { id: "menu_name" }).text(items.menuName))
                                 .append($('<div/>', { id: "menu_price" }).text(items.menuPrice + "원")))
                                 .append($('<hr/>').css('margin-top', '16px'))
@@ -45,10 +45,10 @@ $(document).on('click', '.click_menu', function(){
 	const storeNum = urlParams.get('storeNum');
     const categoryNum = urlParams.get('categoryNum');
 	
-	var menuSEQ = $(this).find('input').val();
+	var seqMenu = $(this).find('input').val();
 	var menuName = $(this).find('#menu_name').text();
 
-	location.href="/bitcafe/menuDetailsForm?categoryNum="+categoryNum+"&storeNum="+storeNum+"&menuName="+menuName+"&menuSEQ="+menuSEQ;
+	location.href="/bitcafe/menuDetailsForm?seqMenu="+seqMenu+"&storeNum="+storeNum;
 	
 
 });

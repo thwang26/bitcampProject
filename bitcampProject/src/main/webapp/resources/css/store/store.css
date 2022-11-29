@@ -8,15 +8,23 @@ body, div, dl,dt,dd,ul,ol,li, h1,h2,h3,h4,h5,h6, form, fieldset, p, button {
 
 /* 매장선택 헤드  */
 header{
-	background-color: #fcf5ef;
+	width: auto;
+	margin: auto;
+	
+	align-items: stretch;
+	display: flex;
+	flex-wrap: wrap;
 	z-index: 1000;
 	position: fixed;
 	top: 0;
+	flex: 0 0 auto;
 	
 }
 
 #storeList_head{
-	width: 640px;
+	background: #fcf5ef;
+	margin: auto;
+	width: 90%;
 }
 
 .storeViewHead{
@@ -26,13 +34,17 @@ img, fieldset {
 	border: 0;
 }
 #goback_icon{
+	background: #fcf5ef;
 	width: 70px;
 	height: 70px;
 	cursor: pointer; 
 }
 #search_DIV{
-	margin-top: 20px;
+	width: 80%;
+	margin: auto;
+	padding-top: 20px;
 	margin-bottom: 30px;
+	background: #fcf5ef;
 }
 
 #inputGroup-sizing-default, #button-addon2{
@@ -43,7 +55,7 @@ img, fieldset {
 /* 매장리스트부분 */ 
 
 #storeList_all{
-	width: 500px;
+	width: 600px;
 }
 
 #store_List{
@@ -112,7 +124,7 @@ img, fieldset {
 	position: relative;
 	flex-wrap: wrap;
 	align-items: stretch;
-	width: 80%;
+	width: 85%;
 	margin: auto;
 	margin-top: 110px;
 	margin-bottom: 60px;

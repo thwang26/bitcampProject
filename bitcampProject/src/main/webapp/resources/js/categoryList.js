@@ -42,7 +42,7 @@ $(document).on('click', '.click_category', function(){
 	var categoryName = $(this).find('#category_name').text();
 	//alert(storeNum);
 	//alert(categoryName);
-	location.href="/bitcafe/menu/?categoryNum="+categoryNum+"&storeNum="+storeNum+"&categoryName="+categoryName;
+	location.href="/bitcafe/menu?categoryNum="+categoryNum+"&storeNum="+storeNum+"&categoryName="+categoryName;
 	
 
 });

@@ -14,7 +14,7 @@
 <body>
 <div class="container" ><!-- container start -->
 	<form id="menuDetailsForm" method="post">
-	<input type="hidden" id="seqMenu" name="seqMenu" value="${param.menuSEQ }"> <!-- 메뉴시퀀스 -->
+	<input type="hidden" id="seqMenu" name="seqMenu" value="${param.seqMenu }"> <!-- 메뉴시퀀스 -->
 	<input type="hidden" id="id" name="id" value="hong"> <!-- member id -->
 	<input type="hidden" id="storeNum" name="storeNum" value="${param.storeNum }">
 	
@@ -65,7 +65,7 @@
 				<input type="text" name="qty" id="qty" value="1" size=1 />
 				<button type="button" class="btn btn-outline-primary" id="plusQtyBtn">+</button>
 				<input type="text" name="menuPrice" id="menuPrice">
-				<input type="hidden" name="orderPrice" id="orderPrice">
+				<input type="text" name="orderPrice" id="orderPrice">
 			</div>
 			<button type="button" id="cartBtn" class="btn btn-secondary btn-lg">담기</button>
 			<button type="button" id="orderBtn" class="btn btn-secondary btn-lg">주문하기</button>

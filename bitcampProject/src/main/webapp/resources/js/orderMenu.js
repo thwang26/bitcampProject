@@ -38,10 +38,12 @@ $(function(){
 $(function(){
 	$('#orderMenuBtn').click(function(){
 		$.ajax({
-			url: '/bitcafe/kakaopay',
+			type: 'post',
+			url: '/bitcafe/kakaoPay',
+			data: $('#orderMenuForm').serialize(),
 			dataTypes: 'json',
 			success: function(data){
-				alert(data);
+				location.href = data.next_redirect_pc_url;	
 			},
 			error: function(err){
 				console.log(err);

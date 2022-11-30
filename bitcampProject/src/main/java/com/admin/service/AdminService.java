@@ -7,6 +7,8 @@ import com.order.bean.OrderDTO;
 
 public interface AdminService {
 
+	public OrderDTO getOrder();
+	
 	public void menuWrite(MenuDTO menuDTO);
 
 	public List<MenuDTO> menuLoad(String categoryNum);

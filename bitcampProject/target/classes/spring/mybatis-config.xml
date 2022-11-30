@@ -8,5 +8,6 @@
 		<typeAlias type="com.menu.bean.CategoryDTO" alias="category"/>
 		<typeAlias type="com.store.bean.StoreDTO" alias="store"/>
 		<typeAlias type="com.order.bean.OrderDTO" alias="order"/>
+		<typeAlias type="com.member.bean.MemberDTO" alias="member" />
 	</typeAliases>
 </configuration>

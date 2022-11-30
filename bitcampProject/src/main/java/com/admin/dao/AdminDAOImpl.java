@@ -20,6 +20,11 @@ public class AdminDAOImpl implements AdminDAO {
 	private SqlSession sqlSession;
 
 	@Override
+	public OrderDTO getOrder() {
+		return sqlSession.selectOne("adminSQL.getOrder");
+	}
+
+	@Override
 	public void menuWrite(MenuDTO menuDTO) {
 		sqlSession.insert("adminSQL.menuWrite", menuDTO);
 	}

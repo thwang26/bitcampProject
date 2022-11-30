@@ -49,7 +49,12 @@ public class AdminController {
 		return "/admin/menuInsert";
 	}
 	
-	@RequestMapping(value="/menuEdit")
+	@RequestMapping(value="/menuDelete", method=RequestMethod.GET)
+	public String menuDelete() {
+		return "/admin/menuDelete";
+	}
+	
+	@RequestMapping(value="/menuEdit", method=RequestMethod.GET)
 	public String menuEdit() {
 		return "/admin/menuEdit";
 	}

@@ -1,12 +1,12 @@
 $('#category li').click(function () {
-	$('#menuList div').remove();
+   $('#menuList div').remove();
     $.ajax({
         type: 'get',
         url: '/bitcafe/menuLoad',
         data: 'categoryNum=' + $(this).val(),
         dataType: 'json',
         success: function (data) {
-        	//alert(JSON.stringify(data));
+           //alert(JSON.stringify(data));
             $.each(data, function (index, items) {
                 $('<div/>', { class: "row nnn", id: "menuList"})
                     .append($('<div/>', { class: "col-4", id: "menuImg" })
@@ -18,11 +18,11 @@ $('#category li').click(function () {
                     })))
                     .append($('<input/>', { type: "hidden" , class: "seqMenu" , value: items.seqMenu}))
                     .append($('<div/>', { class: "col-8", id: "menuInfo" })
-	                    .append($('<div/>', { id:"menuName"}).text(items.menuName))
-	                    .append($('<div/>', { id: "menuContent" }).text(items.menuContent))
-	                    .append($('<div/>', { id: "menuPrice" }).text(items.menuPrice+'₩'))
-	                    .append($('<input/>', { type: "button", value: "편집", class: "btn btn-success menuEditBtn", id: "menuEditBtn"}).css('width', '100px'))
-	                    .append($('<input/>', { type: "button", value: "✕", class: "btn btn-danger menuDeleteBtn", id: "menuDeleteBtn"}).css('width', '100px')))
+                       .append($('<div/>', { id:"menuName"}).text(items.menuName))
+                       .append($('<div/>', { id: "menuContent" }).text(items.menuContent))
+                       .append($('<div/>', { id: "menuPrice" }).text(items.menuPrice+'₩'))
+                       .append($('<input/>', { type: "button", value: "편집", class: "btn btn-success menuEditBtn", id: "menuEditBtn"}).css('width', '100px'))
+                       .append($('<input/>', { type: "button", value: "✕", class: "btn btn-danger menuDeleteBtn", id: "menuDeleteBtn"}).css('width', '100px')))
                     .append($('<hr/>').css('margin-top', '16px'))
                     .appendTo($('#menuList'))
             });

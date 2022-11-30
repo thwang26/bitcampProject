@@ -83,6 +83,23 @@ public class MemberController {
 		return "/member/memberIdSearch";
 	}
 	
+	@RequestMapping(value="/memberPwdSearch", method=RequestMethod.GET)
+	public String memberPwdSearch() {
+		return "/member/memberPwdSearch";
+	}
+	
+	@PostMapping("getId")
+	@ResponseBody
+	public String getId(String email) {
+		return memberService.getId(email);
+	}
+	
+	@PostMapping("getPwd")
+	@ResponseBody
+	public String getPwd(String email) {
+		return memberService.getPwd(email);
+	}
+	
 	
 	/* 이메일 인증 */
 	@RequestMapping(value = "/mailCheck", method = RequestMethod.GET)

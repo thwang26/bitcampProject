@@ -1,11 +1,43 @@
-$("#input_email").keyup(function() {
+//아이디 중복체크
+$('#input_Id').focusout(function(){
+	$('#input_IdDiv').empty();
+	
+	if($('#input_Id').val() == '') {
+		$('#input_IdDiv').text('아이디를 입력해주세요');
+		$('#input_Id').focus();
+	}else{
+		$.ajax({
+			type: 'post',
+			url: '/bitcafe/isExistId',
+			data: 'id=' + $('#input_Id').val(),
+			dataType: 'text',
+			success:function(data){
+				
+				if(data == 'exist'){
+					$('#input_IdDiv').text('존재하는 아이디입니다.');
+					$('#input_IdDiv').css('color', 'blue');	
+				}else if(data == 'non_exist'){
+					$('#input_IdDiv').text('존재하지 않는 아이디입니다.');
+					$('#input_IdDiv').css('color', 'red');		
+				}
+			},
+			error: function(err){
+				console.log(err);
+			}
+		});
+	}
+});
+
+
+
+$("#button-addon3").keyup(function() {
 	//alert("dfdfsdf");
 	//console.log("keyup 테스트");
 	
 	$.ajax({
 		type:'post',
 		url:'getId',
-		data: 'email='+$("#input_email").val(),
+		data: 'email='+$("#input_email2").val(),
 		dataType: 'text',
 		success:function(data){
 			if(data != ""){
@@ -28,9 +60,9 @@ $("#input_email").keyup(function() {
 
 var code = ""; //이메일전송 인증번호 저장위한 코드
 /* 인증번호 이메일 전송 */
-$("#button-addon2").click(function(){
+$("#button-addon4").click(function(){
 	
-	var email = $("#input_email").val();// 입력한 이메일
+	var email = $("#input_email2").val();// 입력한 이메일
 	
 	
     /* 이메일 형식 유효성 검사 */
@@ -56,20 +88,19 @@ $("#button-addon2").click(function(){
 });
 
 /* 인증번호 비교 */
-$("#button-addon3").click(function(){
+$("#button-addon5").click(function(){
     
     var inputCode = $("#input_code").val();
-    alert(code) 
     if(inputCode == code){// 일치할 경우
     	
     	$.ajax({
     		type:'post',
-    		url:'getId',
-    		data: 'email='+$("#input_email").val(),
+    		url:'getPwd',
+    		data: 'email='+$("#input_email2").val(),
     		dataType: 'text',
     		success:function(data){
-    			alert(data);
-				alert("확인되었습니다. 아이디는 " + data + " 입니다.");
+				alert("확인되었습니다. 비밀번호는 " + data + " 입니다.");
+				location.href='/bitcafe/loginForm';
 				
     		}
     	
@@ -87,7 +118,7 @@ function mailFormCheck(email){
    return form.test(email);
 }
 //엔터키로 검색하기 13번키 => 엔터키
-document.getElementById("input_email").addEventListener("keyup", function(e) {
+document.getElementById("input_email2").addEventListener("keyup", function(e) {
     if (e.keyCode === 13) {
         document.getElementById("button-addon2").click();
     }

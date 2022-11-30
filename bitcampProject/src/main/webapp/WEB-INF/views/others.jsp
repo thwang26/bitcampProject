@@ -42,7 +42,7 @@
 	</div>
 	<br/>                      
 	<div>
-		<button type="button" id="Btn" onClick="location.href='/bitcafe'">
+		<button type="button" id="logoutBtn">
 		<img src="/bitcafe/resources/img/others/로그아웃.png" width="40" height="40"/>
 		&nbsp;&nbsp;&nbsp;&nbsp;로그아웃&nbsp;&nbsp;&nbsp;
 		</button>
@@ -58,6 +58,7 @@
 </div><!-- container end -->
 	<%@ include file="bottomTab.jsp" %><!-- bottomTab.jsp -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="/bitcafe/resources/js/logout.js"></script>
 <script type="text/javascript" src="/bitcafe/resources/js/bottomTab.js"></script><!-- bottomTab.js -->
 </body>
 </html>

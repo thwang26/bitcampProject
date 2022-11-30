@@ -44,6 +44,7 @@ public class SpringConfiguration {
 												 new ClassPathResource("com/store/dao/StoreMapper.xml"),
 												 new ClassPathResource("com/admin/dao/AdminMapper.xml"),
 												 new ClassPathResource("com/order/dao/orderMapper.xml"),
+												 new ClassPathResource("com/event/dao/EventMapper.xml"),
 												 new ClassPathResource("com/member/dao/memberMapper.xml"));
 		
 		return sqlSessionFactoryBean.getObject(); //SqlSessionFactory로 return하기 위해서 

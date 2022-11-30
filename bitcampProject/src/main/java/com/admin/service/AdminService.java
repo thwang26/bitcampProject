@@ -12,5 +12,11 @@ public interface AdminService {
 	public void menuWrite(MenuDTO menuDTO);
 
 	public List<MenuDTO> menuLoad(String categoryNum);
+
+	public void menuErase(int seqMenu);
+
+	public MenuDTO menuUpdateForm(int seqMenu);
+
+	public String orderAlert();
 	
 }

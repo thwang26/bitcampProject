@@ -1,61 +1,118 @@
-$('.menu').click(function () {
+$('#category li').click(function () {
+   $('#menuList div').remove();
     $.ajax({
         type: 'get',
         url: '/bitcafe/menuLoad',
         data: 'categoryNum=' + $(this).val(),
         dataType: 'json',
         success: function (data) {
-        	alert(data.content);
+           //alert(JSON.stringify(data));
             $.each(data, function (index, items) {
-                $('<div/>', { class: "row nnn", id: "store_List"})
-                    .append($('<div/>', { class: "col-4", id: "store_img_each" }).append($('<img/>', {
-                        src: items.storeImagePath,
-                        alt: "store1",
+                $('<div/>', { class: "row nnn", id: "menuList"})
+                    .append($('<div/>', { class: "col-4", id: "menuImg" })
+                    .append($('<img/>', {
+                        src: items.menuImagePath,
+                        alt: "menu",
                         class: "rounded float-start",
-                        id: "store_thumb"
+                        id: "menu_thumb"
                     })))
-                    .append($('<div/>', { class: "col-6", id: "store_info" })
-                        .append($('<input/>', {type:"hidden", id:"storeSeq"}).val(items.storeNum))
-                        .append($('<div/>', { id: "store_name" }).text(items.storeName))
-                        .append($('<div/>', { id: "store_addr" }).text(items.storeAddr))
-                        .append($('<div/>', { class: "row", id: "row_tel" })
-                            .append($('<div/>', { class: "col-1", id: "col_phoneIcon" })
-                                .append($('<img/>', {
-                                    src: "./resources/img/phone1.jpg",
-                                    alt: "phone1",
-                                    id: "phone_img"
-                                })
-                                    .css({ 'width': '17px', 'height': '17px' })))
-                            .append($('<div/>', { class: "col", id: "col_telNum" })
-                                .append($('<div/>', { id: "store_tel" }).text(items.storeTel)
-                                ))))
+                    .append($('<input/>', { type: "hidden" , class: "seqMenu" , value: items.seqMenu}))
+                    .append($('<div/>', { class: "col-8", id: "menuInfo" })
+                       .append($('<div/>', { id:"menuName"}).text(items.menuName))
+                       .append($('<div/>', { id: "menuContent" }).text(items.menuContent))
+                       .append($('<div/>', { id: "menuPrice" }).text(items.menuPrice+'₩'))
+                       .append($('<input/>', { type: "button", value: "편집", class: "btn btn-success menuEditBtn", id: "menuEditBtn"}).css('width', '100px'))
+                       .append($('<input/>', { type: "button", value: "✕", class: "btn btn-danger menuDeleteBtn", id: "menuDeleteBtn"}).css('width', '100px')))
                     .append($('<hr/>').css('margin-top', '16px'))
                     .appendTo($('#menuList'))
-
             });
+        },
+        error: function (err) {
+            console.log(err);
+            
+        }
+    });
 
+});//카테고리별 메뉴
+
+$(document).on('click', '.menuEditBtn', function(){
+   console.log($(this).parent().prev().val());
+   window.scrollTo(0,0);
+   $.ajax({
+        type: 'get',
+        url: '/bitcafe/menuUpdateForm',
+        data: 'seqMenu=' + $(this).parent().prev().val(),
+        dataType: 'json',
+        success: function (data) {
+           //alert(JSON.stringify(data));
+           $('#menuList div').remove();
+           $('<div/>', { class: "row nnn", id: "menuList"})
+               .append($('<div/>', { class: "col-4", id: "menuImg" })
+               .append($('<img/>', {
+                   src: data.menuImagePath,
+                   alt: "menu",
+                   class: "rounded float-start",
+                   id: "menu_thumb"
+               })))
+               .append($('<input/>', { type: "hidden" , class: "seqMenu" , id: "seqMenu", value: data.seqMenu}))
+               .append($('<div/>', { class: "col-8", id: "menuInfo" })
+                   .append($('<input/>', { type: "text", id:"menuName", value: data.menuName}))
+                   .append($('<textarea/>', { id: "menuContent", html: data.menuContent }))
+                   .append($('<input/>', { type: "text", id: "menuPrice", value: data.menuPrice }))
+                   .append($('<br/>'))
+                   .append($('<br/>'))
+                   .append($('<input/>', { type: "button", value: "수정", class: "btn btn-success menuUpdateBtn", id: "menuUpdateBtn"}).css('width', '100px'))
+                   .append($('<input/>', { type: "button", value: "취소", class: "btn btn-danger menuBackBtn", id: "menuBackBtn"}).css('width', '100px')))
+               .append($('<hr/>').css('margin-top', '16px'))
+               .appendTo($('#menuList'))
         },
         error: function (err) {
             console.log(err);
         }
     });
+});//메뉴편집 form
 
-});
-$(document).on('click', '.nnn', function(){
-	var storeNum = $(this).find('input').val();
-	
-	alert(storeNum);
+$(document).on('click', '.menuUpdateBtn', function(){
+   console.log($(this).parent().prev().val());
+   if(confirm('메뉴를 수정하시겠습니까?')){
+      $.ajax({
+         type: 'get',
+         url: '/bitcafe/menuUpdate',
+         data: {'menuName': $('#menuName').val(),
+               'menuContent' : $('#menuContent').val(), 
+               'menuPrice' : $('#menuPrice').val(),
+               'seqMenu' : $('#seqMenu').val()},
+         success: function(data){
+            alert('수정을 완료하였습니다.');
+            $('#category li').trigger('click');
+         },
+         error: function(err){
+            console.log(err);
+         }
+      });//$.ajax
+      
+   }
+});//메뉴수정
 
-});
-/*
-function category_list(){
-	var storeNum = document.getElementById("storeSeq").value;
-    alert(storeNum);
-    //location.href="/bitcafe/category/?"
-};
-*/
-function goback_store_info(){
-	alert("뒤로가기 123123");	
-	location.href="/bitcafe/?num=1";
+$(document).on('click', '.menuBackBtn', function(){
+   if(confirm('메뉴수정을 취소 하시겠습니까?')){
+      $('#category li').trigger('click');
+   }
+});//메뉴수정 취소
 
-};
+$(document).on('click', '.menuDeleteBtn', function(){
+   if(confirm('메뉴를 삭제하시겠습니까?')){
+      $.ajax({
+           type: 'get',
+           url: '/bitcafe/menuErase',
+           data: 'seqMenu=' + $(this).parent().prev().val(),
+           success: function () {
+            alert('메뉴를 삭제하였습니다');
+            $('#category li').trigger('click');
+           },
+           error: function (err) {
+               console.log(err);
+           }
+       });
+   }
+});//메뉴삭제

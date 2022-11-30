@@ -12,27 +12,50 @@
 </head>
 <body>
 <div class="container" ><!-- container start -->
-	<img src="/bitcafe/resources/img/maintop.jpg" width="637" height="250" align="middle"/>
-		<div class="title">
-			<h1>Membership</h1>
-			<h2>Withdrawal</h2>
-		</div>
-	<h3><a href="">${memName }</a>님 환영합니다!</h3>
-	<br/>
-	<ul class="other">
-	<li><a href="/bitcafe/views/others/orderList.jsp">장바구니</a></li>
-	<br/>
-	<li><a href="/bitcafe/views/others/orderList.jsp">주문내역</a></li>
-	<br/>
-	<li><a href="/bitcafe/views/others/orderList.jsp">회원정보수정</a></li>
-	<br/>
-	<li><a href="/bitcafe/views/others/memOut.jsp">로그아웃</a></li>
-	<br/>
-	<li><a href="/bitcafe/views/others/orderList.jsp">회원탈퇴</a></li>
-</ul>		
+   <input type="hidden" id="id" value="${id }"/><!-- value에 받아오는 세션 값 넣기 -->
+   <div class="top-img"></div>
+      <div class="title">
+         <h2>Membership</h2>
+         <h1>Withdrawal</h1>
+      </div>
+   <table cellpadding="5" cellspacing="0">
+      <tr>
+         <th colspan="2">
+         <br/>
+         </th>
+      </tr>
+      <tr>
+         <th colspan="2">
+         <br/>
+         </th>
+      </tr>
+      <tr>
+         <th colspan="2">비밀번호</th>
+      </tr>
+      <tr>
+         <td colspan="2">
+            <input type="password" name="pwd" size="40" id="pwd" size="40">
+            <div id="pwdDiv"></div>
+         </td>
+      </tr>
+      <tr>
+         <th colspan="2">
+         <br/>
+         </th>
+      </tr>
+      <tr>
+         <td colspan="2">
+            <div>
+               <input type="button" id="Btn" value="회원탈퇴" />
+               <input type="button"  id="reset"  onClick="location.href='/bitcafe'" value="취소"/>
+            </div>
+         </td>
+      </tr>
+   </table>
 </div><!-- container end -->
-	<%@ include file="../bottomTab.jsp" %><!-- bottomTab.jsp -->
+   <%@ include file="../bottomTab.jsp" %><!-- bottomTab.jsp -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="/bitcafe/resources/js/memOut.js"></script>
 <script type="text/javascript" src="/bitcafe/resources/js/bottomTab.js"></script><!-- bottomTab.js -->
 </body>
 </html>

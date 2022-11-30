@@ -23,6 +23,7 @@ $('#writeBtn').click(function(){
 			success: function(){
 				alert("회원가입을 축하합니다.");
 				location.href='/bitcafe/loginForm';
+
 			},
 			error: function(err){
         		 console.log(err);
@@ -109,7 +110,6 @@ $('#repwd').focusout(function(){
 		}
 	}
 });
-
 
 
 

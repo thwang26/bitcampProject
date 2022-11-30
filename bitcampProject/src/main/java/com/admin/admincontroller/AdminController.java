@@ -43,6 +43,10 @@ public class AdminController {
 	public String menuDelete() {
 		return "/admin/menuDelete";
 	}
+	@RequestMapping(value="/menuEdit", method=RequestMethod.GET)
+	public String menuEdit() {
+		return "/admin/menuEdit";
+	}
 	@RequestMapping(value="/getOrder", method=RequestMethod.GET)
 	@ResponseBody
 	public OrderDTO getOrder() {
@@ -57,5 +61,20 @@ public class AdminController {
 	@ResponseBody
 	public List<MenuDTO> menuLoad(@RequestParam String categoryNum) {
 		return adminService.menuLoad(categoryNum);
+	}
+	@RequestMapping(value="/menuErase", method=RequestMethod.GET)
+	@ResponseBody
+	public void menuErase(@RequestParam int seqMenu) {
+		adminService.menuErase(seqMenu);
+	}
+	@RequestMapping(value="/menuUpdateForm", method=RequestMethod.GET)
+	@ResponseBody
+	public MenuDTO menuUpdateForm(@RequestParam int seqMenu) {
+		return adminService.menuUpdateForm(seqMenu);
+	}
+	@RequestMapping(value="/orderAlert", method=RequestMethod.GET)
+	@ResponseBody
+	public String orderAlert() {
+		return adminService.orderAlert();
 	}
 }

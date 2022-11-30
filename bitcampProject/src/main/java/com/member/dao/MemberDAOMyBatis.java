@@ -18,17 +18,17 @@ public class MemberDAOMyBatis implements MemberDAO {
 	@Override
 	public void memberwrite(MemberDTO memberDTO) {
 		System.out.println("이건 2번");
-		sqlSession.insert("userSQL.memberwrite", memberDTO);
+		sqlSession.insert("memberSQL.memberwrite", memberDTO);
 	}
 
 	@Override
 	public MemberDTO getMember(String id) {
-		return sqlSession.selectOne("userSQL.getMember", id);	
+		return sqlSession.selectOne("memberSQL.getMember", id);	
 	}
 
 	@Override
 	public MemberDTO memberlogin(MemberDTO memberDTO) {
-		return sqlSession.selectOne("userSQL.memberlogin", memberDTO);	
+		return sqlSession.selectOne("memberSQL.memberlogin", memberDTO);	
 	}
 
 

@@ -13,6 +13,7 @@
 <body>
 <div class="container" ><!-- container start -->
 	<img src="/bitcafe/resources/img/maintop.jpg" width="637" height="250" align="middle"/>
+	<div class="top-img"></div>
 	<div class="title">
       <h1>Order List</h1>
 	</div>

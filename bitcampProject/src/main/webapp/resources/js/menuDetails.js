@@ -119,7 +119,9 @@ $('#orderBtn').click(function(){
 		url: '/bitcafe/orderMenu',
 		data: $('#menuDetailsForm').serialize(),
 		success: function(){
-			location.href='/bitcafe/orderMenuForm'; 
+			var storeNum = $('#storeNum').val();
+			alert(storeNum);
+			location.href='/bitcafe/orderMenuForm?storeNum='+storeNum; 
 		},
 		error: function(err){
 			console.log(err);
@@ -127,11 +129,16 @@ $('#orderBtn').click(function(){
 	});
 });
 
-
-
-
-
-
-
-
-
+$('#cartBtn').click(function(){
+	$.ajax({
+		type: 'post',
+		url : '/bitcafe/addCart',
+		data: $('#menuDetailsForm').serialize(),
+		success: function(){
+			$('#cartModal').modal('show');
+		},
+		error:function(err){
+			console.log(err);
+		}
+	});
+});

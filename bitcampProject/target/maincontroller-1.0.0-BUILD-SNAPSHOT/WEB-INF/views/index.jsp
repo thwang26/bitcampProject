@@ -32,7 +32,11 @@
 	</div>
 	<!-- menu end -->
 	
+<<<<<<< HEAD
 	<!--event / scroll start -->
+=======
+	<!--event / scroll start ->
+>>>>>>> main
 	<div id="event">
 <!-- <div class="contents"> -->
 		<div class="banner">

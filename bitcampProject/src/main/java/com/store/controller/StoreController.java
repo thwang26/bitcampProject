@@ -19,7 +19,6 @@ public class StoreController {
 
 	@Autowired
 	private StoreService storeService;
-	
 
 	@GetMapping(value = "getStoreList")
 	@ResponseBody

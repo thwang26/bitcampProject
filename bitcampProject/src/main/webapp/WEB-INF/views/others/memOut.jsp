@@ -53,7 +53,7 @@
 		</tr>
 	</table>
 </div><!-- container end -->
-	<%@ include file="../bottomTab.jsp" %><!-- bottomTab.jsp -->
+   <%@ include file="../bottomTab.jsp" %><!-- bottomTab.jsp -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="/bitcafe/resources/js/memOut.js"></script>
 <script type="text/javascript" src="/bitcafe/resources/js/bottomTab.js"></script><!-- bottomTab.js -->

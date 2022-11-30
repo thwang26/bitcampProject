@@ -15,7 +15,11 @@
 <div class="container" ><!-- container start -->
 <form id="orderMenuForm" method="post">
 	<input type="hidden" id="id" name="id" value="hong"> <!-- member id -->
+<<<<<<< HEAD
 	<input type="hidden" id="storeNum" name="storeNum" value="${param.storeNum}">
+=======
+	<input type="text" id="storeNum" name="storeNum" value="${param.storeNum }">
+>>>>>>> main
 	<input type="hidden" id="seqOrder" name="seqOrder" value="">
 		
 	<h2>결제하기</h2>

@@ -39,6 +39,10 @@ public class AdminController {
 	public String menuInsert() {
 		return "/admin/menuInsert";
 	}
+	@RequestMapping(value="/menuDelete", method=RequestMethod.GET)
+	public String menuDelete() {
+		return "/admin/menuDelete";
+	}
 	@RequestMapping(value="/menuEdit", method=RequestMethod.GET)
 	public String menuEdit() {
 		return "/admin/menuEdit";
@@ -73,5 +77,4 @@ public class AdminController {
 	public String orderAlert() {
 		return adminService.orderAlert();
 	}
-	
 }

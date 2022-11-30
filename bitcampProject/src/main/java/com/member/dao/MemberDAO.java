@@ -1,7 +1,6 @@
 package com.member.dao;
 
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
+import javax.servlet.http.HttpSession;
 
 import com.member.bean.MemberDTO;
 
@@ -11,5 +10,8 @@ public interface MemberDAO {
 
 	public MemberDTO getMember(String id);
 	
+	public MemberDTO memberlogin(MemberDTO memberDTO);
+	
+	public String getId(String email);
 
 }

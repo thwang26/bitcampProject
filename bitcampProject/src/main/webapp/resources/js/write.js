@@ -18,11 +18,11 @@ $('#writeBtn').click(function(){
 	}else{
 		$.ajax({
 			type: 'post',
-			url: '/bitcafe/resources/js/memberwrite',
+			url: '/bitcafe/memberwrite',
 			data: $('#writeForm').serialize(),
 			success: function(){
 				alert("회원가입을 축하합니다.");
-				location.href='/bitcafe/user/list/';
+				location.href='/bitcafe/loginForm';
 			},
 			error: function(err){
         		 console.log(err);
@@ -30,6 +30,7 @@ $('#writeBtn').click(function(){
 		});
 	}
 });
+
 
 //아이디 중복체크
 $('#id').focusout(function(){
@@ -41,7 +42,7 @@ $('#id').focusout(function(){
 	}else{
 		$.ajax({
 			type: 'post',
-			url: '/bitcafe/member/isExistId',
+			url: '/bitcafe/isExistId',
 			data: 'id=' + $('#id').val(),
 			dataType: 'text',
 			success:function(data){
@@ -69,15 +70,47 @@ $('#pwd').focusout(function(){
 		$('#pwdDiv').text('비밀번호를 입력해주세요');
 		$('#pwd').focus();
 	}else{
-		if('#pwd' != '#repwd'){
-			$('#idDiv').text('사용 불가능');
-			$('#idDiv').css('color', 'red');
-		}else if('#pwd' == '#repwd'){
-			$('#idDiv').text('사용 가능');
-			$('#idDiv').css('color', 'blue');				
+		var pwd = $('#pwd').val();
+		var repwd = $('#repwd').val();
+		console.log('=== pwd ' + pwd);
+		console.log('=== repwd ' + repwd);
+		
+		if(pwd != repwd){
+		
+			$('#pwdDiv').text('사용 불가능');
+			$('#pwdDiv').css('color', 'red');
+		}else if(pwd == repwd){
+			$('#pwdDiv').text('사용 가능');
+			$('#pwdDiv').css('color', 'blue');				
 		}
 	}
 });
+
+//비밀번호 재확인
+$('#repwd').focusout(function(){
+	$('#pwdDiv').empty();
+	
+	if($('#pwd').val() == '') {
+		$('#pwdDiv').text('비밀번호를 입력해주세요');
+		$('#pwd').focus();
+	}else{
+		var pwd = $('#pwd').val();
+		var repwd = $('#repwd').val();
+		console.log('=== pwd ' + pwd);
+		console.log('=== repwd ' + repwd);
+		
+		if(pwd != repwd){
+		
+			$('#pwdDiv').text('사용 불가능');
+			$('#pwdDiv').css('color', 'red');
+		}else if(pwd == repwd){
+			$('#pwdDiv').text('사용 가능');
+			$('#pwdDiv').css('color', 'blue');				
+		}
+	}
+});
+
+
 
 
 

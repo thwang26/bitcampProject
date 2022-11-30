@@ -53,17 +53,23 @@ margin-top: 50%;
 
 		<tr>
 	   	    <th colspan="2" align="center">
-			<input type="button" id="loginBtn" value="로그인" >
+			<input type="button" id="loginBtn" value="로그인"  >
 			<input type="button" id="writeFormBtn" value="회원가입" onClick="location.href='memberwriteForm'">
 		    </th>
 		</tr>
 	
 		<tr>
 			<th colspan="2" align="center">
-			<input type="button" id="snsloginBtn" value="SNS로그인" onClick="location.href='http://www.daum.net'" >
-			<input type="button" id="membersearch" value="회원정보찾기" >
+			<input type="button" id="loginSNSBtn" value="SNS로그인" >
 			</th>
 		</tr>
+		
+		<tr>
+			<th colspan="2" align="center">
+			<input type="button" id="memberIdSearchBtn" value="아이디 찾기" onClick="location.href='memberIdSearch'">
+			<input type="button" id="" value="비밀번호 찾기" >
+		</tr>
+		
 		
 	</table>
   
@@ -79,8 +85,10 @@ margin-top: 50%;
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="/bitcafe/resources/js/bottomTab.js"></script><!-- bottomTab.js -->
 
+<script type="text/javascript" src="/bitcafe/resources/js/login.js"></script>
 
-</script>
+<script src = "https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script type="text/javascript" src="/bitcafe/resources/js/loginSNS.js"></script><!-- 카카오 로그인 api -->
 
 </body>
 </html>

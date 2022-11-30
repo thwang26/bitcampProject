@@ -52,7 +52,7 @@ margin-top: 50%;
 		<tr>
 			<th style="margin: 0 auto; font-size: 15px;" align="center">아이디</th>
 			<td>
-				<input type="text" id="id" name="id" maxlength="15" placeholder="아이디 입력" />
+				<input type="text" id="id" name="id" maxlength="15" placeholder="아이디 입력"/>
 				<div id="idDiv" style="margin: 0 auto; font-size: 10px;" ></div>
 			</td>
 		</tr>
@@ -126,6 +126,7 @@ margin-top: 50%;
 
 <script type="text/javascript" src="/bitcafe/resources/js/write.js"></script>
 
+
 <script type="text/javascript">
 
 function change(){
@@ -134,6 +135,7 @@ function change(){
 }
 
 </script>
+
 
 </body>
 </html>

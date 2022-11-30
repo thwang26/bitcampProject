@@ -1,6 +1,7 @@
 
 
 $(document).ready(function() {
+
   $.ajax({
     type : 'get',
     url : '/bitcafe/getEventList',
@@ -15,8 +16,6 @@ $(document).ready(function() {
     src : data.eventImagePath,
     'width': '100%',
     'height': 'auto'
-
-
     })).appendTo($("#eventListTable"));
       /*----------------------------------*/
         // $("<tr/>").append($("<td/>", {

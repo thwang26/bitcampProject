@@ -18,7 +18,8 @@
 }
 .scroll-image img {
 	width:calc(33.333% - 10px);
-    margin:0 15px 15px 0;
+    margin:0 10px 10px 0;
+  	padding:15px;
     object-fit: cover;
 	border-radius: 60%;
   	height:150px;
@@ -27,7 +28,7 @@
 } 
 .scroll-image img:nth-of-type(3n),
 .scroll-image img:last-child {
-    margin-right:0;
+    margin-right:5;
 }
 @media screen and (max-width:480px){
   .scroll-image {
@@ -55,6 +56,7 @@
     width:45%;
     margin:0 15px 0 0;
     
+    
   }
   .scroll-image img:last-of-type{
     margin-right:0;
@@ -69,7 +71,7 @@
 }
 /*-----event css-----------*/
 #event{
-top: 68%;
+top: 65%;
 /* position: relative; */
  position: absolute;
 }

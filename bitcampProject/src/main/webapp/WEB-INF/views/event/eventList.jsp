@@ -17,6 +17,13 @@ font-size: 15px;
 width:100%;
 border: none;
 }
+#eventListTable img{
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+}
+
 </style>
 </head>
 
@@ -37,11 +44,6 @@ border: none;
 				<td><span id="eventImgSpan"></span></td>
 			</tr>
 			
-			<!-- <tr>
-				<td style="width: 200"><span id="eventNameSpan"></span></td>
-				<td style="width: 200"><span id="eventContentSpan"></span></td>
-				<td style="width: 200"><span id="eventImgSpan"></span></td>
-			</tr> -->	
 		</table>
 	</div>
 	
@@ -49,7 +51,7 @@ border: none;
 
 	<%@ include file="../bottomTab.jsp"%><!-- bottomTab.jsp -->
 	<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
-	<script type="text/javascript" src="/bitcafe/resources/js/bottomTab.js"></script><!-- bottomTab.js -->
 	<script type="text/javascript" src="/bitcafe/resources/js/event.js"></script><!-- event.js -->
+	<script type="text/javascript" src="/bitcafe/resources/js/bottomTab.js"></script><!-- bottomTab.js -->
 </body>
 </html>

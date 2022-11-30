@@ -1,9 +1,5 @@
 @charset "UTF-8";
 
-#carouselExampleIndicators{ /*부트스트랩 하단 조정*/
-top:550px;
-}
-
 .top-img{
 	background-image: url("/bitcafe/resources/img/maintop.jpg");
 	background-size: cover;
@@ -20,7 +16,7 @@ top:550px;
 
 .top-name {
 	font-family: 'Marcellus', sans-serif;
-	padding: 200px 80px;
+	padding: 150px 80px;
 	color: white;
 	font-size: 0.6em;
 	text-align: right;
@@ -30,19 +26,6 @@ top:550px;
 	text-decoration: none;
 	color: white;
 }
-/*-------------------------------*/
-#event{
-top:200px;
-position: relative;
-}
-#event img{ 
-border-top-left-radius: 10px;
-border-top-right-radius: 10px;
-border-bottom-right-radius: 10px;
-border-bottom-left-radius: 10px;
-}
-
-/* ------------------------------*/
 
 /*-------------------------------*/
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form,

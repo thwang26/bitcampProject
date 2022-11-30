@@ -1,5 +1,6 @@
 package com.menu.dao;
 
+import com.menu.bean.MenuDTO;
 import java.util.List;
 
 import com.menu.bean.CategoryDTO;

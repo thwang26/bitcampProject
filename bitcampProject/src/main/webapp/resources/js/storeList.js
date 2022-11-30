@@ -4,7 +4,7 @@ $(function () {
         url: '/bitcafe/store/getStoreList',
         dataType: 'json',
         success: function (data) {
-        	//alert(JSON.stringify(data));
+           //alert(JSON.stringify(data));
             $.each(data, function (index, items) {
             
             $('<div/>', {class: "storeList_start", id: "storeList_start"})
@@ -43,16 +43,16 @@ $(function () {
 
 });
 $(document).on('click', '.nnn', function(){
-	var storeNum = $(this).find('input').val();
-	//alert(storeNum);
-	location.href="/bitcafe/categoryList?storeNum="+storeNum;
-	
+   var storeNum = $(this).find('input').val();
+   //alert(storeNum);
+   location.href="/bitcafe/categoryList?storeNum="+storeNum;
+   
 
 });
 
 function goback_store_info(){
-	//alert("뒤로가기 123123");	
-	location.href="/bitcafe?num=1";
+   //alert("뒤로가기 123123");   
+   location.href="/bitcafe?num=1";
 
 };
 
@@ -61,7 +61,7 @@ function goback_store_info(){
 
 
 $('#button-addon2').click(function () {
-	$('.storeList_start').remove();
+   $('.storeList_start').remove();
     //alert("검색버튼")
     $.ajax({
         type: 'get',
@@ -69,7 +69,7 @@ $('#button-addon2').click(function () {
         data: "keyword=" + $('#storekeyword').val(),
         dataType: 'json',
         success: function (data) {
-        	//alert(JSON.stringify(data));
+           //alert(JSON.stringify(data));
             $.each(data, function (index, items) {
             
             $('<div/>', {class: "storeList_start", id: "storeList_start"})

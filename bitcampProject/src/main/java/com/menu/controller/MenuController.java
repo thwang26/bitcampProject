@@ -19,8 +19,8 @@ import com.order.bean.OrderDTO;
 public class MenuController {
 	@Autowired
 	private MenuService menuService;
-
-	@GetMapping(value = "/menuDetailsForm")
+	
+	@GetMapping(value="/menuDetailsForm")
 	public String menuDetailsForm() {
 		return "menuDetailsForm";
 	}
@@ -73,10 +73,5 @@ public class MenuController {
 	public void addCart(@ModelAttribute OrderDTO orderDTO) {
 		menuService.addCart(orderDTO);
 	}
-	
-	
-	
-	
-	
 	
 }

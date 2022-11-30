@@ -16,6 +16,8 @@ $(document).ready(function() {
     src : data.eventImagePath,
     'width': '100%',
     'height': 'auto'
+
+
     })).appendTo($("#eventListTable"));
       /*----------------------------------*/
         // $("<tr/>").append($("<td/>", {

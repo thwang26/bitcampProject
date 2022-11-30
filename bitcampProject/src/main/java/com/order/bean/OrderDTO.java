@@ -17,5 +17,6 @@ public class OrderDTO {
 	private int takeoutOpt;
 	private int shotOpt;
 	private int sizeOpt;
+	private int orderGroup;
 	
 }

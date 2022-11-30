@@ -18,9 +18,7 @@ public class StoreDAOsql implements StoreDAO {
 	
 	@Override
 	public List<StoreDTO> getStoreList(String keyword) {
-
 		return sqlSession.selectList("storeSQL.getStoreList", keyword);
-	
 	}
 
 }

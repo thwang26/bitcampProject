@@ -1,0 +1,86 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>BitCafe</title>
+
+<link rel="stylesheet" type="text/css" href="/bitcafe/resources/css/bottomTab.css"><!-- reset, bottomTab.css -->
+<link rel="icon" href="/bitcafe/resources/img/order.png">
+
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0; /*다 달라붙게한다 디폴트값*/
+}
+
+form{
+margin-top: 50%;
+}
+
+
+</style>
+
+</head>
+<body>
+
+<!-- container start -->
+<div class="container" >
+	<!-- <div id="topImg" style="width:100%; height:370px;">img</div>  여기 있는건 topImg.css로 옮겼음-->
+
+
+	<form name="loginForm" id="loginForm" method="post" align="left" action="" style="cursor: pointer;" >
+	<h4 align="center">로그인</h4>
+	<table border="0" cellpadding="5" cellspacing="0"  >
+		
+		<tr>
+			<th style="margin: 0 auto; font-size: 15px;" align="center">아이디</th>
+			<td>
+				<input type="text" id="id" name="id" maxlength="15" placeholder="아이디 입력" />
+				<div id="idDiv" style="margin: 0 auto; font-size: 10px;" ></div>
+			</td>
+		</tr>
+		
+		<tr>
+			<th style="margin: 0 auto; font-size: 15px;" align="center">비밀번호</th>
+			<td>
+				<input type="password" id="pwd" name="pwd" maxlength="15" placeholder="비밀번호를 입력하세요."/>
+				<div id="pwdDiv" style="margin: 0 auto; font-size: 10px;" > </div>
+			</td>
+		</tr>
+
+		<tr>
+	   	    <th colspan="2" align="center">
+			<input type="button" id="loginBtn" value="로그인" >
+			<input type="button" id="writeFormBtn" value="회원가입" onClick="location.href='memberwriteForm'">
+		    </th>
+		</tr>
+	
+		<tr>
+			<th colspan="2" align="center">
+			<input type="button" id="snsloginBtn" value="SNS로그인" onClick="location.href='http://www.daum.net'" >
+			<input type="button" id="membersearch" value="회원정보찾기" >
+			</th>
+		</tr>
+		
+	</table>
+  
+</form>	
+	
+	
+	
+</div><!-- container end -->
+
+
+
+<%@ include file="../bottomTab.jsp" %><!-- bottomTab.jsp -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="/bitcafe/resources/js/bottomTab.js"></script><!-- bottomTab.js -->
+
+
+</script>
+
+</body>
+</html>

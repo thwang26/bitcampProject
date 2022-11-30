@@ -5,10 +5,26 @@ body, div, dl,dt,dd,ul,ol,li, h1,h2,h3,h4,h5,h6, form, fieldset, p, button {
 	padding: 0;
 }
 
+
 /* 매장선택 헤드  */
+header{
+	width: auto;
+	margin: auto;
+	
+	align-items: stretch;
+	display: flex;
+	flex-wrap: wrap;
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	flex: 0 0 auto;
+	
+}
 
 #storeList_head{
-	width: 640px;
+	background: #fcf5ef;
+	margin: auto;
+	width: 90%;
 }
 
 .storeViewHead{
@@ -18,13 +34,17 @@ img, fieldset {
 	border: 0;
 }
 #goback_icon{
+	background: #fcf5ef;
 	width: 70px;
 	height: 70px;
 	cursor: pointer; 
 }
 #search_DIV{
-	margin-top: 20px;
+	width: 80%;
+	margin: auto;
+	padding-top: 20px;
 	margin-bottom: 30px;
+	background: #fcf5ef;
 }
 
 #inputGroup-sizing-default, #button-addon2{
@@ -34,33 +54,48 @@ img, fieldset {
 
 /* 매장리스트부분 */ 
 
+#storeList_all{
+	width: 600px;
+}
+
 #store_List{
-	width: 500px;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	width: 100%;
+	margin: auto;
 }
 #store_thumb{
-	width: 120px;
-	height: 120px;	
+	width: 100px;
+	height: 100px;	
 }
 
 #store_info{
+	padding-top: 12px;
+	width: 350;
 	text-align: left;
 }
 
 #store_name{
+	width: auto;
 	font-weight: bold;
-	font-size: 30px;
+	font-size: 22px;
 }
 #store_addr{
-	font-size: 22px;
+	width: auto;
+	font-size: 17px;
 	color: grey;
 }
 #store_tel{
-	font-size: 20px;
+	width: auto;
+	font-size: 18px;
 		
 }
 #phone_img{
-	margin-top: 3px;
+	margin-top: 6px;
 	margin-right: 5px;
+	margin-left: 3px;
 }
 #store_img_each{
 	display: flex;
@@ -73,9 +108,43 @@ img, fieldset {
 	background-position: 20px 20px;
 	background-position: left;
 }
+/* 
+#scroll_list{
+	position: relative;
+	flex-wrap: wrap;
+	align-items: stretch;
+	width: 100%;
+	margin: auto;
+	display: flex;
+	
+}  */
+
+
+#scroll_list {
+	position: relative;
+	flex-wrap: wrap;
+	align-items: stretch;
+	width: 85%;
+	margin: auto;
+	margin-top: 110px;
+	margin-bottom: 60px;
+	display: flex;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+#scroll_list::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
 
 
 
+#box_wrap{
+	width: auto;
+	height: auto;
+}
+#categoryStart{
+	width: 600px;
+}
 
 
 
@@ -101,6 +170,7 @@ img {
 /* container(640px)을 제외한 좌우 흰 여백 */
 body {
 	overflow-y: scroll;
+	overflow-x: hidden;
 	background: white;
 }
 /* 전체화면(container), 하단 탭(menu) 크기 및 옵션 */

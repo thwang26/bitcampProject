@@ -17,7 +17,7 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public OrderDTO getOrder() {
-		System.out.println(adminDAO.getOrder().getOrderprice());
+		//System.out.println(adminDAO.getOrder().getOrderPrice());
 		return adminDAO.getOrder();
 	}
 
@@ -29,5 +29,20 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public List<MenuDTO> menuLoad(String categoryNum) {
 		return adminDAO.menuLoad(categoryNum);
+	}
+
+	@Override
+	public void menuErase(int seqMenu) {
+		adminDAO.menuErase(seqMenu);
+	}
+
+	@Override
+	public MenuDTO menuUpdateForm(int seqMenu) {
+		return adminDAO.menuUpdateForm(seqMenu);
+	}
+
+	@Override
+	public String orderAlert() {
+		return adminDAO.orderAlert();
 	}
 }

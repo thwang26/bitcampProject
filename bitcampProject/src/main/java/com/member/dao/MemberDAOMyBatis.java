@@ -15,12 +15,12 @@ public class MemberDAOMyBatis implements MemberDAO {
 
 	@Override
 	public void memberwrite(MemberDTO memberDTO) {
-		sqlSession.insert("userSQL.memberwrite", memberDTO);
+		sqlSession.insert("memberSQL.memberwrite", memberDTO);
 	}
 
 	@Override
 	public MemberDTO getMember(String id) {
-		return sqlSession.selectOne("userSQL.getMember", id);	
+		return sqlSession.selectOne("memberSQL.getMember", id);	
 	}
 
 

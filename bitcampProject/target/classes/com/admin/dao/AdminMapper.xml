@@ -5,10 +5,22 @@
 	
 	
 	<insert id="menuWrite" parameterType="menu">
-		insert into menu (seq, menuName, menuContent, menuPrice, categoryNum) values (seq_menu.NEXTVAL, #{menuName}, #{menuContent}, #{menuPrice}, #{categoryNum})
+		insert into menu (seqMenu, menuName, menuContent, menuPrice, categoryNum) values (seq_menu.NEXTVAL, #{menuName}, #{menuContent}, #{menuPrice}, #{categoryNum})
 	</insert>
 	
 	<select id="menuLoad" parameterType="String" resultType="menu">
 		select * from menu where categoryNum=#{categoryNum}
+	</select>
+
+	<delete id="menuEarase" parameterType="Integer">
+		delete menu where seqMenu=#{seqMenu}
+	</delete>
+	
+	<select id="menuUpdateForm" parameterType="Integer" resultType="menu">
+		select * from menu where seqMenu=#{seqMenu}
+	</select>
+	
+	<select id="orderAlert" resultType="order">
+		<![CDATA[select * from orderInform where ordercode = 0 and rownum<=1]]>
 	</select>
 </mapper>

@@ -1,0 +1,154 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>BitCafe</title>
+<!-- bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/bitcafe/resources/css/bottomTab.css"><!-- reset, bottomTab.css -->
+<link rel="icon" href="/bitcafe/resources/img/order.png">
+</head>
+<body>
+<div class="container" ><!-- container start -->
+<<<<<<< HEAD
+	<form id="menuDetailsForm">
+	<input type="hidden" id="seq" name="seq" value="1"> <!-- 메뉴시퀀스 -->
+	<input type="hidden" id="id" name="id" value="hong"> <!-- member id -->
+	<input type="hidden" id="storeNum" name="storeNum" value="1">
+=======
+	<form id="menuDetailsForm" method="post">
+	<input type="hidden" id="seqMenu" name="seqMenu" value="${param.seqMenu }"> <!-- 메뉴시퀀스 -->
+	<input type="hidden" id="id" name="id" value="hong"> <!-- member id -->
+	<input type="text" id="storeNum" name="storeNum" value="${param.storeNum }">
+>>>>>>> fd1ef69e7ed981636a0b9c7342ee18dce5da3412
+	
+	<div class="card" style="width: 90%;">
+		<img src="" class="card-img-top" alt="커피이미지">
+		<div class="card-body">
+	    	<h3 class="card-title" align="left">
+	    		<input type="text" name="menuName" id="menuName" />
+	    	</h3>
+	    	<p class="card-text" style="font-size:14pt;" align="left">
+<<<<<<< HEAD
+	    		<input type="text" name="menuContent" id="menuContent" />
+=======
+	    		<input type="text" id="menuContent" />
+>>>>>>> fd1ef69e7ed981636a0b9c7342ee18dce5da3412
+	    	</p>
+		</div>
+		<ul class="list-group list-group-flush">
+			<li class="list-group-item">사이즈
+				<div class="btn-group" role="group" aria-label="size group">
+<<<<<<< HEAD
+					<input type="radio" class="btn-check" name="sizeOpt" id="sizeOpt1" autocomplete="off" checked>
+					<label class="btn btn-outline-primary" for="sizeOpt1">Small</label>
+				
+					<input type="radio" class="btn-check" name="sizeOpt" id="sizeOpt2" autocomplete="off">
+					<label class="btn btn-outline-primary" for="sizeOpt2">Regular</label>
+				
+					<input type="radio" class="btn-check" name="sizeOpt" id="sizeOpt3" autocomplete="off">
+=======
+					<input type="radio" class="btn-check" name="sizeOpt" id="sizeOpt1" value="0" autocomplete="off" checked>
+					<label class="btn btn-outline-primary" for="sizeOpt1">Small</label>
+				
+					<input type="radio" class="btn-check" name="sizeOpt" id="sizeOpt2" value="1" autocomplete="off">
+					<label class="btn btn-outline-primary" for="sizeOpt2">Regular</label>
+				
+					<input type="radio" class="btn-check" name="sizeOpt" id="sizeOpt3" value="2" autocomplete="off">
+>>>>>>> fd1ef69e7ed981636a0b9c7342ee18dce5da3412
+					<label class="btn btn-outline-primary" for="sizeOpt3">Large</label>
+				</div>
+			</li>
+			<li class="list-group-item">컵선택
+				<div class="btn-group" role="group" aria-label="takeout group">
+<<<<<<< HEAD
+					<input type="radio" class="btn-check" name="takeoutOpt" id="takeoutOpt1" autocomplete="off" checked>
+					<label class="btn btn-outline-primary" for="takeoutOpt1">매장컵</label>
+				
+					<input type="radio" class="btn-check" name="takeoutOpt" id="takeoutOpt2" autocomplete="off">
+					<label class="btn btn-outline-primary" for="takeoutOpt2">개인컵</label>
+				
+					<input type="radio" class="btn-check" name="takeoutOpt" id="takeoutOpt3" autocomplete="off">
+=======
+					<input type="radio" class="btn-check" name="takeoutOpt" id="takeoutOpt1" value="0" autocomplete="off" checked>
+					<label class="btn btn-outline-primary" for="takeoutOpt1">매장컵</label>
+				
+					<input type="radio" class="btn-check" name="takeoutOpt" id="takeoutOpt2" value="1" autocomplete="off">
+					<label class="btn btn-outline-primary" for="takeoutOpt2">개인컵</label>
+				
+					<input type="radio" class="btn-check" name="takeoutOpt" id="takeoutOpt3" value="2" autocomplete="off">
+>>>>>>> fd1ef69e7ed981636a0b9c7342ee18dce5da3412
+					<label class="btn btn-outline-primary" for="takeoutOpt3">일회용컵</label>
+				</div>
+			</li>
+			<li class="list-group-item">에스프레소 샷
+<<<<<<< HEAD
+				<button type="button" class="btn btn-outline-primary">-</button>
+				<input type="text" name="shotOpt" id="shotOpt" value="0" size=1 />
+				<button type="button" class="btn btn-outline-primary">+</button>
+			</li>
+		</ul>
+		<div class="card-body">
+			<button type="button" class="btn btn-outline-primary">-</button>
+			<input type="text" name="qty" id="qty" value="1" size=1 />
+			<button type="button" class="btn btn-outline-primary">+</button>
+			<input type="text" name="menuPrice" id="menuPrice">
+			<input type="hidden" name="orderPrice" id="orderPrice"> <br>
+			<button type="button" class="btn btn-secondary btn-lg">담기</button>
+			<button type="button" class="btn btn-secondary btn-lg">주문하기</button>
+		</div>
+	</div>
+	</form>
+=======
+				<button type="button" class="btn btn-outline-primary" id="minusShotBtn">-</button>
+				<input type="text" name="shotOpt" id="shotOpt" value="0" size=1 />
+				<button type="button" class="btn btn-outline-primary" id="plusShotBtn">+</button>
+			</li>
+		</ul>
+		<div class="card-body">
+			<div>
+				<button type="button" class="btn btn-outline-primary" id="minusQtyBtn">-</button>
+				<input type="text" name="qty" id="qty" value="1" size=1 />
+				<button type="button" class="btn btn-outline-primary" id="plusQtyBtn">+</button>
+				<input type="text" name="menuPrice" id="menuPrice">
+				<input type="text" name="orderPrice" id="orderPrice">
+			</div>
+			<button type="button" id="cartBtn" class="btn btn-secondary btn-lg" data-bs-toggle="modal" data-bs-target="#cartModal">담기</button>
+			<button type="button" id="orderBtn" class="btn btn-secondary btn-lg">주문하기</button>
+		</div>
+	</div>
+	</form>
+	
+		<!-- Modal -->
+	<div class="modal fade modal-dialog modal-dialog-centered" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h1 class="modal-title fs-5" id="exampleModalLabel">장바구니에 추가되었습니다.</h1>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	      </div>
+	      <!-- <div class="modal-body">
+	        ...
+	      </div> -->
+	      <div class="modal-footer">
+	        <button type="button" id="goToCartBtn" class="btn btn-secondary" data-bs-dismiss="modal" onclick="location.href='/bitcafe/cart'">장바구니 가기</button>
+	        <button type="button" id="goToMenuBtn" class="btn btn-primary" onclick="location.href='/bitcafe/categoryList?storeNum=${param.storeNum }'">다른 메뉴 더보기</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+>>>>>>> fd1ef69e7ed981636a0b9c7342ee18dce5da3412
+</div><!-- container end -->
+	<%@ include file="bottomTab.jsp" %><!-- bottomTab.jsp -->
+<!-- bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="/bitcafe/resources/js/bottomTab.js"></script><!-- bottomTab.js -->
+<script type="text/javascript" src="/bitcafe/resources/js/menuDetails.js"></script>
+
+</body>
+</html>

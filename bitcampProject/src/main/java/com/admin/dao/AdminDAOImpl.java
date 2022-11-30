@@ -33,7 +33,25 @@ public class AdminDAOImpl implements AdminDAO {
 	public List<MenuDTO> menuLoad(String categoryNum) {
 		return sqlSession.selectList("adminSQL.menuLoad", categoryNum);
 	}
-	
-	
-	
+
+	@Override
+	public void menuErase(int seqMenu) {
+		sqlSession.delete("adminSQL.menuEarase", seqMenu);
+	}
+
+	@Override
+	public MenuDTO menuUpdateForm(int seqMenu) {
+		return sqlSession.selectOne("adminSQL.menuUpdateForm", seqMenu);
+	}
+
+	@Override
+	public String orderAlert() {
+		OrderDTO orderDTO = sqlSession.selectOne("adminSQL.orderAlert");
+		System.out.println(orderDTO);
+		
+		if(orderDTO != null) {
+			return "alert";
+		}else return "null";
+	}
+
 }

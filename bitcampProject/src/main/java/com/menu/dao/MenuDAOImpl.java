@@ -39,4 +39,10 @@ public class MenuDAOImpl implements MenuDAO {
 		return sqlSession.selectList("menuSQL.getMenuList", categoryNum);
 	}
 
+	@Override
+	public void addCart(OrderDTO orderDTO) {
+		sqlSession.insert("menuSQL.addCart", orderDTO);
+		
+	}
+
 }

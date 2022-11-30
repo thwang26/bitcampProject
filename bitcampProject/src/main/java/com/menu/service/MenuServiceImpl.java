@@ -37,4 +37,10 @@ public class MenuServiceImpl implements MenuService {
 		return menuDAO.getMenuList(categoryNum);
 	}
 
+	@Override
+	public void addCart(OrderDTO orderDTO) {
+		menuDAO.addCart(orderDTO);
+		
+	}
+
 }

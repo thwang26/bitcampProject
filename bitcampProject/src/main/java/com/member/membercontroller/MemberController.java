@@ -83,12 +83,6 @@ public class MemberController {
 		return "/member/memberIdSearch";
 	}
 	
-	@PostMapping("getId")
-	@ResponseBody
-	public String getId(String email) {
-		System.out.println(email);
-		return memberService.getId(email);
-	}
 	
 	/* 이메일 인증 */
 	@RequestMapping(value = "/mailCheck", method = RequestMethod.GET)

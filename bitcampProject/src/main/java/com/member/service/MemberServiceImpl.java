@@ -73,10 +73,6 @@ public class MemberServiceImpl implements MemberService {
 
 	}
 
-	@Override
-	public String getId(String email) {
-		return memberDAO.getId(email);
-	}
 
 
 

@@ -12,6 +12,4 @@ public interface MemberDAO {
 	
 	public MemberDTO memberlogin(MemberDTO memberDTO);
 	
-	public String getId(String email);
-
 }

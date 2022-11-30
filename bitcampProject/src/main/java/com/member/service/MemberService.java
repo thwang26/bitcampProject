@@ -12,7 +12,6 @@ public interface MemberService {
 
 	public String memberlogin(MemberDTO memberDTO, HttpSession session);
 
-	public String getId(String email);
 
 
 

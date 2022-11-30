@@ -1,5 +1,5 @@
 <footer class="menu">
-	<a class="footer-item" id="home" href='/bitcafe?num=1'>
+	<a class="footer-item" id="homeTab" href='/bitcafe?num=1'>
 		<span>
 			<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
 			width="900.000000pt" height="900.000000pt" viewBox="0 0 900.000000 900.000000"
@@ -24,7 +24,7 @@
 		</span>
 		Home
 	</a>
-	<a class="footer-item" id="order" href='/bitcafe/order?num=2'>
+	<a class="footer-item" id="orderTab" href='/bitcafe/order?num=2'>
 		<span>
 			<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
 			 width="900.000000pt" height="900.000000pt" viewBox="0 0 900.000000 900.000000"
@@ -106,7 +106,7 @@
 		</span>
 		Order
 	</a>
-	<a class="footer-item" id="cart" href='/bitcafe/cart?num=3'>
+	<a class="footer-item" id="cartTab" href='/bitcafe/cart?num=3'>
 		<span>
 			<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
 			 width="900.000000pt" height="900.000000pt" viewBox="0 0 900.000000 900.000000"
@@ -172,7 +172,7 @@
 		</span>
 		Cart
 	</a>
-	<a class="footer-item" id="others" href='/bitcafe/others?num=4'>
+	<a class="footer-item" id="othersTab" href='/bitcafe/others?num=4'>
 		<span>
 			<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
 				 width="900.000000pt" height="900.000000pt" viewBox="0 0 900.000000 900.000000"

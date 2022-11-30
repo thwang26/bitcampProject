@@ -1,6 +1,5 @@
 $(function() {
     
-    //Main 카테고리 셋팅 (DB에서 값을 가져와 셋팅 하세요.)
     var orderArray = new Array();
     var orderObject = new Object();
     

@@ -24,7 +24,9 @@ public class EventDAOMyBatis implements EventDAO {
 
 	@Override
 	public List<MenuDTO> getBestMenuList() {
-		return sqlSession.selectList("eventSQL.getBestMenuList");
+		List<MenuDTO> list = sqlSession.selectList("eventSQL.getBestMenuList");
+		System.out.println(list);
+		return list;
 	}
 
 

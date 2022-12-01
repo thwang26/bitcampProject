@@ -23,6 +23,14 @@
 	 	 select * from member where id=#{id}
 	 </select>
 	 
+	<select id="getId" parameterType="String" resultType="String">
+		select id from member where email = #{email}
+	</select>
+	
+		<select id="getPwd" parameterType="String" resultType="String">
+		select pwd from member where email = #{email}
+	</select>
+	
 	<!-- DTO를 가져와서 찾을 때 -->
 	
 	

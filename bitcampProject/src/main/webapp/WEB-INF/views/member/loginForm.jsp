@@ -67,7 +67,7 @@ margin-top: 50%;
 		<tr>
 			<th colspan="2" align="center">
 			<input type="button" id="memberIdSearchBtn" value="아이디 찾기" onClick="location.href='memberIdSearch'">
-			<input type="button" id="" value="비밀번호 찾기" >
+			<input type="button" id="memberPwdSearchBtn" value="비밀번호 찾기" onClick="location.href='memberPwdSearch'">
 		</tr>
 		
 		

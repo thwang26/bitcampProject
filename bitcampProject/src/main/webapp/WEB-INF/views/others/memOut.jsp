@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="container" ><!-- container start -->
-	<input type="hidden" id="id" value="${id }"/><!-- value에 받아오는 세션 값 넣기 -->
+	<input type="text" id="id" value="${id }"/><!-- value에 받아오는 세션 값 넣기 -->
 	<div class="top-img"></div>
 		<div class="title">
 			<h2>Membership</h2>

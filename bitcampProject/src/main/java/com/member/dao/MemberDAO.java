@@ -11,5 +11,7 @@ public interface MemberDAO {
 	public MemberDTO getMember(String id);
 	
 	public MemberDTO memberlogin(MemberDTO memberDTO);
+
+	public void update(MemberDTO memberDTO);
 	
 }

@@ -31,6 +31,11 @@ public class MemberDAOMyBatis implements MemberDAO {
 		return sqlSession.selectOne("memberSQL.memberlogin", memberDTO);	
 	}
 
+	@Override
+	public void update(MemberDTO memberDTO) {
+		sqlSession.update("memberSQL.memberUpdate", memberDTO);		
+	}
+
 
 
 

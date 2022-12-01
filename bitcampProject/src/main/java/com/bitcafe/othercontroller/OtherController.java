@@ -14,16 +14,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.member.bean.MemberDTO;
 import com.other.service.OtherService;
 import com.store.service.StoreService;
 
-
-@Component
 @Controller
 public class OtherController {
-	/*
-	 * @Autowired private StoreService storeService;
-	 */
+	
+	  @Autowired 
+	  private OtherService otherService;
+	 
 
 	@RequestMapping(value = "/orderList", method = RequestMethod.GET)
 	public String orderList() {
@@ -44,6 +44,12 @@ public class OtherController {
 	@ResponseBody
 	public void logout(HttpSession session) {
 		session.invalidate();
+	}
+	
+	@PostMapping(value="update")
+	@ResponseBody
+	public void update(@ModelAttribute MemberDTO memberDTO) {
+		otherService.update(memberDTO);
 	}
 	
 	/*

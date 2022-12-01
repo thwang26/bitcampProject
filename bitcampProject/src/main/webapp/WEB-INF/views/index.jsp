@@ -21,13 +21,13 @@
 	
 	<!-- login -->
 		<div class="top-name">
-		<c:if test="${sessionScope.memId == null }">
+		<c:if test="${sessionScope.name == null }">
 		BitCafe 오신걸<br>
 		환영합니다.<br>
 		<input type="button" value="로그인하기" onclick="로그인창으로..">
 		</c:if>
-		<c:if test="${memId !=null }">
-		<a href="아이디 누르면 회원정보수정하는 곳으로..">${memId}</a>
+		<c:if test="${name !=null }">
+		<a href="아이디 누르면 회원정보수정하는 곳으로..">${name}</a>
 		&nbsp;님 안녕하세요.<br>
 		환영합니다.
 		

@@ -13,16 +13,16 @@ $("#loginSNSBtn").on("click", function(){
 	            success: function(res) {
 	            	   const kakao_account = res.kakao_account;
 	            	   
-	            	   var id = kakao_account.email;
+	            	   var memId = kakao_account.email;
                        console.log(kakao_account.email)
 			   	alert('성공');
 							
 				$.ajax({
 					type: 'get',
 					url: '/bitcafe/loginSNS',
-					data: 'id='+kakao_account.profile.nickname, //카카오톡 프로필 닉네임이 메인에 나오게했다.
+					data: 'name='+kakao_account.profile.nickname, //카카오톡 프로필 닉네임이 메인에 나오게했다.
 					success: function(data){
-	              location.href="http://localhost:8080/bitcafe/index";
+	                location.href="http://localhost:8080/bitcafe/index";
 					},
 					error: function(err){
 		        		 console.log(err);

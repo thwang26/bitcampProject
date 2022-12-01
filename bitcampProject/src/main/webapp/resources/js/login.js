@@ -25,14 +25,22 @@ $('#loginBtn').click(function(){
 				}else if(data == 'non_existpwd'){
 					$('#pwdDiv').text('비밀번호를 확인해주세요'); 
 					$('#pwdDiv').css('color', 'red');			
-				}else if(data == 'exist'){
+				}else if(data == 'exist,0'){
 					$('#pwdDiv').text('로그인 성공했습니다.');
 					$('#pwdDiv').css('color', 'blue');
-					alert("로그인 성공했습니다.'");	
-					
+					alert("로그인 성공했습니다.");
 					location.href='/bitcafe/index';	
-								
+					
+				}else if(data == 'exist,1'){
+					$('#pwdDiv').text('로그인 성공했습니다.');
+					$('#pwdDiv').css('color', 'blue');
+					alert("로그인 성공했습니다.");
+					location.href='/bitcafe/admin';
 				}
+				
+					
+								
+				
 			},
 			error: function(err){
         		 console.log(err);

@@ -25,6 +25,8 @@ public class MemberServiceImpl implements MemberService {
 	
 	@Autowired
 	private MemberDAO memberDAO;
+	@Autowired
+	private HttpSession session;
 
 	@Override
 	public void memberwrite(MemberDTO memberDTO) {
@@ -47,15 +49,21 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public String memberlogin(MemberDTO memberDTO, HttpSession session) {
+	public String memberlogin(MemberDTO memberDTO) {
 		System.out.println("여기도 들어오냐 ");
 
 		//DB
 		MemberDTO memberDTO2 = memberDAO.getMember(memberDTO.getId()); //아이디와 일치하는 DAO 모두를 가져온다.
 		
 		session.setAttribute("name", memberDTO2.getName()); //가져온 DAO중 Name만 빼서 name으로 login.js에 뿌려준다.
+		
+		//System.out.println(memberDTO2.getAdminNum());
+		//session.setAttribute("adminNum", memberDTO2.getAdminNum());
+		//session.setAttribute("name", memberDTO2.getName());
+		
 		String pwd_input = memberDTO.getPwd();
 		String pwd_DB = memberDTO2.getPwd();
+		
 		
 		System.out.println(pwd_input);
 		System.out.println(pwd_DB);
@@ -68,9 +76,19 @@ public class MemberServiceImpl implements MemberService {
 			return "non_existpwd";
 		}
 		else {
-			return "exist";  //로그인 성공
+			return "exist,"+memberDTO2.getAdminNum();  //로그인 성공
 		}
 
+	}
+
+	@Override
+	public String getId(String email) {
+		return memberDAO.getId(email);
+	}
+
+	@Override
+	public String getPwd(String email) {
+		return memberDAO.getPwd(email);
 	}
 
 

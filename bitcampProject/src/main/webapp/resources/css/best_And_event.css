@@ -1,7 +1,5 @@
 @charset "UTF-8";
 /* ----best menu css------*/
-
-
 #Recommend-Best-name{
 	text-align : left;
 	font-size: 0.7em;
@@ -75,6 +73,7 @@ top: 68%;
 /* position: relative; */
  position: absolute;
 }
+
 #event img{ 
 border-top-left-radius: 10px;
 border-top-right-radius: 10px;

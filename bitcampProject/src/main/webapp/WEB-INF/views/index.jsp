@@ -21,17 +21,16 @@
 	
 	<!-- login -->
 		<div class="top-name">
-		<c:if test="${sessionScope.memId == null }">
+		<c:if test="${sessionScope.name == null }">
 		BitCafe 오신걸<br>
 		환영합니다.<br>
-		<input type="button" value="로그인하기" onclick="로그인창으로..">
+		<input type="button" id="mainLogin" value="로그인" onclick="location.href='/bitcafe/loginForm/'" >
 		</c:if>
-		<c:if test="${memId !=null }">
-		<a href="아이디 누르면 회원정보수정하는 곳으로..">${memId}</a>
+		<c:if test="${sessionScope.name !=null }">
+		<a href="location.href='bitcafe/updateMem'">${name}</a>
 		&nbsp;님 안녕하세요.<br>
 		환영합니다.
-		
-		<!-- <input type="button" value="로그아웃" id="">	 -->		
+			
 	</c:if>
 
 	</div>
@@ -42,14 +41,7 @@
 <h3 id="Recommend-Best-name">Recommend & Best Menu</h3>
 <!-- best_And_event .css -->
 <div id="bestMenu01" class="scroll-image">
- <!--  <img alt="" src="/bitcafe/resources/img/eventImg/프라푸치노_말차크림.jpg" />
-  <img alt="" src="/bitcafe/resources/img/eventImg/프라푸치노_초콜릿크림칩.jpg" />
-  <img alt="" src="/bitcafe/resources/img/eventImg/프라푸치노_카라멜.jpg" />
-  </div>
- <div id="bestMenu02" class="scroll-image">
-  <img alt="" src="/bitcafe/resources/img/eventImg/에스프레소_아이스아메리카노.jpg" />
-  <img alt="" src="/bitcafe/resources/img/eventImg/에스프레소_아메리카노.jpg"/>
-  <img alt="" src="/bitcafe/resources/img/eventImg/아포가토_초콜릿.jpg" /> -->
+ 
 </div>
 	</div>
 <!--recommendList -->

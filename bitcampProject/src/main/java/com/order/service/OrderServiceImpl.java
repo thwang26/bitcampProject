@@ -2,6 +2,7 @@ package com.order.service;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -110,5 +111,25 @@ public class OrderServiceImpl implements OrderService {
         
         return null;
     }
+
+	@Override
+	public List<OrderDTO> getCartList(String id) {
+		return orderDAO.getCartList(id);
+	}
+
+	@Override
+	public List<OrderDTO> getUserStore(String id) {
+		return orderDAO.getUserStore(id);
+	}
+
+	@Override
+	public void orderList(Map<String, Object> map) {
+		orderDAO.orderList(map);
+	}
+
+	@Override
+	public List<OrderDTO> getSelectCartList(Map<String, Object> map) {
+		return orderDAO.getSelectCartList(map);
+	}
 
 }

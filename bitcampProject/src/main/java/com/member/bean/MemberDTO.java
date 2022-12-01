@@ -14,5 +14,7 @@ public class MemberDTO {
 	private String tel1;
 	private String tel2;
 	private String tel3;
+	private String adminNum;
+
 }
 

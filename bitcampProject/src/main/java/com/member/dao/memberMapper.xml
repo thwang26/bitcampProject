@@ -26,6 +26,15 @@
 	 <update id="memberUpdate" parameterType="member">
 		update member set name = #{name}, pwd = #{pwd} where id = #{id}
 	 </update>
+	 
+	<select id="getId" parameterType="String" resultType="String">
+		select id from member where email = #{email}
+	</select>
+	
+		<select id="getPwd" parameterType="String" resultType="String">
+		select pwd from member where email = #{email}
+	</select>
+	
 	<!-- DTO를 가져와서 찾을 때 -->
 	
 	

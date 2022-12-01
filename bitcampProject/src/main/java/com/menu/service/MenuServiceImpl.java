@@ -25,8 +25,8 @@ public class MenuServiceImpl implements MenuService {
 		return menuDAO.getCategory();
 	}
 
-	public void orderMenu(OrderDTO orderDTO) {
-		menuDAO.orderMenu(orderDTO);
+	public int orderMenu(OrderDTO orderDTO) {
+		return menuDAO.orderMenu(orderDTO);
 	}
 
 	@Override

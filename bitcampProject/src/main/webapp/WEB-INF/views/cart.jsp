@@ -17,8 +17,11 @@
 </head>
 <body>
 <div class="container" ><!-- container start -->
-	<input type="hidden" id="storeNum" value="${param.storeNum }">
+	<input type="hidden" id="id" value="hong">
 	<div>장바구니</div>
+	<select id="selectStore" name="selectStore">
+		<option value="none">주문할 매장을 선택해 주세요</option>
+	</select>
 	
 	<div id="cart" class="col-12">
 		<div class="" id="cart-head">
@@ -33,26 +36,9 @@
 		</div>
 		<hr/>
 		
-		<div id="cart-list">
-			<div class="cart-list-row">
-				<div class="cart-list-row-top">
-					<input type="checkbox">
-					<button type="button">X</button>
-				</div>
-				<div class="cart-list-row-info">
-					<div id="menuName" align="left">아메리카노</div>
-					<div class="menu-options-price">
-						<div class="menu-option" style="display: inline-block;">
-							<div id="takeoutOpt" style="display: inline-block;">매장컵</div> |
-							<div id="sizeOpt" style="display: inline-block;">Small</div> |
-							<div id="shotOpt" style="display: inline-block;">1</div>
-						</div>
-						<div id="orderPrice" style="display: inline-block;">5000</div>
-					</div>
-				</div>
-				<hr>
-			</div>
-		</div>
+		<div id="cart-list"></div>
+		
+		<input type="button" id="orderListBtn" value="주문하기">
 	</div>
 </div><!-- container end -->
 	<%@ include file="bottomTab.jsp" %><!-- bottomTab.jsp -->

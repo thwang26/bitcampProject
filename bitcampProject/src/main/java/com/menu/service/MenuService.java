@@ -12,7 +12,7 @@ public interface MenuService {
 
 	public List<CategoryDTO> getCategoryList();
 	
-	public void orderMenu(OrderDTO orderDTO);
+	public int orderMenu(OrderDTO orderDTO);
 
 	public List<MenuDTO> getMenuList(int categoryNum);
 

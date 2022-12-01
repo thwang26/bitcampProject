@@ -118,10 +118,11 @@ $('#orderBtn').click(function(){
 		type: 'post',
 		url: '/bitcafe/orderMenu',
 		data: $('#menuDetailsForm').serialize(),
-		success: function(){
+		success: function(data){
+			var orderGroup = data;
+			alert(orderGroup);
 			var storeNum = $('#storeNum').val();
-			alert(storeNum);
-			location.href='/bitcafe/orderMenuForm?storeNum='+storeNum; 
+			location.href='/bitcafe/orderMenuForm?orderGroup='+orderGroup; 
 		},
 		error: function(err){
 			console.log(err);

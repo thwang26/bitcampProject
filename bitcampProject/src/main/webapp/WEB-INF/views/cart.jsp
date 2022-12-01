@@ -17,24 +17,29 @@
 </head>
 <body>
 <div class="container" ><!-- container start -->
-   <input type="hidden" id="storeNum" value="${param.storeNum }">
-   <input type="hidden" id="id" value="hong">
-   <div>장바구니</div>
-   
-   <div id="cart" class="col-12">
-      <div class="" id="cart-head">
-         <div class="col-4">
-             <input class="" type="checkbox" value="" aria-label="Checkbox for following text input">
-            <span id="check_all">전체 선택</span>
-         </div>
-         <div class="col-4">
-            <span><a href="" style="text-decoration: none;">선택삭제</a></span> |
-            <span><a href="" style="text-decoration: none;">전체삭제</a></span>
-         </div>
-      </div>
-      <hr/>
-
-   </div>
+	<input type="hidden" id="id" value="hong">
+	<div>장바구니</div>
+	<select id="selectStore" name="selectStore">
+		<option value="none">주문할 매장을 선택해 주세요</option>
+	</select>
+	
+	<div id="cart" class="col-12">
+		<div class="" id="cart-head">
+			<div class="col-4">
+			    <input class="" type="checkbox" value="" aria-label="Checkbox for following text input">
+				<span id="check_all">전체 선택</span>
+			</div>
+			<div class="col-4">
+				<span><a href="" style="text-decoration: none;">선택삭제</a></span> |
+				<span><a href="" style="text-decoration: none;">전체삭제</a></span>
+			</div>
+		</div>
+		<hr/>
+		
+		<div id="cart-list"></div>
+		
+		<input type="button" id="orderListBtn" value="주문하기">
+	</div>
 </div><!-- container end -->
    <%@ include file="bottomTab.jsp" %><!-- bottomTab.jsp -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>

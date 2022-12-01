@@ -11,6 +11,17 @@
 </head>
 <body>
 <div id="wrap">
+<<<<<<< HEAD
+	<%@ include file="page.jsp" %>
+	<div id="content">
+		<h3>접수된 주문</h3>
+		<div id="income"></div>
+		<h3>주문확정</h3>
+		<div id="confirm"></div>
+		<h3>완료</h3>
+		<div id="complete"></div>
+	</div><!-- content -->
+=======
    <%@ include file="page.jsp" %>
    <div id="content">
       <h3>접수된 주문</h3>
@@ -20,6 +31,7 @@
       <h3>완료</h3>
       <div id="complete"></div>
    </div><!-- content -->
+>>>>>>> main
 </div>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>

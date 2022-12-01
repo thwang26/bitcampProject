@@ -2,6 +2,15 @@
     pageEncoding="UTF-8"%>
 
 <div id="header">
+<<<<<<< HEAD
+	<a href="/bitcafe/orderMenuList?num=1">
+		<strong>BitCafe</strong>
+	</a>
+	<div id="admin">
+		<div id="welcome">관리자(${name })님 환영합니다!</div>
+		<input type="button" value="로그아웃" id="logoutBtn"/>
+	</div>
+=======
    <a href="/bitcafe/orderMenuList?num=1">
       <strong>BitCafe</strong>
    </a>
@@ -9,6 +18,7 @@
       <div id="welcome">관리자(${name })님 환영합니다!</div>
       <input type="button" value="로그아웃" id="logoutBtn"/>
    </div>
+>>>>>>> main
 </div><!-- header -->
 
 <div id="container">

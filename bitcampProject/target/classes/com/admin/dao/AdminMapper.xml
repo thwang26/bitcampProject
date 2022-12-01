@@ -44,15 +44,15 @@
 	</update>
 	
 	<select id="orderSales1" resultType="order">
-		select menuName, orderDate from orderInform
-	</select><!-- 시간대별 -->
+		select to_char(orderDate, 'YYYY') as orderDate, to_char(sum(orderPrice)) as orderPrice, storeName from orderInform a left join store b on(a.storeNum = b.storeNum) group by to_char(orderDate, 'YYYY'), storename order by storename
+	</select><!-- 연도별 -->
 	
 	<select id="orderSales2" resultType="order">
-		select * from orderInform
-	</select><!-- 일별 -->
+		select to_char(orderDate, 'YY/mm') as orderDate, to_char(sum(orderPrice)) as orderPrice, storeName from orderInform a left join store b on(a.storeNum = b.storeNum) group by to_char(orderDate, 'YY/mm'), storename
+	</select><!-- 월별 -->
 	
 	<select id="orderSales3" resultType="order">
-		select seqOrder from orderInform
-	</select><!-- 월별 -->
+		select orderGroup, to_char(max(orderDate)) as orderDate, to_char(sum(orderPrice)) as orderPrice, max(menuName) as menuName, max(storeName) as storeName from orderInform a left join store b on(a.storeNum = b.storeNum) group by orderGroup order by storeName, orderGroup
+	</select><!-- 일별 -->
 	
 </mapper>

@@ -17,6 +17,59 @@ div#menuNameDiv, div#menuContentDiv, div#menuPriceDiv {
 </head>
 <body>
 <div id="wrap">
+<<<<<<< HEAD
+	<%@ include file="page.jsp" %>
+	<div id="content" class="row">
+	<div class="col-10">
+	<form name="menuInsertForm" id="menuInsertForm" method="">
+		<table cellpadding="5" cellspacing="0" class="table table-sm" id="menuInsertTable">
+			<!-- <tr>
+				<th>메뉴이미지</th>
+				<td>
+					<img id="showImg" width="150" height="150"><br><br>
+					<input type="file" name="img" id="img">
+				</td>
+			</tr> -->
+			<tr>
+				<th>메뉴이름</th>
+				<td>
+					<input type="text" placeholder="메뉴이름 입력" name="menuName" id="menuName" maxlength="30"/>
+					<div id="menuNameDiv"></div>
+				</td>
+			</tr>
+			<tr>
+				<th>메뉴설명</th>
+				<td>
+					<textarea placeholder="메뉴설명 입력" name="menuContent" id="menuContent" cols="50" rows="5"></textarea>
+					<div id="menuContentDiv"></div>
+				</td>
+			</tr>
+			<tr>
+				<th>메뉴가격</th>
+				<td>
+					<input type="text" name="menuPrice" id="menuPrice" maxlength="8"/>원
+					<div id="menuPriceDiv"></div>
+				</td>
+			</tr>
+			<tr>
+				<th>카테고리 선택</th>
+				<td>
+					<select name="categoryNum" id="categoryNum">
+						<option value="">카테고리</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<input type="button" class="menuInsert btn btn-primary" value="메뉴추가">
+					<input type="reset" value="다시작성" class="btn btn-primary">
+				</td>
+			</tr>
+		</table>
+	</form>
+	</div>
+	</div><!-- content -->
+=======
    <%@ include file="page.jsp" %>
    <div id="content" class="row">
    <div class="col-10">
@@ -68,6 +121,7 @@ div#menuNameDiv, div#menuContentDiv, div#menuPriceDiv {
    </form>
    </div>
    </div><!-- content -->
+>>>>>>> main
 </div>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>

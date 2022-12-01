@@ -8,7 +8,8 @@ $(function () {
             $.each(data, function (index, items) {
             	if(items.orderCode == 2){
 	                $('<li/>', { class: "row nnn", id: "income"})
-	                .append($('<input/>', { type: 'text', value: items.seqOrder}))
+	                .append($('<input/>', { type: 'hidden', value: items.orderGroup}))
+	                .append($('<div/>', { id: 'orderPrice', value: items.orderPrice}))
 	                .append($('<div/>', { id: 'menuName'}).text(items.menuName + " ")
 	                	.append($('<input/>', { type: "button", value: "주문확인", class: "btn btn-success orderConfirmBtn", id: "orderConfirmBtn"}).css('width', '100px'))
 	                	.append($('<input/>', { type: "button", value: "취소", class: "btn btn-danger orderRejectBtn", id: "ordeRejectBtn"}).css('width', '100px')))
@@ -16,14 +17,14 @@ $(function () {
 	                .appendTo($('#income'))
             	}else if(items.orderCode == 3){
 	                $('<li/>', { class: "row nnn", id: "confirm"})
-	                .append($('<input/>', { type: 'text', value: items.seqOrder}))
+	                .append($('<input/>', { type: 'hidden', value: items.seqOrder}))
                 	.append($('<div/>', { id: 'menuName'}).text(items.menuName + " ")
                 		.append($('<input/>', { type: "button", value: "완료", class: "btn btn-success orderCompleteBtn", id: "orderConfirmBtn"}).css('width', '100px')))
 	                .append($('<hr/>').css('margin-top', '16px'))
 	                .appendTo($('#confirm'))
             	}else{
 	                $('<li/>', { class: "row nnn", id: "complete"})
-	                .append($('<input/>', { type: 'text', value: items.seqOrder}))
+	                .append($('<input/>', { type: 'hidden', value: items.seqOrder}))
 	                	.append($('<div/>', { id: 'menuName'}).text(items.menuName + " "))
 	                .append($('<hr/>').css('margin-top', '16px'))
 	                .appendTo($('#complete'))
@@ -43,7 +44,7 @@ $(document).on('click', '.orderConfirmBtn', function(){
 		$.ajax({
 	        type: 'get',
 	        url: '/bitcafe/orderConfirm',
-	        data: 'seqOrder='+$(this).parent().prev().val(),
+	        data: 'orderGroup='+$(this).parent().prev().val(),
 	        success: function () {
 	        	alert('접수되었습니다');
 	        	location.reload();

@@ -82,13 +82,13 @@ public class AdminDAOImpl implements AdminDAO {
 	public List<OrderDTO> orderSales(int selectNum) {
 		if(selectNum == 1){
 			System.out.println(selectNum);
-			return sqlSession.selectList("adminSQL.orderSales1", selectNum);
+			return sqlSession.selectList("adminSQL.orderSales1");
 		}else if(selectNum == 2){
 			System.out.println(selectNum);
-			return sqlSession.selectList("adminSQL.orderSales2", selectNum);
+			return sqlSession.selectList("adminSQL.orderSales2");
 		}else {
 			System.out.println(selectNum);
-			return sqlSession.selectList("adminSQL.orderSales3", selectNum);
+			return sqlSession.selectList("adminSQL.orderSales3");
 		}
 	}
 }

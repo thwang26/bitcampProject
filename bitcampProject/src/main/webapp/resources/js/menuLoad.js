@@ -21,7 +21,7 @@ $('#category li').click(function () {
                        .append($('<div/>', { id:"menuName"}).text(items.menuName))
                        .append($('<div/>', { id: "menuContent" }).text(items.menuContent))
                        .append($('<div/>', { id: "menuPrice" }).text(items.menuPrice+'₩'))
-                       .append($('<input/>', { type: "button", value: "편집", class: "btn btn-success menuEditBtn", id: "menuEditBtn"}).css('width', '100px'))
+                       .append($('<input/>', { type: "button", value: "수정", class: "btn btn-success menuEditBtn", id: "menuEditBtn"}).css('width', '100px'))
                        .append($('<input/>', { type: "button", value: "✕", class: "btn btn-danger menuDeleteBtn", id: "menuDeleteBtn"}).css('width', '100px')))
                     .append($('<hr/>').css('margin-top', '16px'))
                     .appendTo($('#menuList'))

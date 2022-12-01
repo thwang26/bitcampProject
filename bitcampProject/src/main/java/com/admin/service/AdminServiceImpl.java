@@ -17,7 +17,7 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public OrderDTO getOrder() {
-		System.out.println(adminDAO.getOrder().getOrderPrice());
+		//System.out.println(adminDAO.getOrder().getOrderPrice());
 		return adminDAO.getOrder();
 	}
 

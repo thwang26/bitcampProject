@@ -10,7 +10,7 @@
 <link rel="icon" href="/bitcafe/resources/img/order.png">
 <style type="text/css">
 #cart-head, .cart-list-row-top, .menu-options-price {
-	display: flex;
+   display: flex;
     justify-content: space-between;
 }
 </style>
@@ -41,7 +41,7 @@
 		<input type="button" id="orderListBtn" value="주문하기">
 	</div>
 </div><!-- container end -->
-	<%@ include file="bottomTab.jsp" %><!-- bottomTab.jsp -->
+   <%@ include file="bottomTab.jsp" %><!-- bottomTab.jsp -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="/bitcafe/resources/js/bottomTab.js"></script><!-- bottomTab.js -->
 <script type="text/javascript" src="/bitcafe/resources/js/cart.js"></script>

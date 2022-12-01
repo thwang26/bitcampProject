@@ -11,7 +11,7 @@
 	<select id="menuLoad" parameterType="String" resultType="menu">
 		select * from menu where categoryNum=#{categoryNum}
 	</select>
-	
+
 	<delete id="menuEarase" parameterType="Integer">
 		delete menu where seqMenu=#{seqMenu}
 	</delete>

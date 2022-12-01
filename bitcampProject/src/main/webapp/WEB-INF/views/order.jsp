@@ -13,6 +13,7 @@
 <body>
 <div id="box_wrap">	
 	<!-- container start -->
+	<input type="hidden" value="${param.seqMenu}" id="seqMenu"> <!--order.js -->
 	<div class="container" >
 		<header>
 			

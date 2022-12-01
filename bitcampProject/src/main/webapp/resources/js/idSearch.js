@@ -59,7 +59,6 @@ $("#button-addon2").click(function(){
 $("#button-addon3").click(function(){
     
     var inputCode = $("#input_code").val();
-    alert(code) 
     if(inputCode == code){// 일치할 경우
     	
     	$.ajax({
@@ -68,9 +67,8 @@ $("#button-addon3").click(function(){
     		data: 'email='+$("#input_email").val(),
     		dataType: 'text',
     		success:function(data){
-    			alert(data);
 				alert("확인되었습니다. 아이디는 " + data + " 입니다.");
-				
+				location.href='/bitcafe/loginForm';
     		}
     	
     	});

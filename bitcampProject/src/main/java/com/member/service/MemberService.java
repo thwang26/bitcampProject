@@ -10,7 +10,7 @@ public interface MemberService {
 
 	public String isExistId(String id);
 
-	public String memberlogin(MemberDTO memberDTO, HttpSession session);
+	public String memberlogin(MemberDTO memberDTO);
 
 	public String getId(String email);
 	

@@ -62,8 +62,10 @@ public class MemberController {
 	@PostMapping(value="memberlogin")
 	@ResponseBody
 	public String memberlogin(@ModelAttribute MemberDTO memberDTO, HttpSession session) {
+		session.setAttribute("name", memberDTO.getName());
+		session.setAttribute("userId", memberDTO.getId());
 		
-		return memberService.memberlogin(memberDTO, session);
+		return memberService.memberlogin(memberDTO);
 		
 	}
 	
@@ -73,8 +75,8 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="/loginSNS", method=RequestMethod.GET)
-	public String index(@RequestParam String id, HttpSession session) {
-		session.setAttribute("name", id);
+	public String index(@RequestParam String name, HttpSession session) {
+		session.setAttribute("name", name);
 		return "/index";
 	}
 	

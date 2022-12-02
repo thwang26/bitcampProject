@@ -17,7 +17,7 @@
 </head>
 <body>
 <div class="container" ><!-- container start -->
-	<input type="hidden" id="id" value="hong">
+	<input type="hidden" id="id" value="${userId }">
 	<div>장바구니</div>
 	<select id="selectStore" name="selectStore">
 		<option value="none">주문할 매장을 선택해 주세요</option>
@@ -26,12 +26,12 @@
 	<div id="cart" class="col-12">
 		<div class="" id="cart-head">
 			<div class="col-4">
-			    <input class="" type="checkbox" value="" aria-label="Checkbox for following text input">
+			    <input id="checkAll" type="checkbox" value="" aria-label="Checkbox for following text input">
 				<span id="check_all">전체 선택</span>
 			</div>
 			<div class="col-4">
-				<span><a href="" style="text-decoration: none;">선택삭제</a></span> |
-				<span><a href="" style="text-decoration: none;">전체삭제</a></span>
+				<input type="button" id="deleteAllBtn" value="전체삭제"> |
+				<input type="button" id="deleteSomeBtn" value="선택삭제">
 			</div>
 		</div>
 		<hr/>

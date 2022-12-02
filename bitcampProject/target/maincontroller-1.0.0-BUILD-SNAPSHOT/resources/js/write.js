@@ -18,12 +18,11 @@ $('#writeBtn').click(function(){
 	}else{
 		$.ajax({
 			type: 'post',
-			url: '/bitcafe/memberwrite',
+			url: '/chapter06_SpringWebMaven/user/write',
 			data: $('#writeForm').serialize(),
 			success: function(){
 				alert("회원가입을 축하합니다.");
-				location.href='/bitcafe/loginForm';
-
+				location.href='/chapter06_SpringWebMaven/user/list/';
 			},
 			error: function(err){
         		 console.log(err);
@@ -31,7 +30,6 @@ $('#writeBtn').click(function(){
 		});
 	}
 });
-
 
 //아이디 중복체크
 $('#id').focusout(function(){
@@ -43,13 +41,12 @@ $('#id').focusout(function(){
 	}else{
 		$.ajax({
 			type: 'post',
-			url: '/bitcafe/isExistId',
+			url: '/chapter06_SpringWebMaven/user/isExistId',
 			data: 'id=' + $('#id').val(),
 			dataType: 'text',
 			success:function(data){
 				if(data == 'exist'){
 					$('#idDiv').text('사용 불가능');
-					$('#idDiv').css('color', 'red');
 				}else if(data == 'non_exist'){
 					$('#idDiv').text('사용 가능');
 					$('#idDiv').css('color', 'blue');				
@@ -63,53 +60,18 @@ $('#id').focusout(function(){
 });
 
 
-//비밀번호확인
-$('#pwd').focusout(function(){
-	$('#pwdDiv').empty();
-	
-	if($('#pwd').val() == '') {
-		$('#pwdDiv').text('비밀번호를 입력해주세요');
-		$('#pwd').focus();
-	}else{
-		var pwd = $('#pwd').val();
-		var repwd = $('#repwd').val();
-		console.log('=== pwd ' + pwd);
-		console.log('=== repwd ' + repwd);
-		
-		if(pwd != repwd){
-		
-			$('#pwdDiv').text('사용 불가능');
-			$('#pwdDiv').css('color', 'red');
-		}else if(pwd == repwd){
-			$('#pwdDiv').text('사용 가능');
-			$('#pwdDiv').css('color', 'blue');				
-		}
-	}
-});
 
-//비밀번호 재확인
-$('#repwd').focusout(function(){
-	$('#pwdDiv').empty();
-	
-	if($('#pwd').val() == '') {
-		$('#pwdDiv').text('비밀번호를 입력해주세요');
-		$('#pwd').focus();
-	}else{
-		var pwd = $('#pwd').val();
-		var repwd = $('#repwd').val();
-		console.log('=== pwd ' + pwd);
-		console.log('=== repwd ' + repwd);
-		
-		if(pwd != repwd){
-		
-			$('#pwdDiv').text('사용 불가능');
-			$('#pwdDiv').css('color', 'red');
-		}else if(pwd == repwd){
-			$('#pwdDiv').text('사용 가능');
-			$('#pwdDiv').css('color', 'blue');				
-		}
-	}
-});
+
+
+
+
+
+
+
+
+
+
+
 
 
 

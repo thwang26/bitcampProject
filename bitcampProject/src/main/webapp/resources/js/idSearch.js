@@ -11,12 +11,12 @@ $("#input_email").keyup(function() {
 			if(data != ""){
 				//alert(data+"버튼업");
 				//$('.id_input_re_1').css("display","inline-block");
-				$('#button-addon2').css("display", "block");
+				//$('#button-addon2').css("display", "block");
 				$('#email_false').css("display", "none");
 			} else {
 				//alert("데이터 없음")
 				//$('.id_input_re_2').css("display","inline-block");
-				$('#button-addon2').css("display", "none");	
+				//$('#button-addon2').css("display", "none");	
 				$('#email_false').css("display", "block");
 			}
 			

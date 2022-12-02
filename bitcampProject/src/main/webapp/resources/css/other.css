@@ -98,6 +98,30 @@ span{
    border-color: #873c00;
    width:350px;
 }
+#logoutBtn{
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	background-color:rgba(0,0,0,0);
+	color:#873c00;
+	padding: 5px;
+	font-size: 30px;
+	border-color: #873c00;
+	width:350px;
+}
+#logoutBtn{
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	background-color:rgba(0,0,0,0);
+	color:#873c00;
+	padding: 5px;
+	font-size: 30px;
+	border-color: #873c00;
+	width:350px;
+}
 .top-img{
    background-image: url("/bitcafe/resources/img/maintop.jpg");
    background-size: cover;

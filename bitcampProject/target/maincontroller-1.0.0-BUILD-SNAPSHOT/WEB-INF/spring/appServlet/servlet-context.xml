@@ -21,14 +21,21 @@
 	<context:component-scan base-package="com.bitcafe.othercontroller" />
 	<context:component-scan base-package="com.store.controller" />
 	<context:component-scan base-package="com.order.controller" />
+<<<<<<< HEAD
 	<context:component-scan base-package="com.member.membercontroller" />
 	<context:component-scan base-package="com.event.controller" />
+=======
+
+>>>>>>> 5bc7d1c42255f3b3c8e314d2682f27bcd4f3691e
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 		
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 5bc7d1c42255f3b3c8e314d2682f27bcd4f3691e
 	
 </beans:beans>

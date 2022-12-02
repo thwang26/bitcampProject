@@ -1,12 +1,13 @@
 @charset "UTF-8";
 
-.top-img{
+/* 상단 메인 이미지 */
+.top-img{ 
 	background-image: url("/bitcafe/resources/img/maintop.jpg");
 	background-size: cover;
 	margin: 0;
 	padding: 0;
 	width: 100%;
-	height: 300px;
+	height: 270px;
 	background-repeat: no-repeat;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
@@ -14,31 +15,33 @@
 	border-bottom-left-radius: 10px;
 }
 
+/* 상단 로그인 text 사이즈 +글시체 조절 */
 .top-name {
 	font-family: 'Marcellus', sans-serif;
-	padding: 200px 80px;
-	color: white;
+	padding: 170px 80px;
+	color: #fcf5ef;
 	font-size: 0.6em;
 	text-align: right;
 }
-
 .top-name a {
 	text-decoration: none;
 	color: white;
 }
+
+.top-name #mainLogin{ /* 로그인 버튼*/
+	width:50pt;
+	height:20pt; 
+	font-size: 0.7em; 
+	border-radius :20px 
+}
 /*-------------------------------*/
-/* #event{
-top:200px;
-position: relative;
-} */
+
 #event img{ 
 border-top-left-radius: 10px;
 border-top-right-radius: 10px;
 border-bottom-right-radius: 10px;
 border-bottom-left-radius: 10px;
 }
-
-/* ------------------------------*/
 
 /*-------------------------------*/
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form,

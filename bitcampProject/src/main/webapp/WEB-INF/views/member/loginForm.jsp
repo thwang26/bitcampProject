@@ -8,20 +8,8 @@
 <title>BitCafe</title>
 
 <link rel="stylesheet" type="text/css" href="/bitcafe/resources/css/bottomTab.css"><!-- reset, bottomTab.css -->
+<link rel="stylesheet" type="text/css" href="/bitcafe/resources/css/member/loginFormCss.css">
 <link rel="icon" href="/bitcafe/resources/img/order.png">
-
-<style type="text/css">
-* {
-	margin: 0;
-	padding: 0; /*다 달라붙게한다 디폴트값*/
-}
-
-form{
-margin-top: 50%;
-}
-
-
-</style>
 
 </head>
 <body>
@@ -32,42 +20,43 @@ margin-top: 50%;
 
 
 	<form name="loginForm" id="loginForm" method="post" align="left" action="" style="cursor: pointer;" >
-	<h4 align="center">로그인</h4>
+	<div id="login-img-01"><!--로그인 Bit Cafe img  -->
+	<a href="/bitcafe/index/"><img src="/bitcafe/resources/img/loginimg/login-img.png"></a></div>
 	<table border="0" cellpadding="5" cellspacing="0"  >
 		
 		<tr>
-			<th style="margin: 0 auto; font-size: 15px;" align="center">아이디</th>
+			<th style="margin: 0 auto; font-size: 15px;" align="center">ID</th>
 			<td>
-				<input type="text" id="id" name="id" maxlength="15" placeholder="아이디 입력" />
+				&nbsp;<input type="text" id="id" name="id" maxlength="15" placeholder="아이디 입력" />
 				<div id="idDiv" style="margin: 0 auto; font-size: 10px;" ></div>
 			</td>
 		</tr>
 		
 		<tr>
-			<th style="margin: 0 auto; font-size: 15px;" align="center">비밀번호</th>
+			<th style="margin: 0 auto; font-size: 15px;" align="center">Password</th>
 			<td>
-				<input type="password" id="pwd" name="pwd" maxlength="15" placeholder="비밀번호를 입력하세요."/>
+				&nbsp;<input type="password" id="pwd" name="pwd" maxlength="15" placeholder="비밀번호를 입력" />
 				<div id="pwdDiv" style="margin: 0 auto; font-size: 10px;" > </div>
 			</td>
 		</tr>
-
 		<tr>
+
 	   	    <th colspan="2" align="center">
 			<input type="button" id="loginBtn" value="로그인"  >
-			<input type="button" id="writeFormBtn" value="회원가입" onClick="location.href='memberwriteForm'">
+			<input type="button" id="writeFormBtn" value="회원가입" onClick="location.href='/bitcafe/memberwriteForm'">
 		    </th>
 		</tr>
 	
 		<tr>
 			<th colspan="2" align="center">
-			<input type="button" id="loginSNSBtn" value="SNS로그인" >
+			<input type="button" id="loginSNSBtn" value="Kakao 로그인" >
 			</th>
 		</tr>
 		
 		<tr>
 			<th colspan="2" align="center">
-			<input type="button" id="memberIdSearchBtn" value="아이디 찾기" onClick="location.href='memberIdSearch'">
-			<input type="button" id="memberPwdSearchBtn" value="비밀번호 찾기" onClick="location.href='memberPwdSearch'">
+			<input type="button" id="memberIdSearchBtn" value="아이디 찾기" onClick="location.href='/bitcafe/memberIdSearch'">
+			<input type="button" id="memberPwdSearchBtn" value="비밀번호 찾기" onClick="location.href='/bitcafe/memberPwdSearch'">
 		</tr>
 		
 		

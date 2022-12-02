@@ -9,14 +9,8 @@ $(function(){
 			type: 'post',
 			url: '/bitcampProject/others/getUser',
 			data: 'id=' + $('#searchId').val(),
-			//dataType: 'json',
-			//서버에서 받아오는 데이터 타입은 'text', 'html', 'xml', 'json' 형식을 지정할 수 있다
-			//getUser에서 id를 찾으면 제대로 JSON으로 오지만 
-			//           id가 없으면 JSON으로 오지를 못한다.
-			//그래서 dataType를 생략해야 한다. (dataType를 생략하면 자료에 맞게 자동으로 형식이 지정된다.)
 			
 			success: function(data){
-				//alert(JSON.stringify(data));
 				
 				if(data == ''){
 					$('#updateDiv').hide();
@@ -29,7 +23,6 @@ $(function(){
 					
 					$('#name').val(data.name);
 					$('#id').val(data.id);
-					//$('#pwd').val(data.pwd);
 				}
 			},
 			error: function(err){

@@ -1,7 +1,5 @@
 package com.order.bean;
 
-import java.util.Date;
-
 import lombok.Data;
 
 @Data
@@ -10,7 +8,7 @@ public class OrderDTO {
 	private String id;
 	private String orderPrice;
 	private int qty;
-	private Date orderDate;
+	private String orderDate;
 	private String menuName;
 	private int orderCode;
 	private int storeNum;
@@ -18,5 +16,6 @@ public class OrderDTO {
 	private int shotOpt;
 	private int sizeOpt;
 	private int orderGroup;
+	private String storeName;
 	
 }

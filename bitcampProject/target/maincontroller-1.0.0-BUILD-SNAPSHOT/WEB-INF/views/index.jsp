@@ -55,6 +55,7 @@
 <!--recommendList -->
 	<!-- menu end -->
 	
+<<<<<<< HEAD
 	<!--event start -->
 <div id="event">
 	<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
@@ -88,6 +89,24 @@
 	<!-- event end-->	
 	<!-- best_And_event .css -->
 </div><!-- container end -->
+=======
+	<!--event / scroll start -->
+	<div id="event">
+<!-- <div class="contents"> -->
+		<div class="banner">
+			<ul>
+				<li><img src="/bitcafe/resources/img/event01.jpg" ></li><!-- width="340" height="210px" -->
+				<li><img src="/bitcafe/resources/img/event02.jpg" ></li>
+				<li><img src="/bitcafe/resources/img/event03.jpg"></li>
+			</ul>
+		</div>
+	<!-- </div> -->
+	</div>
+	<!-- -event / scroll end -->
+	
+	</div><!-- container end -->
+
+>>>>>>> 5bc7d1c42255f3b3c8e314d2682f27bcd4f3691e
 <%@ include file="bottomTab.jsp" %><!-- bottomTab.jsp -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>

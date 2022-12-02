@@ -10,7 +10,7 @@ public interface MemberDAO {
 	
 	public void memberwrite(MemberDTO memberDTO);
 
-	public MemberDTO getMember(String id);
+	public MemberDTO getMember(MemberDTO memberDTO);
 	
 	public MemberDTO memberlogin(MemberDTO memberDTO);
 
@@ -26,5 +26,5 @@ public interface MemberDAO {
 
 	public void updateGo(MemberDTO memberDTO);
 
-	
+	public MemberDTO getMember2(String id);
 }

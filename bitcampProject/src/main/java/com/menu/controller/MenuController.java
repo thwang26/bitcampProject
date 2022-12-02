@@ -59,8 +59,8 @@ public class MenuController {
 
 	@PostMapping(value = "/orderMenu")
 	@ResponseBody
-	public void orderMenu(@ModelAttribute OrderDTO orderDTO) {
-		menuService.orderMenu(orderDTO);
+	public int orderMenu(@ModelAttribute OrderDTO orderDTO) {
+		return menuService.orderMenu(orderDTO);
 	}
 
 	@GetMapping(value = "/orderMenuForm")

@@ -19,15 +19,7 @@
 			<h1>회원정보수정</h1>
 		</div>
 	<table cellpadding="5" cellspacing="0">
-<<<<<<< HEAD
 		<br>
-=======
-		<tr>
-			<th colspan="2">
-			<br/>
-			</th>
-		</tr>
->>>>>>> 7f9f1c16357846bc862afb37123e1228efdacc6c
 		<tr>
 			<th colspan="2">아이디</th>
 		</tr>

@@ -52,6 +52,17 @@ body, div, dl,dt,dd,ul,ol,li, h1,h2,h3,h4,h5,h6, form, fieldset, p, button {
 	text-align: right;
 	font-size: 17pt;
 }
+#deleteAllBtn {
+	background-color: #fcf5ef;
+	border: 0;
+	outline: 0;
+	color: gray;
+}
+#deleteSomeBtn {
+	background-color: #fcf5ef;
+	border: 0;
+	outline: 0;
+}
 
 
 
@@ -94,10 +105,6 @@ img, fieldset {
 	margin-top: 100px;
 	margin-bottom: 60px;
 }
-
-
-
-
 
 #scroll_list {
 	position: relative;
@@ -200,9 +207,35 @@ img, fieldset {
 
 
 
+/* 결제폼 css */
+#orderMenuForm {
+	width: 100%;
+	margin: 0;
+}
+#orderMenuBtn {
+	background-image: url(/bitcafe/resources/img/kakaopay2.png);
+	width: 330px;
+	height: 66px;
+	border: solid 1px grey;
+	border-radius: 20px;
+}
+#order-list_start {
+	font-weight: bold;
+	font-size: 18pt;
+}
+#store-info {
+	width: 550px;
+	margin: auto;
+	text-align: left;
+	color: gray;
+	font-size: 15pt;
+}
 
 
 
+
+
+/* *************************************************************** */
 
 
 li {

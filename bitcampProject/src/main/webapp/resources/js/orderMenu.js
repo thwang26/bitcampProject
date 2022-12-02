@@ -39,7 +39,7 @@ $(function(){
 				if(shotOpt == '0') $('.shotOpt_'+index).hide();
 				else $('.shotOpt_'+index).text(shotOpt + "샷 추가");
 				
-				$('#storeName').text(items.storeName + "점에서 수령");
+				$('#storeName').text("* 선택하신 매장 " + items.storeName);
 				
 				totalPrice += parseInt(items.orderPrice); 
 					
@@ -54,7 +54,7 @@ $(function(){
 	});
 });
 
-$(document).on('click', $('#orderMenuBtn'), function(){
+$(document).on('click', '.orderMenuBtn', function(){
 	$.ajax({
 		type: 'post',
 		url: '/bitcafe/pay',

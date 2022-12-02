@@ -39,8 +39,6 @@
   					<label class="form-check-label" for="flexCheckDefault" id="all_checked">전체 선택</label>
 				</div>
 				<div class="col-7" id="check_other">
-					<span><a href="" style ="color:#360a01; text-decoration : none;">선택삭제</a></span> |
-					<span><a href="" style ="color:grey; text-decoration : none;">전체삭제</a></span>
 					<input type="button" id="deleteAllBtn" value="전체삭제"> |
 					<input type="button" id="deleteSomeBtn" value="선택삭제">
 				</div>

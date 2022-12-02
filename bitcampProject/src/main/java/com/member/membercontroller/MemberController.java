@@ -46,6 +46,11 @@ public class MemberController {
 		return "/member/loginForm";
 	}
 	
+	@RequestMapping(value="/memberloginForm", method=RequestMethod.GET)
+	public String memberloginForm() {
+		return "/member/memberloginForm";
+	}
+	
 	@PostMapping(value="memberwrite")
 	@ResponseBody
 	public void write(@ModelAttribute MemberDTO memberDTO) {

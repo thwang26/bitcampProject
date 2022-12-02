@@ -8,41 +8,21 @@
 <title>BitCafe</title>
 
 <link rel="stylesheet" type="text/css" href="/bitcafe/resources/css/bottomTab.css"><!-- reset, bottomTab.css -->
+<link rel="stylesheet" type="text/css" href="/bitcafe/resources/css/member/memberwriteFormCss.css">
 <link rel="icon" href="/bitcafe/resources/img/order.png">
-<style type="text/css">
 
-#nameDiv{
- font-size: 10px;
- color: red;
-}
-#idDiv{
- font-size: 10px;
- color: red;
-}
-#pwdDiv{
- font-size: 10px;
- color: red;
-}
-form{
-margin-top: 50%;
-}
-
-
-</style>
 </head>
 <body>
 
 <!-- container start -->
 <div class="container" >
-	<!-- <div id="topImg" style="width:100%; height:370px;">img</div>  여기 있는건 topImg.css로 옮겼음-->
-
-	
 	<form name="writeForm" id="writeForm" method="post" align="left" action="" style="cursor: pointer;">
-	<h4 >회원가입</h4><br>
-	<table border="1" cellpadding="5" cellspacing="0">
+	<div id="login-img-01"><!--로그인 Bit Cafe img  -->
+	<a href="/bitcafe/index/"><img src="/bitcafe/resources/img/loginimg/login-img.png"></a></div>
+	<table border="0" cellpadding="5" cellspacing="0">
 	
 		<tr>
-			<th class="memberwrite" style="margin: 0 auto; font-size: 15px;" align="center">이름</th>
+			<th class="memberwrite" style="margin: 0 auto; font-size: 15px;" align="center">Name</th>
 			<td>
 				<input type="text" id="name" name="name" maxlength="10" placeholder="이름 입력"/>
 				<div id="nameDiv"></div>
@@ -50,7 +30,7 @@ margin-top: 50%;
 		</tr>
 		
 		<tr>
-			<th style="margin: 0 auto; font-size: 15px;" align="center">아이디</th>
+			<th style="margin: 0 auto; font-size: 15px;" align="center">Id</th>
 			<td>
 				<input type="text" id="id" name="id" maxlength="15" placeholder="아이디 입력"/>
 				<div id="idDiv" style="margin: 0 auto; font-size: 10px;" ></div>
@@ -58,7 +38,7 @@ margin-top: 50%;
 		</tr>
 		
 		<tr>
-			<th style="margin: 0 auto; font-size: 15px;" align="center">비밀번호</th>
+			<th style="margin: 0 auto; font-size: 15px;" align="center">Password</th>
 			<td>
 				<input type="password" id="pwd" name="pwd" maxlength="15" placeholder="비밀번호를 입력하세요."/>
 				<div id="pwdDiv" style="margin: 0 auto; font-size: 10px;" > </div>
@@ -66,7 +46,7 @@ margin-top: 50%;
 		</tr>
 		
 		<tr>
-			<th style="margin: 0 auto; font-size: 15px;" align="center">비밀번호 확인</th>
+			<th style="margin: 0 auto; font-size: 15px;" align="center">Re Password</th>
 			<td>
 				<input type="password" id="repwd" name="repwd" class="chk" maxlength="15" placeholder="비밀번호를 입력하세요." />
 				<div id = "repwdDiv" style="margin: 0 auto; font-size: 10px;"></div>
@@ -74,7 +54,7 @@ margin-top: 50%;
 		</tr>
 		
 		<tr>
-			 <th style="margin: 0 auto; font-size: 15px;" align="center">이메일</th>
+			 <th style="margin: 0 auto; font-size: 15px;" align="center">Email</th>
 		     <td style="margin: 0 auto; font-size: 15px;">
 				<input type="email" name="email1" id="email1" style="width: 100px;">
 				@
@@ -89,7 +69,7 @@ margin-top: 50%;
 		</tr>
 		
 		<tr>
-   		   <th style="margin: 0 auto; font-size: 15px;" align="center">전화번호</th>
+   		   <th style="margin: 0 auto; font-size: 15px;" align="center">Tel</th>
 	       <td>
 			   <select name="tel1" id="tel1" style="width: 60px;">
 			   <option value="010">010</option>
@@ -106,8 +86,8 @@ margin-top: 50%;
 		
 		 <tr>
 	   	    <th colspan="2" align="center">
-			<input type="button" id="writeBtn" value="회원가입" >
-			<input type="reset" value="다시작성">
+			<input type="button" id="writeBtn" value="Sign Up" >
+			<input type="reset" id="RewriteBtn" value="Rewrite">
 		     </th>
 		 </tr>
 		
@@ -115,10 +95,7 @@ margin-top: 50%;
   
 </form>
 	
-	
 </div><!-- container end -->
-
-
 
 <%@ include file="../bottomTab.jsp" %><!-- bottomTab.jsp -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
@@ -135,8 +112,6 @@ function change(){
 }
 
 </script>
-
-
 </body>
 </html>
 

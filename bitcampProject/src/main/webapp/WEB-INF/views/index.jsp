@@ -18,47 +18,37 @@
 <!-- container start -->
 <div class="container" >
 	<div class="top-img">
-	
 	<!-- login -->
 		<div class="top-name">
 		<c:if test="${sessionScope.name == null }">
-		BitCafe 오신걸<br>
+		BitCafe오신걸<br>
 		환영합니다.<br>
-		<input type="button" value="로그인하기" onclick="로그인창으로..">
+		<input type="button" id="mainLogin" value="로그인" onclick="location.href='/bitcafe/loginForm/'" >
 		</c:if>
-		<c:if test="${name !=null }">
-		<a href="아이디 누르면 회원정보수정하는 곳으로..">${name}</a>
+		<c:if test="${sessionScope.name !=null }">
+		<a href='/bitcafe/updateMem'>${name}</a>
 		&nbsp;님 안녕하세요.<br>
-		환영합니다.
-		
-		<!-- <input type="button" value="로그아웃" id="">	 -->		
+		환영합니다.		
 	</c:if>
-
 	</div>
 	</div>
+	<br>
 	<!--menu start -->
 <div id="recommend">
-<br>
-<h3 id="Recommend-Best-name">Recommend & Best Menu</h3>
-<!-- best_And_event .css -->
+<img src="/bitcafe/resources/img/beanLogo.png" style="width:350px; height: 35px;">
+<h3 id="Recommend-Best-name"><span id="bestMenuReco">Recommend&nbsp;&nbsp;</span>
+<span id="Re-and-Be">&</span>
+<span id="bestMenuM">&nbsp;&nbsp;Best Menu</span></h3>
 <div id="bestMenu01" class="scroll-image">
- <!--  <img alt="" src="/bitcafe/resources/img/eventImg/프라푸치노_말차크림.jpg" />
-  <img alt="" src="/bitcafe/resources/img/eventImg/프라푸치노_초콜릿크림칩.jpg" />
-  <img alt="" src="/bitcafe/resources/img/eventImg/프라푸치노_카라멜.jpg" />
-  </div>
- <div id="bestMenu02" class="scroll-image">
-  <img alt="" src="/bitcafe/resources/img/eventImg/에스프레소_아이스아메리카노.jpg" />
-  <img alt="" src="/bitcafe/resources/img/eventImg/에스프레소_아메리카노.jpg"/>
-  <img alt="" src="/bitcafe/resources/img/eventImg/아포가토_초콜릿.jpg" /> -->
-</div>
-	</div>
-<!--recommendList -->
-	<!-- menu end -->
-	
-	<!--event start -->
+</div><!--recommendList -->
+	</div><!-- menu end -->
+
+<!--event start -->
+
 <div id="event">
 	<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-  <div id="eventGO" align="left">진행 이벤트</div>
+  <img src="/bitcafe/resources/img/beanLogo.png" style="width:350px; height: 35px;">
+  <div id="eventGO" align="center">Event</div>
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -66,21 +56,21 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-     <a href="/bitcafe/eventList?seqEvent=1"> <img src="/bitcafe/resources/img/eventImg/eventImg001.png"  value="1"class="d-block w-100" alt="..."></a><!-- 링크 공지 or 이벤트 1-->
+     <a href="/bitcafe/eventList?seqEvent=1"> <img src="/bitcafe/resources/img/eventImg/eventImg001.png"  value="1"class="d-block w-100" alt="이벤트1"></a><!-- 링크 공지 or 이벤트 1-->
     </div>
     <div class="carousel-item">
-      <a href="/bitcafe/eventList?seqEvent=2"> <img src="/bitcafe/resources/img/eventImg/eventImg002.png" value="2" class="d-block w-100" alt="..."></a><!-- 링크 공지 or 이벤트 2-->
+      <a href="/bitcafe/eventList?seqEvent=2"> <img src="/bitcafe/resources/img/eventImg/eventImg002.png" value="2" class="d-block w-100" alt="이벤트2"></a><!-- 링크 공지 or 이벤트 2-->
     </div>
     <div class="carousel-item">
-       <a href="/bitcafe/eventList?seqEvent=3"><img src="/bitcafe/resources/img/eventImg/eventImg003.png" value="3" class="d-block w-100" alt="..."></a><!-- 링크 공지 or 이벤트 3-->
+       <a href="/bitcafe/eventList?seqEvent=3"><img src="/bitcafe/resources/img/eventImg/eventImg003.png" value="3" class="d-block w-100" alt="이벤트3"></a><!-- 링크 공지 or 이벤트 3-->
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+   <!--  <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
     <span class="visually-hidden">Previous</span>
   </button>
   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
     <span class="visually-hidden">Next</span>
   </button>
  </div>

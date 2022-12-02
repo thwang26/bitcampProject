@@ -1,7 +1,5 @@
 package com.order.bean;
 
-import java.util.Date;
-
 import lombok.Data;
 
 @Data

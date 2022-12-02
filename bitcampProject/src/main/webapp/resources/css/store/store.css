@@ -108,17 +108,6 @@ img, fieldset {
 	background-position: 20px 20px;
 	background-position: left;
 }
-/* 
-#scroll_list{
-	position: relative;
-	flex-wrap: wrap;
-	align-items: stretch;
-	width: 100%;
-	margin: auto;
-	display: flex;
-	
-}  */
-
 
 #scroll_list {
 	position: relative;

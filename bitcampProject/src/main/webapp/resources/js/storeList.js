@@ -22,7 +22,7 @@ $(function () {
                         .append($('<div/>', { class: "row", id: "row_tel" })
                             .append($('<div/>', { class: "col-1", id: "col_phoneIcon" })
                                 .append($('<img/>', {
-                                    src: "./resources/img/phone1.jpg",
+                                    src: "http://localhost:8080/bitcafe/resources/img/phone1.jpg",
                                     alt: "phone1",
                                     id: "phone_img"
                                 })
@@ -42,11 +42,20 @@ $(function () {
     });
 
 });
+
 $(document).on('click', '.nnn', function(){
-   var storeNum = $(this).find('input').val();
+    const urlParams = new URL(location.href).searchParams;
+	const seqMenu = urlParams.get('seqMenu');
+    var storeNum = $(this).find('input').val();
    //alert(storeNum);
-   location.href="/bitcafe/categoryList?storeNum="+storeNum;
    
+   //index에서 best메뉴 선택시 매장으로 and menuDetail로
+   if(seqMenu!=null){
+       location.href="/bitcafe/menuDetailsForm?storeNum="+storeNum+"&seqMenu="+seqMenu;
+    }else {
+       location.href="/bitcafe/categoryList?storeNum="+storeNum;
+
+   }
 
 });
 

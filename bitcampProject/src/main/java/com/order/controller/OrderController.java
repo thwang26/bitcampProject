@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.order.bean.ApproveResponse;
 import com.order.bean.OrderDTO;
+import com.order.bean.ReadyResponse;
 import com.order.service.OrderService;
 
 @Controller
@@ -28,11 +30,8 @@ public class OrderController {
 	
 	@GetMapping(value="/getOrderMenu")
 	@ResponseBody
-	public Map<String, Object> getOrderMenu(@RequestParam String id, @RequestParam int storeNum) {
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("id", id);
-		map.put("storeNum", storeNum);
-		return orderService.getOrderMenu(map);
+	public List<OrderDTO> getOrderMenu(@RequestParam int orderGroup) {
+		return orderService.getOrderMenu(orderGroup);
 	}
 	
 	@PostMapping(value = "/orderList")
@@ -45,19 +44,25 @@ public class OrderController {
 		map.put("orderGroup", orderGroup);
 		orderService.orderList(map);
 	}
-	
-	@PostMapping(value="/kakaoPay")
+
+	@PostMapping(value="/pay")
 	@ResponseBody
-	public String kakaoPay(@RequestParam Map<String,Object> map) {
-		System.out.println("map = " + map.get("seqOrder"));
-		return orderService.kakaoPayReady(map);
+	public ReadyResponse payReady(@RequestParam int orderGroup, Model model) {
+		ReadyResponse readyResponse = orderService.payReady(orderGroup);
+		System.out.println(readyResponse);
+		
+		return readyResponse;
 	}
 	
-	@GetMapping(value="/kakaoPaySuccess")
-	public void kakaoPaySuccess(@RequestParam("pg_token") String pg_token, Model model) {
-		System.out.println("kakaoPaySuccess pg_token : " + pg_token);
+	@GetMapping(value="/completed")
+	public String payCompleted(@RequestParam("pg_token") String pgToken, @RequestParam("orderGroup") int orderGroup, Model model) {
+		System.out.println("kakaoPaySuccess pg_token : " + pgToken);
 		
-		model.addAttribute("info", orderService.kakaoPayInfo(pg_token));
+		ApproveResponse approveResponse = orderService.payApprove(pgToken, orderGroup);
+		System.out.println(approveResponse);
+		model.addAttribute("approveResponse", approveResponse);
+		
+		return "kakaoPaySuccess";
 	}
 	
 	@GetMapping(value="/getCartList")
@@ -75,4 +80,21 @@ public class OrderController {
 		return orderService.getSelectCartList(map);
 	}
 	
+	@GetMapping(value="/deleteSingleOrder")
+	@ResponseBody
+	public void deleteSingleOrder(@RequestParam int seqOrder){
+		orderService.deleteSingleOrder(seqOrder);
+	}
+	
+	@GetMapping(value="/deleteSomeOrder")
+	@ResponseBody
+	public void deleteSomeOrder(@RequestParam(value="checkedArr[]") List<Integer> checkedArr){
+		orderService.deleteSomeOrder(checkedArr);
+	}
+	
+	@GetMapping(value="/paymentComplete")
+	@ResponseBody
+	public void paymentComplete(@RequestParam int orderGroup){
+		orderService.paymentComplete(orderGroup);
+	}
 }

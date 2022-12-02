@@ -17,8 +17,8 @@ public class OrderDAOImpl implements OrderDAO {
 	private SqlSession sqlSession;
 
 	@Override
-	public Map<String, Object> getOrderMenu(Map<String, Object> map) {
-		return sqlSession.selectOne("orderSQL.getOrderMenu", map);
+	public List<OrderDTO> getOrderMenu(int orderGroup) {
+		return sqlSession.selectList("orderSQL.getOrderMenu", orderGroup);
 	}
 
 	@Override
@@ -39,6 +39,22 @@ public class OrderDAOImpl implements OrderDAO {
 	@Override
 	public List<OrderDTO> getSelectCartList(Map<String, Object> map) {
 		return sqlSession.selectList("orderSQL.getSelectCartList", map);
+	}
+
+	@Override
+	public void deleteSingleOrder(int seqOrder) {
+		sqlSession.delete("orderSQL.deleteSingleOrder", seqOrder);
+		
+	}
+
+	@Override
+	public void deleteSomeOrder(List<Integer> checkedArr) {
+		sqlSession.delete("orderSQL.deleteSomeOrder", checkedArr);	
+	}
+
+	@Override
+	public void paymentComplete(int orderGroup) {
+		sqlSession.update("orderSQL.paymentComplete", orderGroup);
 	}
 
 }

@@ -9,7 +9,7 @@ $(document).ready(function(){
 		dataType: 'json',
 		success: function(data){
 			$.each(data, function(index, items) {
-				$('#store_toggle').append($('<option/>',{value: items.storeNum}).text(items.storeName))
+				$('#selectStore').append($('<option/>',{value: items.storeNum}).text(items.storeName))
 			});
 		},
 		error : function(err){
@@ -33,7 +33,7 @@ $(function(){
 				$('<div/>', {class: "cartList_start", id:"cart_index_one"})
 				.append($('<div/>', {class:"row", id:"cartList_head"})
 					.append($('<div/>', {class:"col-5", id:"checked_one_cart"})
-					.append($('<input/>', {type:"checkbox", class: "form-check-input", id:"check_one_cart"}).val(items.seqOrder)))
+					.append($('<input/>', {type:"checkbox", class: "form-check-input cart-list-checkbox", id:"check_one_cart"}).val(items.seqOrder)))
 					.append($('<div/>', { class: "col-7", id:"delete_cart_one"})
 					.append('<button type="button" id="deleteListBtn">X</button>')))
 
@@ -45,7 +45,7 @@ $(function(){
 					.append($('<div/>', { id: "menuName" }).text(items.menuName)))
 
 
-					.append($('<div/>', {class:"row", id:"row_option_price"})
+					.append($('<div/>', {class:"row menu-option", id:"row_option_price"})
 						.append($('<div/>', {class:"col-2", id:"takeoutOpt_col"})
 							.append($('<div/>', { id: "takeoutOpt", class: "takeoutOpt_"+index}).text(items.takeoutOpt)))
 						.append($('<div/>', {class:"col-2", id:"sizeOpt_col"})
@@ -57,12 +57,6 @@ $(function(){
 							.append($('<div/>', { id: "orderPrice", class: "orderPrice"}).text(items.orderPrice+"원")))
 						
 						)
-					
-
-						
-						
-
-						
 					.append($('<hr/>').css('margin-top', '16px'))
 					.appendTo($('#cart-list'))	
 					
@@ -113,7 +107,7 @@ $(document).on('change', '#store_toggle', function(){
 				$('<div/>', {class: "cartList_start", id:"cart_index_one"})
 				.append($('<div/>', {class:"row", id:"cartList_head"})
 					.append($('<div/>', {class:"col-5", id:"checked_one_cart"})
-					.append($('<input/>', {type:"checkbox", class: "form-check-input", id:"check_one_cart"}).val(items.seqOrder)))
+					.append($('<input/>', {type:"checkbox", class: "form-check-input cart-list-checkbox", id:"check_one_cart"}).val(items.seqOrder)))
 					.append($('<div/>', { class: "col-7", id:"delete_cart_one"})
 					.append('<button type="button" id="deleteListBtn">X</button>')))
 
@@ -125,7 +119,7 @@ $(document).on('change', '#store_toggle', function(){
 					.append($('<div/>', { id: "menuName" }).text(items.menuName)))
 
 
-					.append($('<div/>', {class:"row", id:"row_option_price"})
+					.append($('<div/>', {class:"row menu-option", id:"row_option_price"})
 						.append($('<div/>', {class:"col-2", id:"takeoutOpt_col"})
 							.append($('<div/>', { id: "takeoutOpt", class: "takeoutOpt_"+index}).text(items.takeoutOpt)))
 						.append($('<div/>', {class:"col-2", id:"sizeOpt_col"})
@@ -137,12 +131,6 @@ $(document).on('change', '#store_toggle', function(){
 							.append($('<div/>', { id: "orderPrice", class: "orderPrice"}).text(items.orderPrice+"원")))
 						
 						)
-					
-
-						
-						
-
-						
 					.append($('<hr/>').css('margin-top', '16px'))
 					.appendTo($('#cart-list'))	
 					
@@ -174,10 +162,101 @@ $(document).on('change', '#store_toggle', function(){
 	
 });
 
-//체크박스 클릭하면 cheched 속성 부여
+//체크박스 클릭하면 checked 속성 부여
 $(document).on('click','.cart-list-checkbox', function(){
-	//alert($(this).is(':checked'));
 	$(this).attr('checked', $(this).is(':checked'));	
+});
+
+$(document).on('click','#checkAll', function(){
+	$(this).attr('checked', $(this).is(':checked'));	
+});
+
+//전체 선택
+$(document).ready(function(){
+	$('#checkAll').click(function(){
+		if($(this).is(':checked')) $('.cart-list-checkbox').attr('checked',true);
+		else $('.cart-list-checkbox').attr('checked',false);
+	});
+	
+	$('.cart-list-checkbox').click(function(){
+		var total = $('.cart-list-checkbox').length;
+		var checked = $('.cart-list-checkbox:checked').length;
+		
+		if(total != checked) $('#checkAll').attr('checked',false);
+		else $('#checkAll').attr('checked',true);
+	});
+});
+
+//단일 삭제 버튼
+$(document).on('click', '.deleteListBtn', function(){
+	var seqOrder = $(this).prev().val();
+	
+	$.ajax({
+		type: 'get',
+		url: '/bitcafe/deleteSingleOrder',
+		data: 'seqOrder=' + seqOrder,
+		success: function(){
+			alert('장바구니에서 삭제되었습니다.');
+			location.reload();
+		},
+		error: function(err){
+			console.log(err);
+		}
+	});
+});
+
+//선택 삭제
+$('#deleteSomeBtn').click(function(){
+	var checkedArr = [];
+	$('.cart-list-checkbox:checked').each(function(i){
+		checkedArr.push($(this).val());
+	});
+	
+	var objParams = {
+		'checkedArr' : checkedArr
+	};
+	
+	$.ajax({
+		type: 'get',
+		url: '/bitcafe/deleteSomeOrder',
+		data: objParams,
+		success: function(){
+			alert('장바구니에서 삭제되었습니다.');
+			location.reload();
+		},
+		error: function(err){
+			console.log(err);
+		}
+		
+	});
+});
+
+//전체 삭제
+$('#deleteAllBtn').click(function(){ 
+	$('#checkAll').attr('checked',true);
+	
+	var checkedArr = [];
+	$('.cart-list-checkbox:checked').each(function(i){
+		checkedArr.push($(this).val());
+	});
+	
+	var objParams = {
+		'checkedArr' : checkedArr
+	};
+	
+	$.ajax({
+		type: 'get',
+		url: '/bitcafe/deleteSomeOrder',
+		data: objParams,
+		success: function(){
+			alert('장바구니에서 삭제되었습니다.');
+			location.reload();
+		},
+		error: function(err){
+			console.log(err);
+		}
+		
+	});
 });
 
 //주문하기 버튼 클릭했을 때 
@@ -189,7 +268,6 @@ $('#orderListBtn').click(function(){
 		
 	var orderGroup = Math.min.apply(null, checkedArr);
 	var storeNum = $('#storeNum').val();
-	alert('orderGroup = ' + orderGroup + 'storeNum = ' + storeNum);
 	var objParams = {
 		'id' : $('#id').val(),
 		'storeNum' : storeNum,
@@ -210,6 +288,5 @@ $('#orderListBtn').click(function(){
 	});
 	
 });
-
 
 

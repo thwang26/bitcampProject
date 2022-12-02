@@ -15,7 +15,7 @@
 <div class="container" ><!-- container start -->
    <form id="menuDetailsForm" method="post">
    <input type="hidden" id="seqMenu" name="seqMenu" value="${param.seqMenu }"> <!-- 메뉴시퀀스 -->
-   <input type="hidden" id="id" name="id" value="hong"> <!-- member id -->
+   <input type="hidden" id="id" name="id" value="${userId }"> <!-- member id -->
    <input type="text" id="storeNum" name="storeNum" value="${param.storeNum }">
    
    <div class="card" style="width: 90%;">

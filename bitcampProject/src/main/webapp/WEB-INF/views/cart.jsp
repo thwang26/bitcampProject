@@ -19,8 +19,7 @@
 <body>
 
 	<div class="container" ><!-- container start -->
-		<input type="hidden" id="id" value="hong">
-		
+		<input type="hidden" id="id" value="${userId }">
 		<!-- 머리 -->
 		
 			<div class="row" id="storeList_head">
@@ -28,7 +27,7 @@
 				<div class="col-8"><div class="storeViewHead" id="categoryHead">장바구니</div></div>
 			</div>
 			<div id="select_option_div">
-				<select class="form-select form-select-lg mb-3" aria-label="Default select example" id="store_toggle">
+				<select class="form-select form-select-lg mb-3" aria-label="Default select example" id="selectStore">
 					<option selected>결제를 진행할 매장을 선택해 주세요.</option>
 					<!-- ajax (선택 시 seqStore 저장 ) -->
 				</select>
@@ -36,12 +35,14 @@
 			<div id="select_box_all">주문 메뉴</div>
 			<div class="row" id="select_box_start">
 				<div class="col-5" id="checked_allMenu">
-					<input class="form-check-input" type="checkbox" value="" id="check_all_cart">
+					<input class="form-check-input" type="checkbox" value="" id="checkAll">
   					<label class="form-check-label" for="flexCheckDefault" id="all_checked">전체 선택</label>
 				</div>
 				<div class="col-7" id="check_other">
 					<span><a href="" style ="color:#360a01; text-decoration : none;">선택삭제</a></span> |
 					<span><a href="" style ="color:grey; text-decoration : none;">전체삭제</a></span>
+					<input type="button" id="deleteAllBtn" value="전체삭제"> |
+					<input type="button" id="deleteSomeBtn" value="선택삭제">
 				</div>
 			</div>
 		
@@ -52,7 +53,7 @@
 			</div>
 		</div>
 		
-			<input class="btn btn-primary" id="orderListBtn" type="button" value="주문하기">
+		<input class="btn btn-primary" id="orderListBtn" type="button" value="주문하기">
 		
 	</div><!-- container end -->
 

@@ -3,16 +3,17 @@ package com.order.service;
 import java.util.List;
 import java.util.Map;
 
-import com.order.bean.KakaoPayApprovalVO;
+import com.order.bean.ApproveResponse;
 import com.order.bean.OrderDTO;
+import com.order.bean.ReadyResponse;
 
 public interface OrderService {
 
-	public Map<String, Object> getOrderMenu(Map<String, Object> map);
+	public List<OrderDTO> getOrderMenu(int orderGroup);
 
-	public String kakaoPayReady(Map<String,Object> map);
+	//public String kakaoPayReady(Map<String,Object> map);
 	
-	public KakaoPayApprovalVO kakaoPayInfo(String pg_token);
+	//public KakaoPayApprovalVO kakaoPayInfo(String pg_token);
 
 	public List<OrderDTO> getCartList(String id);
 
@@ -21,5 +22,16 @@ public interface OrderService {
 	public void orderList(Map<String, Object> map);
 
 	public List<OrderDTO> getSelectCartList(Map<String, Object> map);
+
+	public ReadyResponse payReady(int orderGroup);
+
+	public ApproveResponse payApprove(String pgToken, int orderGroup);
+
+	public void deleteSingleOrder(int seqOrder);
+
+	public void deleteSomeOrder(List<Integer> checkedArr);
+
+	public void paymentComplete(int orderGroup);
+
 
 }

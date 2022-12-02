@@ -5,6 +5,7 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.collections4.map.HashedMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
@@ -16,10 +17,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import com.store.service.StoreService;
 
 import com.member.bean.MemberDTO;
 import com.other.service.OtherService;
-import com.store.service.StoreService;
 
 @Controller
 public class OtherController {
@@ -27,6 +28,9 @@ public class OtherController {
 	  @Autowired 
 	  private OtherService otherService;
 	 
+	/*
+	 * @Autowired private StoreService storeService;
+	 */
 
 	@RequestMapping(value = "/orderList", method = RequestMethod.GET)
 	public String orderList() {
@@ -84,14 +88,4 @@ public class OtherController {
 		System.out.println("asdfsadf");
 		otherService.updateGo(memberDTO);
 	}
-	/*
-	 * @GetMapping(value = "/memberOut")
-	 * 
-	 * @ResponseBody public void memberOut(@RequestParam(required = false,
-	 * defaultValue = ""){ }
-	 */
-	/*
-	 * @GetMapping("getUserInfo") public MemberDTO getUserInfo(String id)
-	 * { return storeService.getUserInfo(id); }
-	 */
 }

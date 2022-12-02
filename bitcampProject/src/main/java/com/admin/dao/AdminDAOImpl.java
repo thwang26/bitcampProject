@@ -45,13 +45,47 @@ public class AdminDAOImpl implements AdminDAO {
 	}
 
 	@Override
-	public String orderAlert() {
-		OrderDTO orderDTO = sqlSession.selectOne("adminSQL.orderAlert");
-		System.out.println(orderDTO);
+	public String orderAlert(String id) {
+		OrderDTO orderDTO = sqlSession.selectOne("adminSQL.orderAlert", id);
 		
 		if(orderDTO != null) {
 			return "alert";
 		}else return "null";
 	}
 
+	@Override
+	public void menuUpdate(MenuDTO menuDTO) {
+		sqlSession.update("adminSQL.menuUpdate", menuDTO);
+	}
+
+	@Override
+	public List<OrderDTO> orderLoad(String id) {
+		return sqlSession.selectList("adminSQL.orderLoad", id);
+	}
+
+	@Override
+	public void orderConfirm(int orderGroup) {
+		sqlSession.update("adminSQL.orderConfirm", orderGroup);
+	}
+
+	@Override
+	public void orderComplete(int orderGroup) {
+		sqlSession.update("adminSQL.orderComplete", orderGroup);
+	}
+
+	@Override
+	public void orderReject(int orderGroup) {
+		sqlSession.update("adminSQL.orderReject", orderGroup);
+	}
+
+	@Override
+	public List<OrderDTO> orderSales(int selectNum, String id) {
+		if(selectNum == 1){
+			return sqlSession.selectList("adminSQL.orderSales1", id);
+		}else if(selectNum == 2){
+			return sqlSession.selectList("adminSQL.orderSales2", id);
+		}else {
+			return sqlSession.selectList("adminSQL.orderSales3", id);
+		}
+	}
 }

@@ -1,29 +1,18 @@
-$('#logout').click(function(){
+$('#logoutBtn').click(function(){
+	//alert('로그아웃 하시겠습니까?');
 	if(confirm('로그아웃 하시겠습니까?')){
-		location.href='/bitcafe?num=1';
-	}
-});
-$('.ok').click(function(){
-	console.log($(this).parent().text());
-	alert($(this).parent().text()+ '주문을 접수하였습니다.');
-});
-$('.no').click(function(){
-	confirm('주문을 취소하시겠습니까?');
-});
-$('.end').click(function(){
-	confirm('준비를 완료하시겠습니까?');
-});
-$('.order').click(function(){
-	$.ajax({
-		url: '/bitcafe/getOrder',
-		dataType: 'json',
+		$.ajax({
+		url: '/bitcafe/adminLogout',
 		success: function(data){
-			alert("확인합니다.");
+			alert("로그아웃 되었습니다.");
+			location.href='/bitcafe?num=1';
 		},
 		error: function(err){
 			console.log(err);
 		}
 	});
+		
+	}
 });
 $(function(){
 	let query = window.location.search;
@@ -43,4 +32,11 @@ $(function(){
 		$('#menuDelete').addClass('menu-active');
 	
 	}
+});
+$(document).ready(function () {
+   if($('#id').val()){
+   }else{
+      alert('로그인 후 이용 가능합니다.');
+      location.href = '/bitcafe/loginForm';
+   }
 });

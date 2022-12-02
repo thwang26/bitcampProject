@@ -11,20 +11,17 @@
 </head>
 <body>
 <div id="wrap">
-   <%@ include file="page.jsp" %>
-   <div id="content">
-      <h3>접수된 주문</h3>
-      <div id="income"></div>
-      <h3>주문확정</h3>
-      <div id="confirm"></div>
-      <h3>완료</h3>
-      <div id="complete"></div>
-   </div><!-- content -->
+	<%@ include file="page.jsp" %>
+	<div id="orderContent" class="row">
+		<div id="order" class="col-3"><div id="head"><h4>접수된 주문</h4></div><br><div id="income"></div></div>
+		<div id="order" class="col-4"><div id="head"><h4>확정된 주문</h4></div><br><div id="confirm"></div></div>
+		<div id="order" class="col-4"><div id="head"><h4>완료된 주문</h4></div><br><div id="complete"></div></div>
+	</div><!-- content -->
 </div>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="/bitcafe/resources/js/admin.js"></script>
 <script type="text/javascript" src="/bitcafe/resources/js/orderLoad.js"></script>
-<!--<script type="text/javascript" src="/bitcafe/resources/js/orderAlert.js"></script>-->
+<!-- <script type="text/javascript" src="/bitcafe/resources/js/orderAlert.js"></script> -->
 </body>
 </html>

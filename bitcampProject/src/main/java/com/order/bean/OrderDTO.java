@@ -17,5 +17,4 @@ public class OrderDTO {
 	private int sizeOpt;
 	private int orderGroup;
 	private String storeName;
-	
 }

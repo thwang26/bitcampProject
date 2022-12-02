@@ -17,20 +17,14 @@
          <h1>Others</h1>
       </div>
       <br/>
-   <h3><a href="">${memName }</a>님 환영합니다!</h3>
+      <input type="hidden" value="${sessionScope.name}" id="hidden_memName">
+   <h3><a href="">${sessionScope.name }</a>님 환영합니다!</h3>
    <br/>
    <ul class="other">
    <div>
-      <button type="button" id="Btn" onClick="location.href='/bitcafe/DetailView'">
+      <button type="button" id="Btn" onClick="location.href='/bitcafe/cart'">
       <img src="/bitcafe/resources/img/others/장바구니.png" width="40" height="40"/>
       &nbsp;&nbsp;&nbsp;&nbsp;장바구니&nbsp;&nbsp;&nbsp;
-      </button>
-   </div>
-   <br/>
-   <div>
-      <button type="button" id="Btn" onClick="location.href='/bitcafe/orderList'">
-      <img src="/bitcafe/resources/img/others/주문내역.png" width="40" height="40"/>
-      &nbsp;&nbsp;&nbsp;&nbsp;주문내역&nbsp;&nbsp;&nbsp;
       </button>
    </div>
    <br/>
@@ -42,7 +36,7 @@
    </div>
    <br/>                      
    <div>
-      <button type="button" id="Btn">
+      <button type="button" id="logoutBtn">
       <img src="/bitcafe/resources/img/others/로그아웃.png" width="40" height="40"/>
       &nbsp;&nbsp;&nbsp;&nbsp;로그아웃&nbsp;&nbsp;&nbsp;
       </button>

@@ -44,10 +44,18 @@ $(function () {
 });
 
 $(document).on('click', '.nnn', function(){
-   var storeNum = $(this).find('input').val();
+    const urlParams = new URL(location.href).searchParams;
+	const seqMenu = urlParams.get('seqMenu');
+    var storeNum = $(this).find('input').val();
    //alert(storeNum);
-   location.href="/bitcafe/categoryList?storeNum="+storeNum;
    
+   //index에서 best메뉴 선택시 매장으로 and menuDetail로
+   if(seqMenu!=null){
+       location.href="/bitcafe/menuDetailsForm?storeNum="+storeNum+"&seqMenu="+seqMenu;
+    }else {
+       location.href="/bitcafe/categoryList?storeNum="+storeNum;
+
+   }
 
 });
 

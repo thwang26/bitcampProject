@@ -33,7 +33,7 @@ $(function(){
 				$('<div/>', { class: "cart-list-row"})
 					.append($('<div/>', { class: "cart-list-row-top"})
 						.append($('<input/>', {type:"checkbox", class: "cart-list-checkbox"}).val(items.seqOrder))
-						.append('<button type="button" id="deleteListBtn">X</button>'))
+						.append('<button type="button" id="deleteListBtn" class="deleteListBtn">X</button>'))
 					.append($('<div/>', { class: "cart-list-row-info"})
 						.append($('<input/>', {type:"hidden", id:"seqOrder"}).val(items.seqOrder))
 						.append($('<input/>', {type:"hidden", id:"storeNum"}).val(items.storeNum))
@@ -136,10 +136,101 @@ $(document).on('change', '#selectStore', function(){
 	
 });
 
-//체크박스 클릭하면 cheched 속성 부여
+//체크박스 클릭하면 checked 속성 부여
 $(document).on('click','.cart-list-checkbox', function(){
-	//alert($(this).is(':checked'));
 	$(this).attr('checked', $(this).is(':checked'));	
+});
+
+$(document).on('click','#checkAll', function(){
+	$(this).attr('checked', $(this).is(':checked'));	
+});
+
+//전체 선택
+$(document).ready(function(){
+	$('#checkAll').click(function(){
+		if($(this).is(':checked')) $('.cart-list-checkbox').attr('checked',true);
+		else $('.cart-list-checkbox').attr('checked',false);
+	});
+	
+	$('.cart-list-checkbox').click(function(){
+		var total = $('.cart-list-checkbox').length;
+		var checked = $('.cart-list-checkbox:checked').length;
+		
+		if(total != checked) $('#checkAll').attr('checked',false);
+		else $('#checkAll').attr('checked',true);
+	});
+});
+
+//단일 삭제 버튼
+$(document).on('click', '.deleteListBtn', function(){
+	var seqOrder = $(this).prev().val();
+	
+	$.ajax({
+		type: 'get',
+		url: '/bitcafe/deleteSingleOrder',
+		data: 'seqOrder=' + seqOrder,
+		success: function(){
+			alert('장바구니에서 삭제되었습니다.');
+			location.reload();
+		},
+		error: function(err){
+			console.log(err);
+		}
+	});
+});
+
+//선택 삭제
+$('#deleteSomeBtn').click(function(){
+	var checkedArr = [];
+	$('.cart-list-checkbox:checked').each(function(i){
+		checkedArr.push($(this).val());
+	});
+	
+	var objParams = {
+		'checkedArr' : checkedArr
+	};
+	
+	$.ajax({
+		type: 'get',
+		url: '/bitcafe/deleteSomeOrder',
+		data: objParams,
+		success: function(){
+			alert('장바구니에서 삭제되었습니다.');
+			location.reload();
+		},
+		error: function(err){
+			console.log(err);
+		}
+		
+	});
+});
+
+//전체 삭제
+$('#deleteAllBtn').click(function(){ 
+	$('#checkAll').attr('checked',true);
+	
+	var checkedArr = [];
+	$('.cart-list-checkbox:checked').each(function(i){
+		checkedArr.push($(this).val());
+	});
+	
+	var objParams = {
+		'checkedArr' : checkedArr
+	};
+	
+	$.ajax({
+		type: 'get',
+		url: '/bitcafe/deleteSomeOrder',
+		data: objParams,
+		success: function(){
+			alert('장바구니에서 삭제되었습니다.');
+			location.reload();
+		},
+		error: function(err){
+			console.log(err);
+		}
+		
+	});
 });
 
 //주문하기 버튼 클릭했을 때 
@@ -151,7 +242,6 @@ $('#orderListBtn').click(function(){
 		
 	var orderGroup = Math.min.apply(null, checkedArr);
 	var storeNum = $('#storeNum').val();
-	alert('orderGroup = ' + orderGroup + 'storeNum = ' + storeNum);
 	var objParams = {
 		'id' : $('#id').val(),
 		'storeNum' : storeNum,
@@ -172,6 +262,5 @@ $('#orderListBtn').click(function(){
 	});
 	
 });
-
 
 

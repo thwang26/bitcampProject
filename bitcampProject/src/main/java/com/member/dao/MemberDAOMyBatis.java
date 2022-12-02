@@ -22,8 +22,8 @@ public class MemberDAOMyBatis implements MemberDAO {
 	}
 
 	@Override
-	public MemberDTO getMember(String id) {
-		return sqlSession.selectOne("memberSQL.getMember", id);	
+	public MemberDTO getMember(MemberDTO memberDTO) {
+		return sqlSession.selectOne("memberSQL.getMember", memberDTO);	
 	}
 
 	@Override
@@ -39,6 +39,12 @@ public class MemberDAOMyBatis implements MemberDAO {
 	@Override
 	public String getPwd(String email) {
 		return sqlSession.selectOne("memberSQL.getPwd", email);
+	}
+
+	@Override
+	public MemberDTO getMember2(String id) {
+		return sqlSession.selectOne("memberSQL.getMember2", id);	
+	
 	}
 
 

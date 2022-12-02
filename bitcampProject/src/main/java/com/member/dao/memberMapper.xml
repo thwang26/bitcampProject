@@ -15,8 +15,12 @@
 		insert into member(seqMember, name, id, pwd, email, tel) values(seq_member.nextval, #{name}, #{id}, #{pwd}, #{email}, #{tel})
 	</insert>
 	
-	<select id="getMember" parameterType="String" resultType="member">
-		select * from member where id = #{id}
+	<select id="getMember" parameterType="member" resultType="member">
+		select * from member where id=#{id} and pwd = #{pwd}
+	</select>
+	
+	<select id="getMember2" parameterType="String" resultType="member">
+		select * from member where id=#{id}
 	</select>
 
 	 <select id="memberlogin" parameterType="member" resultType="member">

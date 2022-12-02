@@ -24,7 +24,7 @@
 		<c:if test="${sessionScope.name == null }">
 		BitCafe 오신걸<br>
 		환영합니다.<br>
-		<input type="button" value="로그인하기" onclick="로그인창으로..">
+		<input type="button" value="로그인하기" onclick="location.href='/bitcafe/loginForm/'">
 		</c:if>
 		<c:if test="${name !=null }">
 		<a href="아이디 누르면 회원정보수정하는 곳으로..">${name}</a>

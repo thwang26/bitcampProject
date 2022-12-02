@@ -1,10 +1,31 @@
 @charset "UTF-8";
 /* ----best menu css------*/
-#Recommend-Best-name{
-	text-align : left;
-	font-size: 0.7em;
-	
+
+.top-name #mainLogin{
+	background-color: #fcf5ef;
+    color: #6e6e6e;
+    border:none;
 }
+
+#Recommend-Best-name{
+	/* text-align : left; */
+	text-align : center;
+	font-size: 0.7em;
+	/* color: rgba(176,167,160,0.7); */	
+}
+
+#Recommend-Best-name #bestMenuReco{
+	color: rgba(141,68,0,0.7);
+}
+
+#Recommend-Best-name #bestMenuM{
+	color: rgba(141,68,0,0.7);
+}
+
+#Recommend-Best-name #Re-and-Be{
+	color: rgba(141,68,0,0.7);
+}
+
 .scroll-image {
     display:flex;
     flex-wrap:wrap;
@@ -69,9 +90,15 @@
 }
 /*-----event css-----------*/
 #event{
-top: 68%;
+top: 65%;
 /* position: relative; */
  position: absolute;
+}
+
+#eventGO{
+	font-size: 0.7em;
+	font-family: 'Marcellus', sans-serif;
+	color: rgba(141,68,0,0.7);
 }
 
 #event img{ 

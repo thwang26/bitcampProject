@@ -54,7 +54,7 @@ margin-top: 50%;
 		<tr>
 	   	    <th colspan="2" align="center">
 			<input type="button" id="loginBtn" value="로그인"  >
-			<input type="button" id="writeFormBtn" value="회원가입" onClick="location.href='memberwriteForm'">
+			<input type="button" id="writeFormBtn" value="회원가입" onClick="location.href='/bitcafe/memberwriteForm'">
 		    </th>
 		</tr>
 	
@@ -66,8 +66,8 @@ margin-top: 50%;
 		
 		<tr>
 			<th colspan="2" align="center">
-			<input type="button" id="memberIdSearchBtn" value="아이디 찾기" onClick="location.href='memberIdSearch'">
-			<input type="button" id="memberPwdSearchBtn" value="비밀번호 찾기" onClick="location.href='memberPwdSearch'">
+			<input type="button" id="memberIdSearchBtn" value="아이디 찾기" onClick="location.href='/bitcafe/memberIdSearch'">
+			<input type="button" id="memberPwdSearchBtn" value="비밀번호 찾기" onClick="location.href='/bitcafe/memberPwdSearch'">
 		</tr>
 		
 		

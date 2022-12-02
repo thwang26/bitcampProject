@@ -20,8 +20,8 @@ border: none;
 #eventListTable img{
 border-top-left-radius: 10px;
 border-top-right-radius: 10px;
-border-bottom-right-radius: 10px;
-border-bottom-left-radius: 10px;
+border-bottom-right-radius: 20px;
+border-bottom-left-radius: 20px;
 }
 
 </style>
@@ -35,11 +35,17 @@ border-bottom-left-radius: 10px;
 			rules="none"> <!-- rules밑으로 선 없애기 -->
 			
 			<tr>
-				<td style="width:300px; height:80px;"><span id="eventNameSpan"></span></td>
+			<td><img src="/bitcafe/resources/img/beanLogo.png" style="width:350px; height: 35px;"></td>
 			</tr>
+			
 			<tr>
-				<td style="width:300px; height:80px;"><span id="eventContentSpan"></span></td>
+				<td style="width:250px; height:80px; font-size: 1.5em;"><span id="eventNameSpan"></span></td>
 			</tr>
+			
+			<tr>
+				<td style="width:250px; height:80px; font-size: 1.2em;"><span id="eventContentSpan"></span></td>
+			</tr>
+			
 			<tr>
 				<td><span id="eventImgSpan"></span></td>
 			</tr>

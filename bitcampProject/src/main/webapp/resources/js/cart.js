@@ -9,7 +9,7 @@ $(document).ready(function(){
 		dataType: 'json',
 		success: function(data){
 			$.each(data, function(index, items) {
-				$('#selectStore').append($('<option/>',{value: items.storeNum}).text(items.storeName))
+				$('#store_toggle').append($('<option/>',{value: items.storeNum}).text(items.storeName))
 			});
 		},
 		error : function(err){
@@ -28,27 +28,46 @@ $(function(){
 		},
 		dataType: 'json',
 		success: function(data){
-			//alert(JSON.stringify(data));
+			alert(JSON.stringify(data));
 			$.each(data, function(index, items) {
-				$('<div/>', { class: "cart-list-row"})
-					.append($('<div/>', { class: "cart-list-row-top"})
-						.append($('<input/>', {type:"checkbox", class: "cart-list-checkbox"}).val(items.seqOrder))
-						.append('<button type="button" id="deleteListBtn">X</button>'))
-					.append($('<div/>', { class: "cart-list-row-info"})
-						.append($('<input/>', {type:"hidden", id:"seqOrder"}).val(items.seqOrder))
-						.append($('<input/>', {type:"hidden", id:"storeNum"}).val(items.storeNum))
-						.append($('<input/>', {type:"hidden", id:"orderGroup"}).val(items.orderGroup))
-						.append($('<div/>', { id: "menuName" }).text(items.menuName))
-						.append($('<div/>', { class: "menu-options-price"})
-							.append($('<div/>', { class: "menu-option" }).css("display", "inline-block")
-								//.append($('<div/>', { id: "takeoutOpt", class: "takeoutOpt", value: items.takeoutOpt}).css("display", "inline-block"))
-								.append($('<div/>', { id: "takeoutOpt", class: "takeoutOpt_"+index}).css("display", "inline-block").text(items.takeoutOpt))
-								.append($('<div/>', { id: "sizeOpt", class: "sizeOpt_"+index}).css("display", "inline-block").text(items.sizeOpt))
-								.append($('<div/>', { id: "shotOpt", class: "shotOpt_"+index}).css("display", "inline-block").text(items.shotOpt)))
-							.append($('<div/>', { id: "orderPrice", class: "orderPrice"}).css("display", "inline-block").text(items.orderPrice))))
+				$('<div/>', {class: "cartList_start", id:"cart_index_one"})
+				.append($('<div/>', {class:"row", id:"cartList_head"})
+					.append($('<div/>', {class:"col-5", id:"checked_one_cart"})
+					.append($('<input/>', {type:"checkbox", class: "form-check-input", id:"check_one_cart"}).val(items.seqOrder)))
+					.append($('<div/>', { class: "col-7", id:"delete_cart_one"})
+					.append('<button type="button" id="deleteListBtn">X</button>')))
+
+
+					.append($('<input/>', {type:"hidden", id:"seqOrder"}).val(items.seqOrder))
+					.append($('<input/>', {type:"hidden", id:"storeNum"}).val(items.storeNum))
+					.append($('<input/>', {type:"hidden", id:"orderGroup"}).val(items.orderGroup))
+					.append($('<div/>', {id:"menuName_div"})
+					.append($('<div/>', { id: "menuName" }).text(items.menuName)))
+
+
+					.append($('<div/>', {class:"row", id:"row_option_price"})
+						.append($('<div/>', {class:"col-2", id:"takeoutOpt_col"})
+							.append($('<div/>', { id: "takeoutOpt", class: "takeoutOpt_"+index}).text(items.takeoutOpt)))
+						.append($('<div/>', {class:"col-2", id:"sizeOpt_col"})
+							.append($('<div/>', { id: "sizeOpt", class: "sizeOpt_"+index}).text(items.sizeOpt)))
+						.append($('<div/>', {class:"col-2", id:"shotOpt_col"})
+							.append($('<div/>', { id: "shotOpt", class: "shotOpt_"+index}).text(items.shotOpt)))
+
+						.append($('<div/>', {class:"col-6", id:"orderPrice_col"})
+							.append($('<div/>', { id: "orderPrice", class: "orderPrice"}).text(items.orderPrice+"원")))
+						
+						)
+					
+
+						
+						
+
+						
 					.append($('<hr/>').css('margin-top', '16px'))
 					.appendTo($('#cart-list'))	
 					
+
+
 					var sizeOpt = items.sizeOpt;		
 					var takeoutOpt = items.takeoutOpt;
 					var shotOpt = items.shotOpt;
@@ -75,11 +94,11 @@ $(function(){
 	});
 });
 
-$(document).on('change', '#selectStore', function(){
+$(document).on('change', '#store_toggle', function(){
 	var storeNum =  $(this).val(); 
 	
 	if(storeNum == 'none') location.reload();
-	$('#cart-list .cart-list-row').remove();
+	$('.cartList_start').remove();
 	
 	$.ajax({
 		type: 'get',
@@ -91,25 +110,44 @@ $(document).on('change', '#selectStore', function(){
 		dataType: 'json',
 		success: function(data){
 			$.each(data, function(index, items) {
-				$('<div/>', { class: "cart-list-row"})
-					.append($('<div/>', { class: "cart-list-row-top"})
-						.append($('<input/>', {type:"checkbox", class: "cart-list-checkbox"}).val(items.seqOrder))
-						.append('<button type="button" id="deleteListBtn">X</button>'))
-					.append($('<div/>', { class: "cart-list-row-info"})
-						.append($('<input/>', {type:"hidden", id:"seqOrder"}).val(items.seqOrder))
-						.append($('<input/>', {type:"hidden", id:"storeNum"}).val(items.storeNum))
-						.append($('<input/>', {type:"hidden", id:"orderGroup"}).val(items.orderGroup))
-						.append($('<div/>', { id: "menuName" }).text(items.menuName))
-						.append($('<div/>', { class: "menu-options-price"})
-							.append($('<div/>', { class: "menu-option" }).css("display", "inline-block")
-								//.append($('<div/>', { id: "takeoutOpt", class: "takeoutOpt", value: items.takeoutOpt}).css("display", "inline-block"))
-								.append($('<div/>', { id: "takeoutOpt", class: "takeoutOpt_"+index}).css("display", "inline-block").text(items.takeoutOpt))
-								.append($('<div/>', { id: "sizeOpt", class: "sizeOpt_"+index}).css("display", "inline-block").text(items.sizeOpt))
-								.append($('<div/>', { id: "shotOpt", class: "shotOpt_"+index}).css("display", "inline-block").text(items.shotOpt)))
-							.append($('<div/>', { id: "orderPrice", class: "orderPrice"}).css("display", "inline-block").text(items.orderPrice))))
+				$('<div/>', {class: "cartList_start", id:"cart_index_one"})
+				.append($('<div/>', {class:"row", id:"cartList_head"})
+					.append($('<div/>', {class:"col-5", id:"checked_one_cart"})
+					.append($('<input/>', {type:"checkbox", class: "form-check-input", id:"check_one_cart"}).val(items.seqOrder)))
+					.append($('<div/>', { class: "col-7", id:"delete_cart_one"})
+					.append('<button type="button" id="deleteListBtn">X</button>')))
+
+
+					.append($('<input/>', {type:"hidden", id:"seqOrder"}).val(items.seqOrder))
+					.append($('<input/>', {type:"hidden", id:"storeNum"}).val(items.storeNum))
+					.append($('<input/>', {type:"hidden", id:"orderGroup"}).val(items.orderGroup))
+					.append($('<div/>', {id:"menuName_div"})
+					.append($('<div/>', { id: "menuName" }).text(items.menuName)))
+
+
+					.append($('<div/>', {class:"row", id:"row_option_price"})
+						.append($('<div/>', {class:"col-2", id:"takeoutOpt_col"})
+							.append($('<div/>', { id: "takeoutOpt", class: "takeoutOpt_"+index}).text(items.takeoutOpt)))
+						.append($('<div/>', {class:"col-2", id:"sizeOpt_col"})
+							.append($('<div/>', { id: "sizeOpt", class: "sizeOpt_"+index}).text(items.sizeOpt)))
+						.append($('<div/>', {class:"col-2", id:"shotOpt_col"})
+							.append($('<div/>', { id: "shotOpt", class: "shotOpt_"+index}).text(items.shotOpt)))
+
+						.append($('<div/>', {class:"col-6", id:"orderPrice_col"})
+							.append($('<div/>', { id: "orderPrice", class: "orderPrice"}).text(items.orderPrice+"원")))
+						
+						)
+					
+
+						
+						
+
+						
 					.append($('<hr/>').css('margin-top', '16px'))
 					.appendTo($('#cart-list'))	
 					
+
+
 					var sizeOpt = items.sizeOpt;		
 					var takeoutOpt = items.takeoutOpt;
 					var shotOpt = items.shotOpt;

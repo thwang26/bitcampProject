@@ -6,9 +6,58 @@ body, div, dl,dt,dd,ul,ol,li, h1,h2,h3,h4,h5,h6, form, fieldset, p, button {
 }
 
 
-/* 매장선택 헤드  */
-header{
-	width: auto;
+
+#select_option_div {
+	width: 100%;
+	margin: 0;
+	background-color: #fcf5ef;
+
+}
+
+#store_toggle {
+	width: 80%;
+	margin: auto;
+	background-color: #fcf5ef;
+	color: grey;
+}
+#select_box_all {
+	width: 100%;
+	margin: 0;
+	text-align: center;
+	background-color: #fcf5ef;
+	font-size: 20pt;
+	font-weight: bold;
+}
+
+#select_box_start {
+	width: 90%;
+	margin: 0;
+	background-color: #fcf5ef;
+}
+
+#check_all_cart {
+	margin-top: 13px;
+	width: 25px;
+	height: 25px;
+}
+#checked_allMenu {
+	text-align: left;
+}
+#all_checked {
+	font-size: 17pt;
+	color: grey;
+}
+#check_other {
+	padding-top: 10px;
+	text-align: right;
+	font-size: 17pt;
+}
+
+
+
+/* 메뉴 선택 헤드  */
+#header1 {
+	width: 100%;
 	margin: auto;
 	
 	align-items: stretch;
@@ -18,13 +67,11 @@ header{
 	position: fixed;
 	top: 0;
 	flex: 0 0 auto;
-	
 }
-
 #storeList_head{
 	background: #fcf5ef;
-	margin: auto;
-	width: 90%;
+	margin: 0;
+	width: 100%;
 }
 
 .storeViewHead{
@@ -34,89 +81,32 @@ img, fieldset {
 	border: 0;
 }
 #goback_icon{
-	background: #fcf5ef;
 	width: 70px;
 	height: 70px;
 	cursor: pointer; 
 }
-#search_DIV{
-	width: 80%;
-	margin: auto;
-	padding-top: 20px;
-	margin-bottom: 30px;
-	background: #fcf5ef;
-}
 
-#inputGroup-sizing-default, #button-addon2{
-	background-color: #fcf5ef;
+
+
+
+/* 메뉴 리스트부분 */ 
+#menuStart{
+	margin-top: 100px;
+	margin-bottom: 60px;
 }
 
 
-/* 매장리스트부분 */ 
 
-#storeList_all{
-	width: 600px;
-}
 
-#store_List{
-	position: relative;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: stretch;
-	width: 100%;
-	margin: auto;
-}
-#store_thumb{
-	width: 100px;
-	height: 100px;	
-}
-
-#store_info{
-	padding-top: 12px;
-	width: 350;
-	text-align: left;
-}
-
-#store_name{
-	width: auto;
-	font-weight: bold;
-	font-size: 22px;
-}
-#store_addr{
-	width: auto;
-	font-size: 17px;
-	color: grey;
-}
-#store_tel{
-	width: auto;
-	font-size: 18px;
-		
-}
-#phone_img{
-	margin-top: 6px;
-	margin-right: 5px;
-	margin-left: 3px;
-}
-#store_img_each{
-	display: flex;
-    justify-content: center;
-    padding-top: 12px;
-}
-
-#store_tel{
-	background-image: url("bitcafe/resources/img/phone1.jpg");
-	background-position: 20px 20px;
-	background-position: left;
-}
 
 #scroll_list {
 	position: relative;
 	flex-wrap: wrap;
 	align-items: stretch;
-	width: 85%;
+	width: 90%;
 	margin: auto;
-	margin-top: 110px;
-	margin-bottom: 60px;
+	margin-top: 10px;
+	margin-bottom: 30px;
 	display: flex;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
@@ -125,24 +115,95 @@ img, fieldset {
     display: none; /* Chrome, Safari, Opera*/
 }
 
+/* ajax */
+#cart-list {
+	width: 100%;
+	margin: 0;
+}
+#cart_index_one {
+	width: 100%;
+	margin: 0;
+}
+#cartList_head {
+	width: 100%;
+	margin: 0;
+}
+#delete_cart_one {
+
+	text-align: right;
+}
+#deleteListBtn {
+	width: 30px;
+	height: 30px;
+	background-color: #fcf5ef;
+	font-size: 15pt;
+}
+#checked_one_cart {
+	text-align: left;
+}
+#check_one_cart {
+	width: 25px;
+	height: 25px;
+}
+
+
+#menuName_div {
+	width: 100%;
+	margin: 0;
+	padding-left: 50px;
+	text-align: left;
+}
+
 
 
 #box_wrap{
 	width: auto;
 	height: auto;
 }
-#categoryStart{
-	width: 600px;
+#orderBtn_div{
+	width: auto;
+	margin: auto;
+	margin-bottom: 80px;
+}
+#orderListBtn {
+	width: 500px;
+	height: 60px;
+	margin: auto;
+	background-color: #360a01;
+	margin-bottom: 140px;
+}
+#row_option_price {
+	padding-left: 60px;
+	font-size: 14pt;
+}
+#takeoutOpt_col {
+	color: #a9a9a9;
+	padding: 0;
+}
+#sizeOpt_col {
+	color: #a9a9a9;	
+	padding: 0;
+}
+#shotOpt_col {
+	color: #a9a9a9;	
+	padding: 0;
+}
+#orderPrice_col {
+	font-weight: bold;
+	font-size: 17pt;
+	padding-right: 70px;
+	text-align: right;
 }
 
-
-
-
-
-
-
-
 /* *************************************************************** */
+
+
+
+
+
+
+
+
 
 li {
 	list-style: none;
@@ -159,7 +220,6 @@ img {
 /* container(640px)을 제외한 좌우 흰 여백 */
 body {
 	overflow-y: scroll;
-	overflow-x: hidden;
 	background: white;
 }
 /* 전체화면(container), 하단 탭(menu) 크기 및 옵션 */

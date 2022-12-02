@@ -11,7 +11,7 @@ public interface MenuDAO {
 
 	public MenuDTO getMenu(int seqMenu);
 
-	public void orderMenu(OrderDTO orderDTO);
+	public int orderMenu(OrderDTO orderDTO);
 
 	List<CategoryDTO> getCategory();
 

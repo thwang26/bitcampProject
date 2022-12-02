@@ -23,20 +23,6 @@
 			</th>
 		</tr>
 		<tr>
-			<th colspan="2">수정 할 아이디 입력</th>
-		</tr>
-		<tr>
-			<td colspan="2">
-				<input type="text" id="searchId" size="33">
-				<input type="button" id="searchIdBtn" style="width: 60px;"value="검색">
-			</td>
-		</tr>
-		<tr>
-			<th colspan="2">
-			<br/>
-			</th>
-		</tr>
-		<tr>
 			<th colspan="2">아이디</th>
 		</tr>
 		<tr>
@@ -136,7 +122,7 @@
 			<td colspan="2">
 				<div>
 					<button type="button" id="updateBtn">회원정보수정</button>
-					<button type="reset"  id="resetBtn">다시작성</button>
+					<button type="button"  id="resetBtn" onClick="location.href='/bitcafe/updateMem'">다시작성</button>
 				</div>
 			</td>
 		</tr>

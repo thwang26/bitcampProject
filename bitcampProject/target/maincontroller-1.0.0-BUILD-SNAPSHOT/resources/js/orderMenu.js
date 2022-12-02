@@ -11,12 +11,10 @@ $(function(){
 			console.log(data);
 			$('#menuName').val(data.MENUNAME);
 			$('#orderPrice').val(data.ORDERPRICE);
-			$('#seqOrder').val(data.SEQORDER);
 			$('#qty').val(data.QTY);
 			$('#sizeOpt').val(data.SIZEOPT);
 			$('#takeoutOpt').val(data.TAKEOUTOPT);
 			$('#shotOpt').val(data.SHOTOPT);
-			$('#storeNum').val(data.STORENUM);
 			$('#storeName').val(data.STORENAME);
 			$('#storeAddr').val(data.STOREADDR);
 			
@@ -30,7 +28,6 @@ $(function(){
 			if(takeoutOpt == '0') $('#takeoutOpt').prop('value','매장컵');
 			else if(takeoutOpt == '1') $('#takeoutOpt').prop('value','개인컵');
 			else if(takeoutOpt == '2') $('#takeoutOpt').prop('value','일회용컵');
-			
 		},
 		error: function(err){
 			console.log(err);
@@ -38,18 +35,19 @@ $(function(){
 	});
 });
 
-$(document).on('click', $('#orderMenuBtn'), function(){
-	$.ajax({
-		type: 'post',
-		url: '/bitcafe/kakaoPay',
-		data: $('#orderMenuForm').serialize(),
-		success: function(data){
-			alert(data);
-			location.href = data;	
-		},
-		error: function(err){
-			console.log(err);
-		}
-	});		
+$(function(){
+	$('#orderMenuBtn').click(function(){
+		$.ajax({
+			type: 'post',
+			url: '/bitcafe/kakaoPay',
+			data: $('#orderMenuForm').serialize(),
+			dataTypes: 'json',
+			success: function(data){
+				location.href = data.next_redirect_pc_url;	
+			},
+			error: function(err){
+				console.log(err);
+			}
+		});
+	});
 });
-	

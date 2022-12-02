@@ -20,6 +20,8 @@
 	<context:component-scan base-package="com.store.service"/>
 	<context:component-scan base-package="com.event.dao"/>
 	<context:component-scan base-package="com.event.service"/>
+	<context:component-scan base-package="com.other.dao" />
+	<context:component-scan base-package="com.other.service" />
 	
 	<!-- navermail설정 -->
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">

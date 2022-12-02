@@ -35,10 +35,10 @@ border-bottom-left-radius: 10px;
 			rules="none"> <!-- rules밑으로 선 없애기 -->
 			
 			<tr>
-				<td style="width: 300"><span id="eventNameSpan"></span></td>
+				<td style="width:300px; height:80px;"><span id="eventNameSpan"></span></td>
 			</tr>
 			<tr>
-				<td style="width: 300"><span id="eventContentSpan"></span></td>
+				<td style="width:300px; height:80px;"><span id="eventContentSpan"></span></td>
 			</tr>
 			<tr>
 				<td><span id="eventImgSpan"></span></td>

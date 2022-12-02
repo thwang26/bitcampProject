@@ -22,7 +22,7 @@ $(function () {
                         .append($('<div/>', { class: "row", id: "row_tel" })
                             .append($('<div/>', { class: "col-1", id: "col_phoneIcon" })
                                 .append($('<img/>', {
-                                    src: "./resources/img/phone1.jpg",
+                                    src: "http://localhost:8080/bitcafe/resources/img/phone1.jpg",
                                     alt: "phone1",
                                     id: "phone_img"
                                 })
@@ -42,6 +42,7 @@ $(function () {
     });
 
 });
+
 $(document).on('click', '.nnn', function(){
    var storeNum = $(this).find('input').val();
    //alert(storeNum);

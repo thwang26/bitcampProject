@@ -23,9 +23,10 @@ public class MenuDAOImpl implements MenuDAO {
 	}
 
 	@Override
-	public void orderMenu(OrderDTO orderDTO) {
+	public int orderMenu(OrderDTO orderDTO) {
 		sqlSession.insert("menuSQL.orderMenu", orderDTO);
-		
+		int orderGroup = sqlSession.selectOne("menuSQL.orderMenu2");
+		return orderGroup;
 	}
 
 	@Override

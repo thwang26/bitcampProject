@@ -1,5 +1,6 @@
 package com.order.dao;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
@@ -16,8 +17,44 @@ public class OrderDAOImpl implements OrderDAO {
 	private SqlSession sqlSession;
 
 	@Override
-	public Map<String, Object> getOrderMenu(Map<String, Object> map) {
-		return sqlSession.selectOne("orderSQL.getOrderMenu", map);
+	public List<OrderDTO> getOrderMenu(int orderGroup) {
+		return sqlSession.selectList("orderSQL.getOrderMenu", orderGroup);
+	}
+
+	@Override
+	public List<OrderDTO> getCartList(String id) {
+		return sqlSession.selectList("orderSQL.getCartList", id);
+	}
+
+	@Override
+	public List<OrderDTO> getUserStore(String id) {
+		return sqlSession.selectList("orderSQL.getUserStore", id);
+	}
+
+	@Override
+	public void orderList(Map<String, Object> map) {
+		sqlSession.update("orderSQL.orderList", map);
+	}
+
+	@Override
+	public List<OrderDTO> getSelectCartList(Map<String, Object> map) {
+		return sqlSession.selectList("orderSQL.getSelectCartList", map);
+	}
+
+	@Override
+	public void deleteSingleOrder(int seqOrder) {
+		sqlSession.delete("orderSQL.deleteSingleOrder", seqOrder);
+		
+	}
+
+	@Override
+	public void deleteSomeOrder(List<Integer> checkedArr) {
+		sqlSession.delete("orderSQL.deleteSomeOrder", checkedArr);	
+	}
+
+	@Override
+	public void paymentComplete(int orderGroup) {
+		sqlSession.update("orderSQL.paymentComplete", orderGroup);
 	}
 
 }

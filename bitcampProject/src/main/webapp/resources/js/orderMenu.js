@@ -3,33 +3,49 @@ $(function(){
 		type: 'get',
 		url: '/bitcafe/getOrderMenu',
 		data: {
-				'id': $('#id').val(),
-				'storeNum': $('#storeNum').val()
+				'orderGroup': $('#orderGroup').val()
 			  },
 		dataType: 'json',
 		success: function(data){
-			console.log(data);
-			$('#menuName').val(data.MENUNAME);
-			$('#orderPrice').val(data.ORDERPRICE);
-			$('#seqOrder').val(data.SEQORDER);
-			$('#qty').val(data.QTY);
-			$('#sizeOpt').val(data.SIZEOPT);
-			$('#takeoutOpt').val(data.TAKEOUTOPT);
-			$('#shotOpt').val(data.SHOTOPT);
-			$('#storeNum').val(data.STORENUM);
-			$('#storeName').val(data.STORENAME);
-			$('#storeAddr').val(data.STOREADDR);
+			var totalPrice= 0;
+			$.each(data, function(index, items) {
+				$('<div/>', { class: "order-list-row"})
+					.append($('<div/>', { class: "cart-list-row-info"})
+						.append($('<input/>', {type:"hidden", id:"seqOrder"}).val(items.seqOrder))
+						.append($('<input/>', {type:"hidden", id:"storeNum"}).val(items.storeNum))
+						.append($('<input/>', {type:"hidden", id:"orderGroup"}).val(items.orderGroup))
+						.append($('<div/>', { id: "menuName" }).text(items.menuName))
+						.append($('<div/>', { class: "menu-options-price"})
+							.append($('<div/>', { class: "menu-option" }).css("display", "inline-block")
+								.append($('<div/>', { id: "takeoutOpt", class: "takeoutOpt_"+index}).css("display", "inline-block").text(items.takeoutOpt))
+								.append($('<div/>', { id: "sizeOpt", class: "sizeOpt_"+index}).css("display", "inline-block").text(items.sizeOpt))
+								.append($('<div/>', { id: "shotOpt", class: "shotOpt_"+index}).css("display", "inline-block").text(items.shotOpt)))
+							.append($('<div/>', { id: "orderPrice", class: "orderPrice"}).css("display", "inline-block").text(items.orderPrice))))
+					.append($('<hr/>').css('margin-top', '16px'))
+					.appendTo($('#order-list'))	
+					
+				var sizeOpt = items.sizeOpt;		
+				var takeoutOpt = items.takeoutOpt;
+				var shotOpt = items.shotOpt;
+				
+				if(sizeOpt == '0') $('.sizeOpt_'+index).text('Small');
+				else if(sizeOpt == '1') $('.sizeOpt_'+index).text('Regular');
+				else if(sizeOpt == '2') $('.sizeOpt_'+index).text('Large');
+				
+				if(takeoutOpt == '0') $('.takeoutOpt_'+index).text('매장컵');
+				else if(takeoutOpt == '1') $('.takeoutOpt_'+index).text('개인컵');
+				else if(takeoutOpt == '2') $('.takeoutOpt_'+index).text('일회용컵'); 
+				
+				if(shotOpt == '0') $('.shotOpt_'+index).hide();
+				else $('.shotOpt_'+index).text(shotOpt + "샷 추가");
+				
+				$('#storeName').text(items.storeName + "점에서 수령");
+				
+				totalPrice += parseInt(items.orderPrice); 
+					
+			}); //each
 			
-			var sizeOpt = $('#sizeOpt').val();
-			var takeoutOpt = $('#takeoutOpt').val();
-			
-			if(sizeOpt == '0') $('#sizeOpt').prop('value','Small');
-			else if(sizeOpt == '1') $('#sizeOpt').prop('value','Regular');
-			else if(sizeOpt == '2') $('#sizeOpt').prop('value','Large');
-			
-			if(takeoutOpt == '0') $('#takeoutOpt').prop('value','매장컵');
-			else if(takeoutOpt == '1') $('#takeoutOpt').prop('value','개인컵');
-			else if(takeoutOpt == '2') $('#takeoutOpt').prop('value','일회용컵');
+			$('#totalPrice').attr('value', totalPrice).text(totalPrice);
 			
 		},
 		error: function(err){
@@ -41,11 +57,13 @@ $(function(){
 $(document).on('click', $('#orderMenuBtn'), function(){
 	$.ajax({
 		type: 'post',
-		url: '/bitcafe/kakaoPay',
-		data: $('#orderMenuForm').serialize(),
+		url: '/bitcafe/pay',
+		data: {
+			'orderGroup' : $('#orderGroup').val()
+		},
 		success: function(data){
-			alert(data);
-			location.href = data;	
+			console.log(JSON.stringify(data));
+			location.href = data.next_redirect_pc_url;	
 		},
 		error: function(err){
 			console.log(err);

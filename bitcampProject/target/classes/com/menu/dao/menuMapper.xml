@@ -39,6 +39,10 @@
 									 , seq_order.NEXTVAL)
 	</insert>
 	
+	<select id="orderMenu2" resultType="int">
+		select seq_order.currval as orderGroup from dual
+	</select>
+	
 	<!-- 장바구니 담기 -->
 	<insert id="addCart" parameterType="order">
 		insert into orderinform values(seq_order.NEXTVAL

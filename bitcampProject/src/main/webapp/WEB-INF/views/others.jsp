@@ -36,7 +36,7 @@
    </div>
    <br/>                      
    <div>
-      <button type="button" id="logoutBtn">
+      <button type="button" id="Btn">
       <img src="/bitcafe/resources/img/others/로그아웃.png" width="40" height="40"/>
       &nbsp;&nbsp;&nbsp;&nbsp;로그아웃&nbsp;&nbsp;&nbsp;
       </button>

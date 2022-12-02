@@ -18,7 +18,7 @@ div#menuNameDiv, div#menuContentDiv, div#menuPriceDiv {
 <body>
 <div id="wrap">
 	<%@ include file="page.jsp" %>
-	<div id="content" class="row">
+	<div id="formContent" class="row">
 	<div class="col-10">
 	<form name="menuInsertForm" id="menuInsertForm" method="">
 		<table cellpadding="5" cellspacing="0" class="table table-sm" id="menuInsertTable">
@@ -74,5 +74,6 @@ div#menuNameDiv, div#menuContentDiv, div#menuPriceDiv {
 <script type="text/javascript" src="/bitcafe/resources/js/admin.js"></script>
 <script type="text/javascript" src="/bitcafe/resources/js/menuInsert.js"></script>
 <script type="text/javascript" src="/bitcafe/resources/js/imgUpload.js"></script>
+<script type="text/javascript" src="/bitcafe/resources/js/orderAlert.js"></script>
 </body>
 </html>

@@ -12,11 +12,11 @@
 <body>
 <div id="wrap">
 	<%@ include file="page.jsp" %>
-	
-	<div id="content">
+	<div id="salesContent">
 		<select name="orderNum" id="orderNum">
 			<option value="">매출</option>
 		</select>
+		<br/><br/>
 	</div><!-- content -->
 </div>
 

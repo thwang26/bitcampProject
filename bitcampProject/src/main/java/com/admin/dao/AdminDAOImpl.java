@@ -45,8 +45,8 @@ public class AdminDAOImpl implements AdminDAO {
 	}
 
 	@Override
-	public String orderAlert() {
-		OrderDTO orderDTO = sqlSession.selectOne("adminSQL.orderAlert");
+	public String orderAlert(String id) {
+		OrderDTO orderDTO = sqlSession.selectOne("adminSQL.orderAlert", id);
 		
 		if(orderDTO != null) {
 			return "alert";
@@ -59,36 +59,33 @@ public class AdminDAOImpl implements AdminDAO {
 	}
 
 	@Override
-	public List<OrderDTO> orderLoad() {
-		return sqlSession.selectList("adminSQL.orderLoad");
+	public List<OrderDTO> orderLoad(String id) {
+		return sqlSession.selectList("adminSQL.orderLoad", id);
 	}
 
 	@Override
-	public void orderConfirm(int seqOrder) {
-		sqlSession.update("adminSQL.orderConfirm", seqOrder);
+	public void orderConfirm(int orderGroup) {
+		sqlSession.update("adminSQL.orderConfirm", orderGroup);
 	}
 
 	@Override
-	public void orderComplete(int seqOrder) {
-		sqlSession.update("adminSQL.orderComplete", seqOrder);
+	public void orderComplete(int orderGroup) {
+		sqlSession.update("adminSQL.orderComplete", orderGroup);
 	}
 
 	@Override
-	public void orderReject(int seqOrder) {
-		sqlSession.update("adminSQL.orderReject", seqOrder);
+	public void orderReject(int orderGroup) {
+		sqlSession.update("adminSQL.orderReject", orderGroup);
 	}
 
 	@Override
-	public List<OrderDTO> orderSales(int selectNum) {
+	public List<OrderDTO> orderSales(int selectNum, String id) {
 		if(selectNum == 1){
-			System.out.println(selectNum);
-			return sqlSession.selectList("adminSQL.orderSales1");
+			return sqlSession.selectList("adminSQL.orderSales1", id);
 		}else if(selectNum == 2){
-			System.out.println(selectNum);
-			return sqlSession.selectList("adminSQL.orderSales2");
+			return sqlSession.selectList("adminSQL.orderSales2", id);
 		}else {
-			System.out.println(selectNum);
-			return sqlSession.selectList("adminSQL.orderSales3");
+			return sqlSession.selectList("adminSQL.orderSales3", id);
 		}
 	}
 }

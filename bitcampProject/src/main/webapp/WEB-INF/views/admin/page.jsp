@@ -6,7 +6,13 @@
 		<strong>BitCafe</strong>
 	</a>
 	<div id="admin">
-		<div id="welcome">관리자(${name })님 환영합니다!</div>
+		<input type="hidden" value=${name } id="name" />
+		<input type="hidden" value=${userId } id="id" />
+		<!-- <label>
+			<input role="switch" type="checkbox" id="checkbox"/>
+			<span>주문알림  </span>
+		</label> -->
+		<div style="cursor: pointer;" id="welcome" onclick="location.href='/bitcafe/';">관리자(${name })님 환영합니다!</div>
 		<input type="button" value="로그아웃" id="logoutBtn"/>
 	</div>
 </div><!-- header -->

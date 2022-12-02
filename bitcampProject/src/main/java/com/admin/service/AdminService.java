@@ -17,18 +17,18 @@ public interface AdminService {
 
 	public MenuDTO menuUpdateForm(int seqMenu);
 
-	public String orderAlert();
+	public String orderAlert(String id);
 
 	public void menuUpdate(MenuDTO menuDTO);
 
-	public List<OrderDTO> orderLoad();
+	public List<OrderDTO> orderLoad(String id);
 
-	public void orderConfirm(int seqOrder);
+	public void orderConfirm(int orderGroup);
 
-	public void orderComplete(int seqOrder);
+	public void orderComplete(int orderGroup);
 
-	public void orderReject(int seqOrder);
+	public void orderReject(int orderGroup);
 
-	public List<OrderDTO> orderSales(int selectNum);
+	public List<OrderDTO> orderSales(int selectNum, String id);
 	
 }

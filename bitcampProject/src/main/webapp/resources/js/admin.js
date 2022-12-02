@@ -33,3 +33,10 @@ $(function(){
 	
 	}
 });
+$(document).ready(function () {
+   if($('#id').val()){
+   }else{
+      alert('로그인 후 이용 가능합니다.');
+      location.href = '/bitcafe/loginForm';
+   }
+});

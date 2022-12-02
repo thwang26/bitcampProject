@@ -42,8 +42,8 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public String orderAlert() {
-		return adminDAO.orderAlert();
+	public String orderAlert(String id) {
+		return adminDAO.orderAlert(id);
 	}
 
 	@Override
@@ -52,27 +52,27 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public List<OrderDTO> orderLoad() {
-		return adminDAO.orderLoad();
+	public List<OrderDTO> orderLoad(String id) {
+		return adminDAO.orderLoad(id);
 	}
 
 	@Override
-	public void orderConfirm(int seqOrder) {
-		adminDAO.orderConfirm(seqOrder);
+	public void orderConfirm(int orderGroup) {
+		adminDAO.orderConfirm(orderGroup);
 	}
 
 	@Override
-	public void orderComplete(int seqOrder) {
-		adminDAO.orderComplete(seqOrder);
+	public void orderComplete(int orderGroup) {
+		adminDAO.orderComplete(orderGroup);
 	}
 
 	@Override
-	public void orderReject(int seqOrder) {
-		adminDAO.orderReject(seqOrder);
+	public void orderReject(int orderGroup) {
+		adminDAO.orderReject(orderGroup);
 	}
 
 	@Override
-	public List<OrderDTO> orderSales(int selectNum) {
-		return adminDAO.orderSales(selectNum);
+	public List<OrderDTO> orderSales(int selectNum, String id) {
+		return adminDAO.orderSales(selectNum, id);
 	}
 }

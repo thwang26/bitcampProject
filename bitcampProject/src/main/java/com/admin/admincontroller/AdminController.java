@@ -31,7 +31,7 @@ public class AdminController {
 	
 	@RequestMapping(value="/admin")
 	public String index() {
-		return "/admin/admin";
+		return "/admin/orderMenuList";
 	}
 	
 	@RequestMapping(value="/orderMenuList")
@@ -91,38 +91,38 @@ public class AdminController {
 	
 	@RequestMapping(value="/orderAlert", method=RequestMethod.GET)
 	@ResponseBody
-	public String orderAlert() {
-		return adminService.orderAlert();
+	public String orderAlert(@RequestParam String id) {
+		return adminService.orderAlert(id);
 	}
 	
 	@RequestMapping(value="/orderLoad", method=RequestMethod.GET)
 	@ResponseBody
-	public List<OrderDTO> orderLoad() {
-		return adminService.orderLoad();
+	public List<OrderDTO> orderLoad(@RequestParam String id) {
+		return adminService.orderLoad(id);
 	}
 	
 	@RequestMapping(value="/orderConfirm", method=RequestMethod.GET)
 	@ResponseBody
-	public void orderConfirm(@RequestParam int seqOrder) {
-		adminService.orderConfirm(seqOrder);
+	public void orderConfirm(@RequestParam int orderGroup) {
+		adminService.orderConfirm(orderGroup);
 	}
 	
 	@RequestMapping(value="/orderComplete", method=RequestMethod.GET)
 	@ResponseBody
-	public void orderComplete(@RequestParam int seqOrder) {
-		adminService.orderComplete(seqOrder);
+	public void orderComplete(@RequestParam int orderGroup) {
+		adminService.orderComplete(orderGroup);
 	}
 	
 	@RequestMapping(value="/orderReject", method=RequestMethod.GET)
 	@ResponseBody
-	public void orderReject(@RequestParam int seqOrder) {
-		adminService.orderReject(seqOrder);
+	public void orderReject(@RequestParam int orderGroup) {
+		adminService.orderReject(orderGroup);
 	}
 	
 	@RequestMapping(value="/orderSales", method=RequestMethod.GET)
 	@ResponseBody
-	public List<OrderDTO> orderSales(@RequestParam int selectNum) {
-		return adminService.orderSales(selectNum);
+	public List<OrderDTO> orderSales(@RequestParam int selectNum, @RequestParam(value="id", required=false) String id) {
+		return adminService.orderSales(selectNum, id);
 	}
 	
 	@RequestMapping(value="/adminLogout")

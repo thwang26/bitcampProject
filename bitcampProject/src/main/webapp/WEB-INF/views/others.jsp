@@ -29,13 +29,6 @@
    </div>
    <br/>
    <div>
-      <button type="button" id="Btn" onClick="location.href='/bitcafe/orderList'">
-      <img src="/bitcafe/resources/img/others/주문내역.png" width="40" height="40"/>
-      &nbsp;&nbsp;&nbsp;&nbsp;주문내역&nbsp;&nbsp;&nbsp;
-      </button>
-   </div>
-   <br/>
-   <div>
       <button type="button" id="Btn" onClick="location.href='/bitcafe/updateMem'">
       <img src="/bitcafe/resources/img/others/회원정보.png" width="40" height="40"/>
       회원정보수정

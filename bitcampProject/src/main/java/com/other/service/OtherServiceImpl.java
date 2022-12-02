@@ -1,5 +1,7 @@
 package com.other.service;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,9 +19,26 @@ public class OtherServiceImpl implements OtherService {
 	}
 	
 	@Override
-	public void update(MemberDTO memberDTO) {
-		memberDAO.update(memberDTO);
+	public void memberDelete(String id) {
+
+		memberDAO.memberDelete(id);
 	}
-	
-		
+
+	@Override
+	public MemberDTO checkPwd(Map<String, Object> map) {
+		return memberDAO.checkPwd(map);
+	}
+
+
+
+	@Override
+	public MemberDTO update(String ssId) {
+		return memberDAO.update(ssId);
+	}
+
+	@Override
+	public void updateGo(MemberDTO memberDTO) {
+		memberDAO.updateGo(memberDTO);
+	}
+
 }

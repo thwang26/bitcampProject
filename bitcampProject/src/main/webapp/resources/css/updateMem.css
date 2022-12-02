@@ -45,7 +45,7 @@ th{
 /* container(640px)을 제외한 좌우 흰 여백 */
 table{
 	font-size:30px;
-	position: absolute;
+/* 	position: absolute; */
    	top: 20%;
    	width: 100%;
     margin-left: auto;
@@ -55,6 +55,10 @@ table{
 }
 span{
 	text-align: left;
+}
+.div{
+	font-size: 15px;
+	color: red;
 }
 /* 전체화면(container), 하단 탭(menu) 크기 및 옵션 */
 .container {
@@ -74,7 +78,7 @@ span{
 	font-size: 2em;
 	color: #360a01;
 }
-#updateBtn{
+#updateBtn, #resetBtn{
 	border-top-left-radius:5px;
 	border-bottom-left-radius:5px;
 	border-top-right-radius:5px;
@@ -85,139 +89,7 @@ span{
 	font-size: 23px;
 	border-color: #873c00;
 }
-#resetBtn{
-	border-top-left-radius:5px;
-	border-bottom-left-radius:5px;
-	border-top-right-radius:5px;
-	border-bottom-right-radius:5px;
-	background-color:rgba(0,0,0,0);
-	color:#873c00;
-	padding: 3px;
-	font-size: 23px;
-	border-color: #873c00;
-}
-#tel1{
-	border-top-left-radius:5px;
-	border-bottom-left-radius:5px;
-	border-top-right-radius:5px;
-	border-bottom-right-radius:5px;
-	background-color:rgba(0,0,0,0);
-	color:#873c00;
-	padding: 2px;
-	font-size: 20px;
-	border-color: #873c00;
-}
-#tel2{
-	border-top-left-radius:5px;
-	border-bottom-left-radius:5px;
-	border-top-right-radius:5px;
-	border-bottom-right-radius:5px;
-	background-color:rgba(0,0,0,0);
-	color:#873c00;
-	padding: 2px;
-	font-size: 20px;
-	border-color: #873c00;
-}
-#tel3{
-	border-top-left-radius:5px;
-	border-bottom-left-radius:5px;
-	border-top-right-radius:5px;
-	border-bottom-right-radius:5px;
-	background-color:rgba(0,0,0,0);
-	color:#873c00;
-	padding: 2px;
-	font-size: 20px;
-	border-color: #873c00;
-}
-#repwd{
-	border-top-left-radius:5px;
-	border-bottom-left-radius:5px;
-	border-top-right-radius:5px;
-	border-bottom-right-radius:5px;
-	background-color:rgba(0,0,0,0);
-	color:#873c00;
-	padding: 2px;
-	font-size: 20px;
-	border-color: #873c00;
-}
-#pwd{
-	border-top-left-radius:5px;
-	border-bottom-left-radius:5px;
-	border-top-right-radius:5px;
-	border-bottom-right-radius:5px;
-	background-color:rgba(0,0,0,0);
-	color:#873c00;
-	padding: 2px;
-	font-size: 20px;
-	border-color: #873c00;
-}
-#id{
-	border-top-left-radius:5px;
-	border-bottom-left-radius:5px;
-	border-top-right-radius:5px;
-	border-bottom-right-radius:5px;
-	background-color:rgba(0,0,0,0);
-	color:#873c00;
-	padding: 2px;
-	font-size: 20px;
-	border-color: #873c00;
-}
-#searchId{
-	border-top-left-radius:5px;
-	border-bottom-left-radius:5px;
-	border-top-right-radius:5px;
-	border-bottom-right-radius:5px;
-	background-color:rgba(0,0,0,0);
-	color:#873c00;
-	padding: 2px;
-	font-size: 20px;
-	border-color: #873c00;
-}
-#searchIdBtn{
-	border-top-left-radius:5px;
-	border-bottom-left-radius:5px;
-	border-top-right-radius:5px;
-	border-bottom-right-radius:5px;
-	background-color:rgba(0,0,0,0);
-	color:#873c00;
-	padding: 2px;
-	font-size: 20px;
-	border-color: #873c00;
-}
-#name{
-	border-top-left-radius:5px;
-	border-bottom-left-radius:5px;
-	border-top-right-radius:5px;
-	border-bottom-right-radius:5px;
-	background-color:rgba(0,0,0,0);
-	color:#873c00;
-	padding: 2px;
-	font-size: 20px;
-	border-color: #873c00;
-}
-#email1{
-	border-top-left-radius:5px;
-	border-bottom-left-radius:5px;
-	border-top-right-radius:5px;
-	border-bottom-right-radius:5px;
-	background-color:rgba(0,0,0,0);
-	color:#873c00;
-	padding: 2px;
-	font-size: 20px;
-	border-color: #873c00;
-}
-#email2{
-	border-top-left-radius:5px;
-	border-bottom-left-radius:5px;
-	border-top-right-radius:5px;
-	border-bottom-right-radius:5px;
-	background-color:rgba(0,0,0,0);
-	color:#873c00;
-	padding: 2px;
-	font-size: 20px;
-	border-color: #873c00;
-}
-#email3{
+#tel1, #tel2, #tel3, #repwd, #pwd, #id, #searchId, #searchIdBtn, #name, #email1, #email2, #email3{
 	border-top-left-radius:5px;
 	border-bottom-left-radius:5px;
 	border-top-right-radius:5px;

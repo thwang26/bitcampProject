@@ -31,10 +31,29 @@
 		select id from member where email = #{email}
 	</select>
 	
-		<select id="getPwd" parameterType="String" resultType="String">
+	<select id="getPwd" parameterType="String" resultType="String">
 		select pwd from member where email = #{email}
 	</select>
 	
+	<delete id="memberDelete" parameterType="String">
+		delete member where id=#{id}
+	</delete>
+	
+	<select id="checkPwd" parameterType="java.util.Map" resultType="member">
+		select * from member where id=#{ssId} and pwd=#{ssPwd}
+	</select>
+
+	<select id="update" parameterType="String" resultType="member">
+		select * from member where id=#{ssId}
+	</select>
+	<update id="updateGo" parameterType="member">
+		update member set
+					     name=#{name}
+					   , pwd=#{pwd}
+					   , email=#{email}
+					   , tel=#{tel}
+					   where id=#{id}
+	</update>
 	<!-- DTO를 가져와서 찾을 때 -->
 	
 	

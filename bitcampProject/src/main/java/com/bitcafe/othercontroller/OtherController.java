@@ -1,7 +1,10 @@
 package com.bitcafe.othercontroller;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.collections4.map.HashedMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
@@ -46,12 +49,41 @@ public class OtherController {
 		session.invalidate();
 	}
 	
-	@PostMapping(value="update")
+	/*
+	 * @PostMapping(value="update")
+	 * 
+	 * @ResponseBody public void update(@ModelAttribute MemberDTO memberDTO) {
+	 * otherService.update(memberDTO); }
+	 */
+	@PostMapping("memberDelete")
 	@ResponseBody
-	public void update(@ModelAttribute MemberDTO memberDTO) {
-		otherService.update(memberDTO);
+	public void memberDelete(@RequestParam("id") String id, HttpSession session) {
+		session.invalidate();
+		otherService.memberDelete(id);
 	}
 	
+	@PostMapping(value="checkPwd")
+	@ResponseBody
+	public MemberDTO checkPwd(@RequestParam("ssId") String ssId, @RequestParam("ssPwd") String ssPwd) {
+		
+		Map<String, Object> map = new HashedMap<String, Object>();
+		map.put("ssId", ssId);
+		map.put("ssPwd", ssPwd);
+		return otherService.checkPwd(map);
+	}
+	
+	@PostMapping(value="update")
+	@ResponseBody
+	public MemberDTO update(@RequestParam String ssId) {
+		
+		return otherService.update(ssId);
+	}
+	@PostMapping(value="updateGo")
+	@ResponseBody
+	public void updateGO(@ModelAttribute MemberDTO memberDTO) {
+		System.out.println("asdfsadf");
+		otherService.updateGo(memberDTO);
+	}
 	/*
 	 * @GetMapping(value = "/memberOut")
 	 * 

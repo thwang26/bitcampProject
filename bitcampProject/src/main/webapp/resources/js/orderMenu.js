@@ -9,19 +9,32 @@ $(function(){
 		success: function(data){
 			var totalPrice= 0;
 			$.each(data, function(index, items) {
-				$('<div/>', { class: "order-list-row"})
-					.append($('<div/>', { class: "cart-list-row-info"})
-						.append($('<input/>', {type:"hidden", id:"seqOrder"}).val(items.seqOrder))
-						.append($('<input/>', {type:"hidden", id:"storeNum"}).val(items.storeNum))
-						.append($('<input/>', {type:"hidden", id:"orderGroup"}).val(items.orderGroup))
-						.append($('<div/>', { id: "menuName" }).text(items.menuName))
-						.append($('<div/>', { class: "menu-options-price"})
-							.append($('<div/>', { class: "menu-option" }).css("display", "inline-block")
-								.append($('<div/>', { id: "takeoutOpt", class: "takeoutOpt_"+index}).css("display", "inline-block").text(items.takeoutOpt))
-								.append($('<div/>', { id: "sizeOpt", class: "sizeOpt_"+index}).css("display", "inline-block").text(items.sizeOpt))
-								.append($('<div/>', { id: "shotOpt", class: "shotOpt_"+index}).css("display", "inline-block").text(items.shotOpt)))
-							.append($('<div/>', { id: "orderPrice", class: "orderPrice"}).css("display", "inline-block").text(items.orderPrice))))
+					$('<div/>', {class: "cartList_start", id:"cart_index_one"})
+
+
+					.append($('<input/>', {type:"hidden", id:"seqOrder"}).val(items.seqOrder))
+					.append($('<input/>', {type:"hidden", id:"storeNum"}).val(items.storeNum))
+					.append($('<input/>', {type:"hidden", id:"orderGroup"}).val(items.orderGroup))
+					.append($('<div/>', {id:"menuName_div"})
+					.append($('<div/>', { id: "menuName" }).text(items.menuName)))
+
+
+					.append($('<div/>', {class:"row menu-option", id:"row_option_price"})
+						.append($('<div/>', {class:"col-2", id:"takeoutOpt_col"})
+							.append($('<div/>', { id: "takeoutOpt", class: "takeoutOpt_"+index}).text(items.takeoutOpt)))
+						.append($('<div/>', {class:"col-2", id:"sizeOpt_col"})
+							.append($('<div/>', { id: "sizeOpt", class: "sizeOpt_"+index}).text(items.sizeOpt)))
+						.append($('<div/>', {class:"col-2", id:"shotOpt_col"})
+							.append($('<div/>', { id: "shotOpt", class: "shotOpt_"+index}).text(items.shotOpt)))
+
+						.append($('<div/>', {class:"col-6", id:"orderPrice_col"})
+							.append($('<div/>', { id: "orderPrice", class: "orderPrice"}).text(items.orderPrice+"원")))
+						
+						)
 					.append($('<hr/>').css('margin-top', '16px'))
+
+
+
 					.appendTo($('#order-list'))	
 					
 				var sizeOpt = items.sizeOpt;		
@@ -39,13 +52,13 @@ $(function(){
 				if(shotOpt == '0') $('.shotOpt_'+index).hide();
 				else $('.shotOpt_'+index).text(shotOpt + "샷 추가");
 				
-				$('#storeName').text(items.storeName + "점에서 수령");
+				$('#storeName').text("* 선택하신 매장 " + items.storeName);
 				
 				totalPrice += parseInt(items.orderPrice); 
 					
 			}); //each
 			
-			$('#totalPrice').attr('value', totalPrice).text(totalPrice);
+			$('#totalPrice').attr('value', totalPrice).text(totalPrice+"원");
 			
 		},
 		error: function(err){
@@ -54,7 +67,7 @@ $(function(){
 	});
 });
 
-$(document).on('click', $('#orderMenuBtn'), function(){
+$(document).on('click', '.orderMenuBtn', function(){
 	$.ajax({
 		type: 'post',
 		url: '/bitcafe/pay',

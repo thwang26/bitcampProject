@@ -28,14 +28,14 @@ $(function(){
 		},
 		dataType: 'json',
 		success: function(data){
-			alert(JSON.stringify(data));
+			//alert(JSON.stringify(data));
 			$.each(data, function(index, items) {
 				$('<div/>', {class: "cartList_start", id:"cart_index_one"})
 				.append($('<div/>', {class:"row", id:"cartList_head"})
 					.append($('<div/>', {class:"col-5", id:"checked_one_cart"})
 					.append($('<input/>', {type:"checkbox", class: "form-check-input cart-list-checkbox", id:"check_one_cart"}).val(items.seqOrder)))
 					.append($('<div/>', { class: "col-7", id:"delete_cart_one"})
-					.append('<button type="button" id="deleteListBtn">X</button>')))
+					.append('<button type="button" id="deleteListBtn" class="deleteListBtn">X</button>')))
 
 
 					.append($('<input/>', {type:"hidden", id:"seqOrder"}).val(items.seqOrder))
@@ -88,7 +88,7 @@ $(function(){
 	});
 });
 
-$(document).on('change', '#store_toggle', function(){
+$(document).on('change', '#selectStore', function(){
 	var storeNum =  $(this).val(); 
 	
 	if(storeNum == 'none') location.reload();
@@ -189,7 +189,7 @@ $(document).ready(function(){
 
 //단일 삭제 버튼
 $(document).on('click', '.deleteListBtn', function(){
-	var seqOrder = $(this).prev().val();
+	var seqOrder = $(this).parent().prev().children().val();
 	
 	$.ajax({
 		type: 'get',

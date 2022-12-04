@@ -52,6 +52,17 @@ body, div, dl,dt,dd,ul,ol,li, h1,h2,h3,h4,h5,h6, form, fieldset, p, button {
 	text-align: right;
 	font-size: 17pt;
 }
+#deleteAllBtn {
+	background-color: #fcf5ef;
+	border: 0;
+	outline: 0;
+	color: gray;
+}
+#deleteSomeBtn {
+	background-color: #fcf5ef;
+	border: 0;
+	outline: 0;
+}
 
 
 
@@ -94,10 +105,6 @@ img, fieldset {
 	margin-top: 100px;
 	margin-bottom: 60px;
 }
-
-
-
-
 
 #scroll_list {
 	position: relative;
@@ -200,9 +207,92 @@ img, fieldset {
 
 
 
+/* 결제폼 css */
+#orderMenuForm {
+	max-width: 640px;
+	min-width: 320px;
+	height: 1200px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #fcf5ef;
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	font-family: 'Marcellus', sans-serif;
+	color: #360a01;
+	width: 100%;
+	margin: 0;
+}
+#orderMenuBtn {
+	background-image: url(/bitcafe/resources/img/kakaopay2.png);
+	width: 330px;
+	height: 66px;
+	border: solid 1px grey;
+	border-radius: 20px;
+}
+#order-list_start {
+	font-weight: bold;
+	font-size: 18pt;
+}
+#store-info {
+	width: 80%;
+	margin: 0;
+	text-align: left;
+	color: gray;
+	font-size: 15pt;
+}
+#totalPrice {
+	font-weight: bold;
+}
+#order-list {
+	width: 100%;
+	margin: 0;
+}
+
+#scroll_list_order {
+	position: relative;
+	flex-wrap: wrap;
+	align-items: stretch;
+	width: 90%;
+	height: auto;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 200px;
+	display: flex;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+#scroll_list_order::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+#orderMenuForm_bottom {
+	position: fixed;
+	bottom: 80px;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	align-items: center;
+	background-color: #fcf5ef;
+	margin: 0 auto;
+	max-width: 640px;
+	min-width: 320px;
+	height: 120px;
+	font-family: 'Marcellus', sans-serif;
+	font-size: 2em;
+	color: #360a01;
+}
+#totalPrice_div {
+	font-size: 18pt;
+}
 
 
 
+
+
+/* *************************************************************** */
 
 
 li {

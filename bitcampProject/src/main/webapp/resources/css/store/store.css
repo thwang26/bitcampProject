@@ -135,7 +135,17 @@ img, fieldset {
 	width: 600px;
 }
 
-
+#col_phoneIcon {
+	padding: 0;
+}
+#row_tel {
+	width: auto;
+	margin-left: 3px;
+}
+#col_telNum {	
+	padding-top: 3px;
+	padding-left: 0;
+}
 
 
 

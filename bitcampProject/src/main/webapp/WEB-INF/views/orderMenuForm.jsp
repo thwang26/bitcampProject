@@ -12,28 +12,42 @@
 </head>
 <body>
 <div class="container" ><!-- container start -->
-<form id="orderMenuForm" method="post">
-	<input type="hidden" id="id" name="id" value="${userId }"> <!-- member id -->
-	<input type="hidden" id="orderGroup" name="orderGroup" value="${param.orderGroup }">
-	
-	<div class="row" id="storeList_head">
-		<div class="col"><div class="storeViewHead" id="categoryHead">결제하기</div></div>
-	</div>
-	<br>
-	<div id="order-list_start">주문 내역</div>	
-	<br>
-	<div id="store-info">
-		<div id="storeName"></div>
-	</div>
-	
-	<div id="order-list"></div>
-	
-	<span>최종 결제 금액</span>
-	<div id="totalPrice"></div>
+	<form id="orderMenuForm" method="post">
+		<input type="hidden" id="id" name="id" value="${userId }"> <!-- member id -->
+		<input type="hidden" id="orderGroup" name="orderGroup" value="${param.orderGroup }">
+		
+		<div class="row" id="storeList_head">
+			<div class="col">
+				<div class="storeViewHead" id="categoryHead">결제하기</div>
+			</div>
+		</div>
+		<br>
+		<div id="order-list_start">주문 내역</div>	
+		<br>
+		<div id="store-info">
+			<div id="storeName"></div>
+		</div>
+		
+		<div style="overflow-y: scroll; overflow-x:hidden; " id="scroll_list_order" class="scroll_list1">
+			<div id="order-list">
+				<!-- ajax -->
+			</div>
+		</div>
+	</form>
+</div>
+<!-- container end -->
 
-	<input type="button" class="orderMenuBtn" id="orderMenuBtn" value="">  
-</form>
-</div><!-- container end -->
+		<!-- bottom -->
+		<div id="orderMenuForm_bottom">
+		<div class="row" style="width: 90%; margin: auto;">
+			<div class="col" id="totalPrice_div" style="text-align: right; padding-top: 5px;">최종 결제 금액</div><br>
+			<div class="col" id="totalPrice" style="padding: 0;"></div><br>
+		</div>
+			<div class="row" style="width: 330px; margin: auto; text-align: center;">	
+				<input type="button" class="orderMenuBtn" id="orderMenuBtn" value="">  
+			</div>
+		</div>
+
 	<%@ include file="bottomTab.jsp" %><!-- bottomTab.jsp -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="/bitcafe/resources/js/bottomTab.js"></script><!-- bottomTab.js -->

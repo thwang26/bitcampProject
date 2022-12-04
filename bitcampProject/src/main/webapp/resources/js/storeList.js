@@ -22,12 +22,11 @@ $(function () {
                         .append($('<div/>', { class: "row", id: "row_tel" })
                             .append($('<div/>', { class: "col-1", id: "col_phoneIcon" })
                                 .append($('<img/>', {
-                                    src: "http://localhost:8080/bitcafe/resources/img/phone1.jpg",
-                                    alt: "phone1",
+                                    src: "/bitcafe/resources/img/phone1.jpg",
                                     id: "phone_img"
                                 })
                                     .css({ 'width': '17px', 'height': '17px' })))
-                            .append($('<div/>', { class: "col", id: "col_telNum" })
+                            .append($('<div/>', { class: "col-7", id: "col_telNum" })
                                 .append($('<div/>', { id: "store_tel" }).text(items.storeTel)
                                 ))))
                     .append($('<hr/>').css('margin-top', '16px')))

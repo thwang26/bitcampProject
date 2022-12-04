@@ -31,7 +31,7 @@
 		delete from orderInform where seqOrder=#{seqOrder}
 	</delete>
 	
-	<delete id="deleteSomeOrder" parameterType="java.util.List">
+	<delete id="deleteSomeOrder" parameterType="java.util.Map">
 		<foreach collection="checkedArr" item="seqOrder" separator=";" open="DECLARE BEGIN" close="; END;">
 			delete from orderInform where seqOrder=#{seqOrder}
 		</foreach>

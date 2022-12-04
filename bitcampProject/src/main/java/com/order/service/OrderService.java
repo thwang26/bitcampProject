@@ -29,7 +29,7 @@ public interface OrderService {
 
 	public void deleteSingleOrder(int seqOrder);
 
-	public void deleteSomeOrder(List<Integer> checkedArr);
+	public void deleteSomeOrder(Map<String, Object> map);
 
 	public void paymentComplete(int orderGroup);
 

@@ -157,8 +157,8 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
-	public void deleteSomeOrder(List<Integer> checkedArr) {
-		orderDAO.deleteSomeOrder(checkedArr);
+	public void deleteSomeOrder(Map<String, Object> map) {
+		orderDAO.deleteSomeOrder(map);
 	}
 
 	@Override

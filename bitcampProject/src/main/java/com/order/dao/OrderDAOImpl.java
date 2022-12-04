@@ -48,8 +48,8 @@ public class OrderDAOImpl implements OrderDAO {
 	}
 
 	@Override
-	public void deleteSomeOrder(List<Integer> checkedArr) {
-		sqlSession.delete("orderSQL.deleteSomeOrder", checkedArr);	
+	public void deleteSomeOrder(Map<String, Object> map) {
+		sqlSession.delete("orderSQL.deleteSomeOrder", map);	
 	}
 
 	@Override

@@ -89,7 +89,9 @@ public class OrderController {
 	@GetMapping(value="/deleteSomeOrder")
 	@ResponseBody
 	public void deleteSomeOrder(@RequestParam(value="checkedArr[]") List<Integer> checkedArr){
-		orderService.deleteSomeOrder(checkedArr);
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("checkedArr", checkedArr);
+		orderService.deleteSomeOrder(map);
 	}
 	
 	@GetMapping(value="/paymentComplete")

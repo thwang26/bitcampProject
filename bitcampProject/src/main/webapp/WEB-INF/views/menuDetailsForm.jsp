@@ -8,67 +8,86 @@
 <title>BitCafe</title>
 <!-- bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/bitcafe/resources/css/menuDetails.css">
 <link rel="stylesheet" type="text/css" href="/bitcafe/resources/css/bottomTab.css"><!-- reset, bottomTab.css -->
 <link rel="icon" href="/bitcafe/resources/img/order.png">
 </head>
 <body>
 <div class="container" ><!-- container start -->
+	<div class="row" id="menuDetails_head">
+		<div class="col-2" id="menuDetails_head_goback" onclick="goback_store_info()"><img alt="goback" src="/bitcafe/resources/img/goback.png" id="goback_icon"></div>
+		<div class="col-8"><div class="menuDetailsViewHead"></div></div>
+	</div>
+
    <form id="menuDetailsForm" method="post">
    <input type="hidden" id="seqMenu" name="seqMenu" value="${param.seqMenu }"> <!-- 메뉴시퀀스 -->
    <input type="hidden" id="id" name="id" value="${userId }"> <!-- member id -->
-   <input type="text" id="storeNum" name="storeNum" value="${param.storeNum }">
+   <input type="hidden" id="storeNum" name="storeNum" value="${param.storeNum }">
    
-   <div class="card" style="width: 90%;">
+   <div class="card" style="width: 100%;">
       <img src="" class="card-img-top" alt="커피이미지">
       <div class="card-body">
-          <h3 class="card-title" align="left">
-             <input type="text" name="menuName" id="menuName" />
-          </h3>
-          <p class="card-text" style="font-size:14pt;" align="left">
-             <input type="text" id="menuContent" />
-          </p>
+          <div id="menuName" class="card-title" align="left"></div>
+          <div id="menuContent" class="card-text" align="left"></div>
       </div>
       <ul class="list-group list-group-flush">
-         <li class="list-group-item">사이즈
-            <div class="btn-group" role="group" aria-label="size group">
-               <input type="radio" class="btn-check" name="sizeOpt" id="sizeOpt1" value="0" autocomplete="off" checked>
-               <label class="btn btn-outline-primary" for="sizeOpt1">Small</label>
-            
-               <input type="radio" class="btn-check" name="sizeOpt" id="sizeOpt2" value="1" autocomplete="off">
-               <label class="btn btn-outline-primary" for="sizeOpt2">Regular</label>
-            
-               <input type="radio" class="btn-check" name="sizeOpt" id="sizeOpt3" value="2" autocomplete="off">
-               <label class="btn btn-outline-primary" for="sizeOpt3">Large</label>
+         <li class="list-group-item">
+         	<div class="row">
+         		<div class="size-option col-4">사이즈</div>
+	            <div class="col-8 btn-group" role="group" aria-label="size group">
+	               <input type="radio" class="btn-check" name="sizeOpt" id="sizeOpt1" value="0" autocomplete="off" checked>
+	               <label class="btn btn-outline-secondary" for="sizeOpt1">Small</label>
+	            
+	               <input type="radio" class="btn-check" name="sizeOpt" id="sizeOpt2" value="1" autocomplete="off">
+	               <label class="btn btn-outline-secondary" for="sizeOpt2">Regular</label>
+	            
+	               <input type="radio" class="btn-check" name="sizeOpt" id="sizeOpt3" value="2" autocomplete="off">
+	               <label class="btn btn-outline-secondary" for="sizeOpt3">Large</label>
+	            </div>
             </div>
          </li>
-         <li class="list-group-item">컵선택
-            <div class="btn-group" role="group" aria-label="takeout group">
-               <input type="radio" class="btn-check" name="takeoutOpt" id="takeoutOpt1" value="0" autocomplete="off" checked>
-               <label class="btn btn-outline-primary" for="takeoutOpt1">매장컵</label>
-            
-               <input type="radio" class="btn-check" name="takeoutOpt" id="takeoutOpt2" value="1" autocomplete="off">
-               <label class="btn btn-outline-primary" for="takeoutOpt2">개인컵</label>
-            
-               <input type="radio" class="btn-check" name="takeoutOpt" id="takeoutOpt3" value="2" autocomplete="off">
-               <label class="btn btn-outline-primary" for="takeoutOpt3">일회용컵</label>
+         <li class="list-group-item">
+         	<div class="row">
+	         	<div class="takeout-option col-4">컵선택</div>
+	            <div class="col-8 btn-group" role="group" aria-label="takeout group">
+	               <input type="radio" class="btn-check" name="takeoutOpt" id="takeoutOpt1" value="0" autocomplete="off" checked>
+	               <label class="btn btn-outline-secondary" for="takeoutOpt1">매장컵</label>
+	            
+	               <input type="radio" class="btn-check" name="takeoutOpt" id="takeoutOpt2" value="1" autocomplete="off">
+	               <label class="btn btn-outline-secondary" for="takeoutOpt2">개인컵</label>
+	            
+	               <input type="radio" class="btn-check" name="takeoutOpt" id="takeoutOpt3" value="2" autocomplete="off">
+	               <label class="btn btn-outline-secondary" for="takeoutOpt3">일회용컵</label>
+	            </div>
             </div>
          </li>
-         <li class="list-group-item">에스프레소 샷
-            <button type="button" class="btn btn-outline-primary" id="minusShotBtn">-</button>
-            <input type="text" name="shotOpt" id="shotOpt" value="0" size=1 />
-            <button type="button" class="btn btn-outline-primary" id="plusShotBtn">+</button>
+         <li class="list-group-item">
+         	<div class="row">
+         		<div class="shot-option col-6">에스프레소 샷</div>
+         		<div class="col-6">
+		            <button type="button" class="btn btn-outline-secondary" id="minusShotBtn">-</button>
+		            <input type="text" name="shotOpt" id="shotOpt" value="0" size=1 />
+		            <button type="button" class="btn btn-outline-secondary" id="plusShotBtn">+</button>
+		       	</div>
+            </div>
          </li>
       </ul>
       <div class="card-body">
-         <div>
-            <button type="button" class="btn btn-outline-primary" id="minusQtyBtn">-</button>
-            <input type="text" name="qty" id="qty" value="1" size=1 />
-            <button type="button" class="btn btn-outline-primary" id="plusQtyBtn">+</button>
-            <input type="text" name="menuPrice" id="menuPrice">
-            <input type="text" name="orderPrice" id="orderPrice">
+         <div class="row">
+         	<div class="col-7">
+	            <button type="button" class="btn btn-outline-secondary" id="minusQtyBtn">-</button>
+	            <input type="text" name="qty" id="qty" value="1" size=1 />
+	            <button type="button" class="btn btn-outline-secondary" id="plusQtyBtn">+</button>
+            </div>
+            <div class="col-5">
+	            <input type="text" name="orderPrice" id="orderPrice" size=4>원 
+	            <input type="hidden" name="menuPrice" id="menuPrice">
+            </div>
          </div>
-         <button type="button" id="cartBtn" class="btn btn-secondary btn-lg" data-bs-toggle="modal" data-bs-target="#cartModal">담기</button>
-         <button type="button" id="orderBtn" class="btn btn-secondary btn-lg">주문하기</button>
+         <div>
+	         <button type="button" id="cartBtn" class="btn btn-secondary btn-lg" data-bs-toggle="modal" data-bs-target="#cartModal">담기</button>
+	         <button type="button" id="orderBtn" class="btn btn-secondary btn-lg">주문하기</button>
+         </div>
       </div>
    </div>
    </form>

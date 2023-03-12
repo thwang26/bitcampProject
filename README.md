@@ -1,4 +1,4 @@
-# BitCafe - 비트캠프 자바 224기 미니프로젝트 <a href="https://www.notion.so/thwang/c8dae4d4775e4aaa9f6e2e98e8fe70cc?v=1e31f95182fe442992a7d3962bdadf44">(상세 진행과정)</a>
+# BitCafe - 비트캠프 자바 224기 팀 프로젝트 <a href="https://www.notion.so/thwang/c8dae4d4775e4aaa9f6e2e98e8fe70cc?v=1e31f95182fe442992a7d3962bdadf44">(상세 진행과정)</a>
 
 ## ☕ 소개<br>
 
